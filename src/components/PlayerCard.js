@@ -8,11 +8,11 @@ const PlayerCard = ({ name, jersey, dob, type, metric1, metric2, image }) => {
                     <div className="col-left">
                         <div>
                             <h2>{metric1}</h2>
-                            <p>Runs</p>
+                            <p>{type === "Bowler" ? "Wickets" : "Runs"}</p>
                         </div>
                         <div>
                             <h2>{metric2}</h2>
-                            <p>Balls</p>
+                            <p>{type === "Bowler" ? "Runs" : "Balls"}</p>
                         </div>
                     </div>
                     <div className="col-right">

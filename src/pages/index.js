@@ -53,6 +53,8 @@ const Homepage = () => {
       },
       resistanceRatio: 0
     })
+
+    document.querySelector("video").play();
   })
 
   const news = [

@@ -27,7 +27,7 @@ const Teams = () => {
         {
             team: "South Africa Champions",
             logo: "/assets/images/team-logos/south-africa-logo.webp",
-            href: "/teams/sauth-africa-champions"
+            href: "/teams/south-africa-champions"
         },
         {
             team: "West Indies Champions",

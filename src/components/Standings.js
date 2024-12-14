@@ -308,8 +308,7 @@ const Standings = () => {
                     <div key={team.shortName}>
                         <div className="standing-table-body" onClick={() => toggleRowExpansion(team.shortName)}>
                             <div>
-                                <Image src={team.logo} width={50} height={50} />
-                                {team.shortName}
+                                <Image src={team.logo} width={60} height={60} />
                             </div>
                             <div>{team.stats.P}</div>
                             <div>{team.stats.W}</div>

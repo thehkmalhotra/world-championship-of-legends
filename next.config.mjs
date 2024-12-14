@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     domains: ["wclcricket.com", "staging.wclcricket.com"],
-    unoptimised: false
+    unoptimized: false
   },
   reactStrictMode: true,
 };

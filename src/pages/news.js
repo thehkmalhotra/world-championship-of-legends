@@ -160,7 +160,7 @@ const News = () => {
                         </div>
                         <div className="news-grid">
                             {
-                                news.map((article, index) => {
+                                news.reverse().map((article, index) => {
                                     return (
                                         <ArticleCard title={article.news_title} image={article.news_image} url={article.news_url} key={index}></ArticleCard>
                                     )

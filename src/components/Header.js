@@ -22,7 +22,6 @@ const Header = () => {
                     <ul className="nav-menu-right">
                         <li><Link href="/about" legacyBehavior><a className={router.pathname === "/about" ? "active" : ""}>About</a></Link></li>
                         <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Partners</a></Link></li>
-                        <li><Link href="/tickets" legacyBehavior><a>Tickets</a></Link></li>
                     </ul>
                     <div className="hamburger" onClick={() => { setMobileMenu(!mobileMenu) }}>
                         {

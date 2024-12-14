@@ -7,7 +7,7 @@ const Videos = () => {
     const videos = [
         {
             "video_title": "India Champions vs England Champions - Full Match Highlights (3rd July)",
-            "video_image": "https://i.ytimg.com/vi/QWS95Yx4j18/mqdefault.jpg",
+            "video_image": "https://i.ytimg.com/vi/QWS95Yx4j18/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAMbE6yUq1dz09JU0cPtKf-VWfKBQ",
             "video_url": "https://youtu.be/QWS95Yx4j18?feature=shared"
         },
         {

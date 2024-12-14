@@ -324,7 +324,7 @@ const Homepage = () => {
               <div className="swiper mySwiper">
                 <div className="swiper-wrapper">
                   {
-                    videos.map((video, index) => {
+                    videos.reverse().map((video, index) => {
                       return (
                         <div className="swiper-slide" key={index}>
                           <ArticleCard title={video.video_title} image={video.video_image} url={video.video_url} type="Video"></ArticleCard>

@@ -16,15 +16,18 @@ const Footer = () => {
                             <li><Link href="/cancellation-refund" legacyBehavior><a>Cancellation & Refund</a></Link></li>
                         </ul>
                     </div>
-                    <div class="col-3">
-                     <p>Sai Telematics is our official partner for collecting payments.</p>
-                    </div>
+                </div>
+                <div class="payment-partner">
+                  <p>Sai Telematics is our official partner for collecting payments.</p>
                 </div>
             </footer>
 
             <style jsx>{`
                 footer {
                     width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
                 }
 
                 .footer-container {
@@ -93,7 +96,7 @@ const Footer = () => {
                     color: #fff;
                 }
 
-                .footer-container .col-3 p {
+                .payment-partner p {
                     color: #ABB1CB;
                     font-family: "Formula Condensed Regular";
                     font-size: 16px;

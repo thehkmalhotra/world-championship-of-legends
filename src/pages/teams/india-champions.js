@@ -1,0 +1,316 @@
+import Header from '@/components/Header'
+import PlayerCard from '@/components/PlayerCard';
+import TeamOwner from '@/components/TeamOwner';
+import React from 'react'
+import 'swiper/css';
+
+const IndiaChampions = () => {
+  const players = [
+    {
+      "player_name": "Yuvraj Singh",
+      "player_type": "Batsman",
+      "player_jersey": "12",
+      "player_metric_1": "59",
+      "player_metric_2": "28",
+      "player_dob": "12 Dec",
+      "player_image": "/assets/images/players/india-champions/yuvraj-singh.webp"
+    },
+    {
+      "player_name": "Harbhajan Singh",
+      "player_type": "Bowler",
+      "player_jersey": "3",
+      "player_metric_1": "4",
+      "player_metric_2": "25",
+      "player_dob": "3 Jul",
+      "player_image": "/assets/images/players/india-champions/harbhajan-singh.webp"
+    },
+    {
+      "player_name": "Suresh Raina",
+      "player_type": "Batsman",
+      "player_jersey": "48",
+      "player_metric_1": "52",
+      "player_metric_2": "40",
+      "player_dob": "27 Nov",
+      "player_image": "/assets/images/players/india-champions/suresh-raina.webp"
+    },
+    {
+      "player_name": "Irfan Pathan",
+      "player_type": "Batsman",
+      "player_jersey": "56",
+      "player_metric_1": "51",
+      "player_metric_2": "19",
+      "player_dob": "27 Oct",
+      "player_image": "/assets/images/players/india-champions/irfan-pathan.webp"
+    },
+    {
+      "player_name": "Robin Uthappa",
+      "player_type": "Batsman",
+      "player_jersey": "14",
+      "player_metric_1": "65",
+      "player_metric_2": "35",
+      "player_dob": "11 Nov",
+      "player_image": "/assets/images/players/india-champions/robin-uthappa.webp"
+    },
+    {
+      "player_name": "Ambati Rayadu",
+      "player_type": "Batsman",
+      "player_jersey": "9",
+      "player_metric_1": "50",
+      "player_metric_2": "30",
+      "player_dob": "23 Sep",
+      "player_image": "/assets/images/players/india-champions/ambati-rayadu.webp"
+    },
+    {
+      "player_name": "Gurkeerat Mann",
+      "player_type": "Batsman",
+      "player_jersey": "8",
+      "player_metric_1": "86",
+      "player_metric_2": "42",
+      "player_dob": "29 Jun",
+      "player_image": "/assets/images/players/india-champions/gurkeerat-maan.webp"
+    },
+    {
+      "player_name": "Yusuf Pathan",
+      "player_type": "Batsman",
+      "player_jersey": "21",
+      "player_metric_1": "78",
+      "player_metric_2": "48",
+      "player_dob": "17 Nov",
+      "player_image": "/assets/images/players/india-champions/yusuf-pathan.webp"
+    },
+    {
+      "player_name": "Rahul Sharma",
+      "player_type": "Bowler",
+      "player_jersey": "27",
+      "player_metric_1": "-",
+      "player_metric_2": "-",
+      "player_dob": "30 Nov",
+      "player_image": "/assets/images/players/india-champions/rahul-sharma.webp"
+    },
+    {
+      "player_name": "Naman Ojha",
+      "player_type": "Batsman",
+      "player_jersey": "40",
+      "player_metric_1": "25",
+      "player_metric_2": "20",
+      "player_dob": "20 Jul",
+      "player_image": "/assets/images/players/india-champions/naman-ojha.webp"
+    },
+    {
+      "player_name": "Rahul Shukla",
+      "player_type": "Bowler",
+      "player_jersey": "",
+      "player_metric_1": "1",
+      "player_metric_2": "31",
+      "player_dob": "28 Aug",
+      "player_image": "/assets/images/players/india-champions/rahul-shukla.webp"
+    },
+    {
+      "player_name": "R P Singh",
+      "player_type": "Bowler",
+      "player_jersey": "9",
+      "player_metric_1": "1",
+      "player_metric_2": "38",
+      "player_dob": "6 Dec",
+      "player_image": "/assets/images/players/india-champions/rp-singh.webp"
+    },
+    {
+      "player_name": "Vinay Kumar",
+      "player_type": "Bowler",
+      "player_jersey": "",
+      "player_metric_1": "2",
+      "player_metric_2": "36",
+      "player_dob": "12 Feb",
+      "player_image": "/assets/images/players/india-champions/vinay-kumar.webp"
+    },
+    {
+      "player_name": "Dhawal Kulkarni",
+      "player_type": "Bowler",
+      "player_jersey": "91",
+      "player_metric_1": "2",
+      "player_metric_2": "49",
+      "player_dob": "10 Dec",
+      "player_image": "/assets/images/players/india-champions/dhawal-kulkarni.webp"
+    },
+    {
+      "player_name": "Anureet Singh",
+      "player_type": "Bowler",
+      "player_jersey": "33",
+      "player_metric_1": "3",
+      "player_metric_2": "43",
+      "player_dob": "2 Mar",
+      "player_image": "/assets/images/players/india-champions/anureet-singh.webp"
+    },
+    {
+      "player_name": "Pawan Negi",
+      "player_type": "Bowler",
+      "player_jersey": "15",
+      "player_metric_1": "1",
+      "player_metric_2": "24",
+      "player_dob": "6 Jan",
+      "player_image": "/assets/images/players/india-champions/pawan-negi.webp"
+    }
+  ];
+
+  return (
+    <>
+      <div className="main">
+        <Header />
+        <div className="body">
+          <div className="teams-container">
+            <div className="team-header-container">
+              <ul>
+                <li>Homepage &gt;</li>
+                <li>Teams &gt;</li>
+                <li>India Champions</li>
+              </ul>
+              <div className="page-headers">
+                <h1>India Champions</h1>
+              </div>
+            </div>
+            <div className="team-owners-container">
+              <div className="team-owners">
+              <div className="team-owner">
+                      <TeamOwner name="Mr. Sumant Bahl" image="/assets/images/team-owners/sumant-bahl.webp" about="Sumant Bahl has over 30 years of global media experience. Starting in 1994, he helped launch major TV channels in India, including Star Movies and Zee Cinema, and later HBO and Cartoon Network. In 2004, he moved to the UK to head Zee Europe's Distribution & Marketing, pioneering the use of mainstream media for Indian TV promotions. At 35, Sumant founded a TV media consultancy and advertising agency focused on ethnic Asian brands in the UK. He now runs his own entertainment business and is Managing Director for International Business at Travelxp HD & 4K, overseeing operations in 25 languages across 100 countries." />
+                    </div>
+                    <div className="team-owner">
+                      <TeamOwner name="Mr. Jaspal Bahra" image="/assets/images/team-owners/jaspal-bahra.webp" about="Jaspal Bahra, a UK-born Indian, is a music enthusiast and financial specialist with over 18 years in investment banking, including roles at Barclays Wealth, HSBC Private Bank, J Morgan, Brewin Dolphin, and Wesleyan. FCA registered, his financial expertise and experience with Bollywood's top artists make him a successful entertainment businessman. Jaspal was the first Indian promoter to produce a recurring show at London's 02 Arena. In 2015, he co-founded Grace Entertainment with Sumant Bahl, producing over 100 shows across the UK, Europe, Australia, and New Zealand, featuring artists like Asha Bhosle, Rahat Fateh Ali Khan, Shreya Ghoshal, and Sonu Nigam." />
+                    </div>
+                    <div className="team-owner">
+                      <TeamOwner name="Mr. Salman Ahmed" image="/assets/images/team-owners/salman-ahmed.webp" about="Salman Ahmed, a global entertainment icon since 1987, has promoted over 1500 live concerts, establishing himself as a top concert promoter. Beyond music, he has contributed to global peace and diplomacy, organizing the 2014 Nobel Peace Prize Concert, events for the UN General Assembly, and King Charles at Buckingham Palace. As a founding member of King Charles' British Asian Trust and Vice President of Barnardos, a UK children's charity, he is dedicated to philanthropy. His involvement with Oxford University's Music Faculty highlights his commitment to education. In 2022, Salman's PME Entertainment orchestrated a major pre-World Cup event in Qatar, drawing over 50,000 attendees, cementing his influence on the international stage." />
+                    </div>
+              </div>
+            </div>
+            <div className="team-squad">
+              <h2>Squad 2k24</h2>
+              <div className="players-grid">
+                {players.map((player, index) => (
+                  <PlayerCard
+                    key={index}
+                    name={player.player_name}
+                    type={player.player_type}
+                    jersey={player.player_jersey}
+                    dob={player.player_dob}
+                    metric1={player.player_metric_1}
+                    metric2={player.player_metric_2}
+                    image={player.player_image}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .teams-container {
+            width: 100%;
+            max-width: 1280px;
+            padding: 0 20px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            margin-top: 80px;
+        }
+
+        .team-header-container {
+            width: max-content;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .team-header-container ul {
+            display: flex;
+            gap: 5px;
+            list-style: none;
+        }
+
+        .team-header-container ul li {
+            color: #ABB1CB;
+            font-family: "Formula Condensed Regular";
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .page-headers {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .page-headers h1 {
+            color: #ffffff;
+            font-family: "Formula Condensed Bold";
+            font-weight: 500;
+            font-size: 45px;
+            letter-spacing: .02em;
+            text-transform: uppercase;
+        }
+
+        .team-owners-container {
+            width: 100%;
+            max-width: 1280px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 100px;
+            margin-top: 80px;
+        }
+
+        .team-owners {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            background-color: #27336D;
+            padding: 15px;
+            border-radius: 20px;
+        }
+
+        @media screen and (max-width: 1023px) {
+        .team-owners {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        }
+
+        .team-squad {
+            width: 100%;
+            max-width: 1280px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 80px;
+        }
+
+        .team-squad h2 {
+            color: #ffffff;
+            font-family: "Formula Condensed Bold";
+            font-weight: 500;
+            font-size: 30px;
+            letter-spacing: .02em;
+            text-transform: uppercase;
+          }
+
+          .players-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+          }
+
+          @media screen and (max-width: 1023px) {
+          .players-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 10px;
+          }
+          }
+      `}</style>
+    </>
+  )
+}
+
+export default IndiaChampions

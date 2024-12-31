@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Formula Condensed Light";
+  src: url("/assets/fonts/formula-condensed-light.ttf");
+}
+
+@font-face {
+  font-family: "Formula Condensed Regular";
+  src: url("/assets/fonts/formula-condensed-regular.ttf");
+}
+
+@font-face {
+  font-family: "Formula Condensed Bold";
+  src: url("/assets/fonts/formula-condensed-bold.ttf");
+}
+
+@font-face {
+  font-family: "Schabo";
+  src: url("/assets/fonts/schabo.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+a {
+  text-decoration: unset;
+  display: flex;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body,
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  width: 100%;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #2D3B7D;
+}

@@ -93,6 +93,14 @@ const Footer = () => {
                 footer ul li a:hover {
                     color: #fff;
                 }
+
+                .footer-container .col-3 p {
+                    color: #ABB1CB;
+                    font-family: "Formula Condensed Regular";
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                }
             `}</style>
         </>
     )

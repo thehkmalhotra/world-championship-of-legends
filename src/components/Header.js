@@ -22,9 +22,9 @@ const Header = () => {
                     <ul className="nav-menu-right">
                         <li><Link href="/about" legacyBehavior><a className={router.pathname === "/about" ? "active" : ""}>About</a></Link></li>
                         <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Partners</a></Link></li>
-                        <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Instagram</a></Link></li>
-                        <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Facebook</a></Link></li>
-                        <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>X</a></Link></li>
+                        <li><Link href="https://www.instagram.com/worldchampionshipoflegends" legacyBehavior><a>Instagram</a></Link></li>
+                        <li><Link href="https://www.facebook.com/@worldchampionshipoflegends/?mibextid=ZbWKwL" legacyBehavior><a>Facebook</a></Link></li>
+                        <li><Link href="https://www.instagram.com/worldchampionshipoflegends" legacyBehavior><a>Instagram</a></Link></li>
                     </ul>
                     <div className="hamburger" onClick={() => { setMobileMenu(!mobileMenu) }}>
                         {
@@ -45,9 +45,9 @@ const Header = () => {
                                     <li onClick={() => { setMobileMenu(false) }}><Link href="/#standings" legacyBehavior><a>Standings</a></Link></li>
                                     <li><Link href="/about" legacyBehavior><a className={router.pathname === "/about" ? "active" : ""}>About</a></Link></li>
                                     <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Partners</a></Link></li>
-                                    <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Instagram</a></Link></li>
-                                    <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Facebook</a></Link></li>
-                                    <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>X</a></Link></li>
+                                    <li><Link href="https://www.instagram.com/worldchampionshipoflegends" legacyBehavior><a>Instagram</a></Link></li>
+                                    <li><Link href="https://www.facebook.com/@worldchampionshipoflegends/?mibextid=ZbWKwL" legacyBehavior><a>Facebook</a></Link></li>
+                                    <li><Link href="https://www.instagram.com/worldchampionshipoflegends" legacyBehavior><a>Instagram</a></Link></li>
                                 </ul>
                             </div>
                             :

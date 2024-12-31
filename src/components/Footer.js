@@ -17,6 +17,9 @@ const Footer = () => {
                             <li><Link href="/cancellation-refund" legacyBehavior><a>Cancellation & Refund</a></Link></li>
                         </ul>
                     </div>
+                    <div class="col-3">
+                     <p>Sai Telematics is our official partner for collecting payments.</p>
+                    </div>
                 </div>
             </footer>
 

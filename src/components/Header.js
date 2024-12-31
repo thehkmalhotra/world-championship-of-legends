@@ -24,7 +24,7 @@ const Header = () => {
                         <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Partners</a></Link></li>
                         <li><Link href="https://www.instagram.com/worldchampionshipoflegends" legacyBehavior><a>Instagram</a></Link></li>
                         <li><Link href="https://www.facebook.com/@worldchampionshipoflegends/?mibextid=ZbWKwL" legacyBehavior><a>Facebook</a></Link></li>
-                        <li><Link href="https://www.instagram.com/worldchampionshipoflegends" legacyBehavior><a>Instagram</a></Link></li>
+                        <li><Link href="https://x.com/wclleague" legacyBehavior><a>X</a></Link></li>
                     </ul>
                     <div className="hamburger" onClick={() => { setMobileMenu(!mobileMenu) }}>
                         {
@@ -47,7 +47,7 @@ const Header = () => {
                                     <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Partners</a></Link></li>
                                     <li><Link href="https://www.instagram.com/worldchampionshipoflegends" legacyBehavior><a>Instagram</a></Link></li>
                                     <li><Link href="https://www.facebook.com/@worldchampionshipoflegends/?mibextid=ZbWKwL" legacyBehavior><a>Facebook</a></Link></li>
-                                    <li><Link href="https://www.instagram.com/worldchampionshipoflegends" legacyBehavior><a>Instagram</a></Link></li>
+                                    <li><Link href="https://x.com/wclleague" legacyBehavior><a>X</a></Link></li>
                                 </ul>
                             </div>
                             :

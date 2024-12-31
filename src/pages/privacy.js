@@ -128,6 +128,12 @@ const PrivacyPolicy = () => {
                     padding: 0 0 50px 0;
                 }
 
+                @media screen and (max-width: 767px) {
+                  .policy-content {
+                     width: 100%;
+                   }
+                }
+
                 .policy-content h2 {
                     font-family: "Formula Condensed Bold";
                     font-weight: 500;

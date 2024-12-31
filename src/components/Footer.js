@@ -13,7 +13,6 @@ const Footer = () => {
                     <div className="col-2">
                         <ul>
                             <li><Link href="/privacy" legacyBehavior><a>Privacy</a></Link></li>
-                            <li><Link href="/terms-conditions" legacyBehavior><a>Terms Conditions</a></Link></li>
                             <li><Link href="/cancellation-refund" legacyBehavior><a>Cancellation & Refund</a></Link></li>
                         </ul>
                     </div>

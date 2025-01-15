@@ -18,17 +18,24 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
+                <div className="payment-provider">
+                    <p>Sai Telematics is our official partner for collecting payments.</p>
+                </div>
             </footer>
 
             <style jsx>{`
                 footer {
                     width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    padding: 30px 0;
                 }
 
                 .footer-container {
                     width: 100%;
                     max-width: 1280px;
-                    padding: 30px 20px;
+                    padding: 0 20px;
                     margin: auto;
                     display: flex;
                     justify-content: space-between;
@@ -89,6 +96,19 @@ const Footer = () => {
 
                 footer ul li a:hover {
                     color: #fff;
+                }
+
+                .payment-provider {
+                    padding: 0 20px;
+                }
+
+                .payment-provider p {
+                    color: #ABB1CB;
+                    font-family: "Formula Condensed Regular";
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    text-align: center;
                 }
             `}</style>
         </>

@@ -14,49 +14,28 @@ const Contact = () => {
                         <div className="contact-header-container">
                             <ul>
                                 <li>Homepage &gt;</li>
-                                <li>contact</li>
+                                <li>Contact</li>
                             </ul>
                             <div className="page-headers">
-                                <h1>contact Wcl</h1>
+                                <h1>Contact Wcl</h1>
                             </div>
                         </div>
                         <div className="contact-wcl">
-                            <Image src="/assets/images/trophy.webp" width={100} height={280} />
                             <div>
-                                <h2>WAR OF CHAMPIONS</h2>
-                                <p>Edgbaston, the distinguished host of the World Championship of Legends (WCL) this summer. Immerse yourself in a riveting T20 tournament. Approved by the England & Wales Cricket Board (ECB), WCL unveils a stellar showcase of retired and non-contracted players from cricketing giants, including England, India, Pakistan, Australia, West Indies, and South Africa. Join us for an unforgettable celebration of cricket’s living legends.</p>
+                                <h2>Office Address</h2>
+                                <p>Meydan Grandstand, 6th Floor, Meydan Road, Nad Al Sheba, Dubai, U.A.E.</p>
                             </div>
-                        </div>
-                        <div className="contact-wcl-bollywood">
                             <div>
-                                <h2>Meet the league owners</h2>
-                                <p>Leading the World Championship of Legends (WCL) is a visionary leadership team dedicated to redefining the sport. Mr. Ajay Devgn, Bollywood icon and co-owner of WCL, Mr. Nishant Pitti, co-founder of EaseMyTrip, and Mr. Harshit Tomar, founder and owner of WCL, bring together their unmatched expertise in entertainment, business, and sports to make WCL a premier platform for cricket legends.</p>
+                                <h2>Office Address (India)</h2>
+                                <p>Sai Telematics - E2 Swaran Jayanti Puram Govindpuram Ghaziabad Uttar Pradesh 201002</p>
                             </div>
-                            <div className="bollywood-owners">
-                                <Link href={"/owner/ajay-devgn"}>
-                                    <div className="wcl-owner" style={{ backgroundImage: "url('/assets/images/owners/ajay-devgn.webp')" }}>
-                                        <div>
-                                            <h2>Ajay Devgn</h2>
-                                            <p>Co-Owner</p>
-                                        </div>
-                                    </div>
-                                </Link>
-                                <Link href={"/owner/nishant-pitti"}>
-                                    <div className="wcl-owner" style={{ backgroundImage: "url('/assets/images/owners/nishant-pitti.webp')" }}>
-                                        <div>
-                                            <h2>Nishant Pitti</h2>
-                                            <p>Chief Patron</p>
-                                        </div>
-                                    </div>
-                                </Link>
-                                <Link href={"/owner/harshit-tomar"}>
-                                    <div className="wcl-owner" style={{ backgroundImage: "url('/assets/images/owners/harshit-tomar.webp')" }}>
-                                        <div>
-                                            <h2>Harshit Tomar</h2>
-                                            <p>Founder & CEO</p>
-                                        </div>
-                                    </div>
-                                </Link>
+                            <div>
+                                <h2>Email</h2>
+                                <p>support@wclcricket.com</p>
+                            </div>
+                            <div>
+                                <h2>Support Hours</h2>
+                                <p>Our team is available to assist you Monday to Friday, 9 AM to 6 PM (Dubai Time).</p>
                             </div>
                         </div>
                     </div>
@@ -67,13 +46,12 @@ const Contact = () => {
             <style jsx>{`
             .contact-container {
                 width: 100%;
-                max-width: 1280px;
                 padding: 0 20px;
                 margin: auto;
                 display: flex;
                 flex-direction: column;
                 gap: 100px;
-                margin-top: 80px;
+                padding: 300px;
             }
 
             .contact-header-container {
@@ -116,17 +94,12 @@ const Contact = () => {
 
             .contact-wcl {
                 width: 100%;
-                max-width: 720px;
+                max-width: 100%;
                 padding: 0 20px;
                 margin: 50px auto 0 auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 80px;
-            }
-
-            .contact-wcl img {
-                margin: auto;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
             }
 
             .contact-wcl div {
@@ -151,112 +124,6 @@ const Contact = () => {
                 letter-spacing: .02em;
                 text-transform: uppercase;
                 text-align: center;
-            }
-
-            .contact-wcl-bollywood {
-                width: 100%;
-                max-width: 720px;
-                padding: 0 20px;
-                margin: 150px auto 0 auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 50px;
-            }
-
-            .contact-wcl-bollywood div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
-
-            .contact-wcl-bollywood div h2 {
-                color: #ffffff;
-                font-family: "Formula Condensed Bold";
-                font-weight: 500;
-                letter-spacing: .02em;
-                text-transform: uppercase;
-                text-align: center;
-            }
-
-            .contact-wcl-bollywood div p {
-                color: #D3D3D3;
-                font-family: "Formula Condensed Light";
-                font-weight: 500;
-                letter-spacing: .02em;
-                text-transform: uppercase;
-                text-align: center;
-            }
-
-            .bollywood-owners {
-                width: 100%;
-                display: grid !important;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
-
-            @media screen and (max-width: 768px) {
-            .bollywood-owners {
-                grid-template-columns: repeat(1, 1fr);
-            }
-            }
-
-            .wcl-owner {
-                width: 100%;
-                height: 320px;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                border-radius: 20px;
-                display: flex;
-                padding: 15px;
-                position: relative;
-            }
-
-            @media screen and (max-width: 768px) {
-            .wcl-owner {
-                height: 480px;
-            }
-            }
-
-            .wcl-owner:after {
-                content: "";
-                height: 100%;
-                width: 100%;
-                background-color: #00000050;
-                position: absolute;
-                top: 0;
-                left: 0;
-                border-radius: 20px;
-            }
-
-            .wcl-owner div {
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-                margin-top: auto;
-                margin-right: auto;
-            }
-
-            .wcl-owner h2 {
-                margin: auto auto 0 0;
-                color: #D3D3D3;
-                font-family: "Formula Condensed Regular" !important;
-                font-size: 15px;
-                letter-spacing: .02em;
-                text-transform: uppercase;
-                z-index: 1;
-            }
-
-            .wcl-owner p {
-                margin: auto auto 0 0;
-                color: #D3D3D3;
-                font-family: "Formula Condensed Light" !important;
-                font-size: 12px;
-                letter-spacing: .02em;
-                text-transform: uppercase;
-                z-index: 1;
             }
       `}</style>
         </>

@@ -1,7 +1,5 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 
 const Contact = () => {
@@ -17,7 +15,7 @@ const Contact = () => {
                                 <li>Contact</li>
                             </ul>
                             <div className="page-headers">
-                                <h1>Contact Wcl</h1>
+                                <h1>Contact WCL</h1>
                             </div>
                         </div>
                         <div className="contact-wcl">
@@ -44,88 +42,103 @@ const Contact = () => {
             </div>
 
             <style jsx>{`
-            .contact-container {
-                width: 100%;
-                padding: 0 20px;
-                margin: auto;
-                display: flex;
-                flex-direction: column;
-                gap: 100px;
-                padding: 300px;
-            }
+                .contact-container {
+                    width: 100%;
+                    padding: 40px 20px;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                }
 
-            .contact-header-container {
-                width: max-content;
-                margin: auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
+                .contact-header-container {
+                    width: max-content;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+                }
 
-            .contact-header-container ul {
-                display: flex;
-                gap: 5px;
-                list-style: none;
-            }
+                .contact-header-container ul {
+                    display: flex;
+                    gap: 5px;
+                    list-style: none;
+                }
 
-            .contact-header-container ul li {
-                color: #ABB1CB;
-                font-family: "Formula Condensed Regular";
-                font-size: 16px;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-            }
+                .contact-header-container ul li {
+                    color: #ABB1CB;
+                    font-family: "Formula Condensed Regular";
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                }
 
-            .page-headers {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
+                .page-headers {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    text-align: center;
+                }
 
-            .page-headers h1 {
-                color: #ffffff;
-                font-family: "Formula Condensed Bold";
-                font-weight: 500;
-                font-size: 45px;
-                letter-spacing: .02em;
-                text-transform: uppercase;
-            }
+                .page-headers h1 {
+                    color: #ffffff;
+                    font-family: "Formula Condensed Bold";
+                    font-weight: 500;
+                    font-size: 45px;
+                    letter-spacing: .02em;
+                    text-transform: uppercase;
+                }
 
-            .contact-wcl {
-                width: 100%;
-                max-width: 100%;
-                padding: 0 20px;
-                margin: 50px auto 0 auto;
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
-            }
+                .contact-wcl {
+                    width: 100%;
+                    max-width: 1280px;
+                    margin: 0 auto;
+                    padding: 100px 2rem;
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                    gap: 20px;
+                }
 
-            .contact-wcl div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
+                .contact-wcl div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
 
-            .contact-wcl div h2 {
-                color: #ffffff;
-                font-family: "Formula Condensed Bold";
-                font-weight: 500;
-                letter-spacing: .02em;
-                text-transform: uppercase;
-            }
+                .contact-wcl div h2 {
+                    color: #ffffff;
+                    font-family: "Formula Condensed Bold";
+                    font-weight: 500;
+                    letter-spacing: .02em;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
 
-            .contact-wcl div p {
-                color: #D3D3D3;
-                font-family: "Formula Condensed Light";
-                font-weight: 500;
-                letter-spacing: .02em;
-                text-transform: uppercase;
-                text-align: center;
-            }
-      `}</style>
+                .contact-wcl div p {
+                    color: #D3D3D3;
+                    font-family: "Formula Condensed Light";
+                    font-weight: 500;
+                    letter-spacing: .02em;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+
+                /* Responsive adjustments */
+                @media (min-width: 768px) {
+                    .contact-wcl {
+                        grid-template-columns: repeat(2, 1fr);
+                        padding: 280px 20px;
+                    }
+                }
+
+                @media (min-width: 1024px) {
+                    .contact-wcl {
+                        grid-template-columns: repeat(4, 1fr);
+                        padding: 280px 20px;
+                    }
+                }
+            `}</style>
         </>
     )
 }

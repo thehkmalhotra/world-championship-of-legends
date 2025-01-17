@@ -21,10 +21,11 @@ const Header = () => {
                     <Link href="/" legacyBehavior><a><Image src="/assets/images/wcl-logo.webp" width={70} height={70} /></a></Link>
                     <ul className="nav-menu-right">
                         <li><Link href="/about" legacyBehavior><a className={router.pathname === "/about" ? "active" : ""}>About</a></Link></li>
+                        <li><Link href="/contact" legacyBehavior><a className={router.pathname === "/contact" ? "active" : ""}>Contact</a></Link></li>
                         <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Partners</a></Link></li>
-                        <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Instagram</a></Link></li>
-                        <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Facebook</a></Link></li>
-                        <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>X</a></Link></li>
+                        <li><Link href="https://www.instagram.com/worldchampionshipoflegends" legacyBehavior><a>Instagram</a></Link></li>
+                        <li><Link href="https://www.facebook.com/@worldchampionshipoflegends/?mibextid=ZbWKwL" legacyBehavior><a>Facebook</a></Link></li>
+                        <li><Link href="https://x.com/wclleague" legacyBehavior><a>X</a></Link></li>
                     </ul>
                     <div className="hamburger" onClick={() => { setMobileMenu(!mobileMenu) }}>
                         {
@@ -44,10 +45,11 @@ const Header = () => {
                                     <li><Link href="/teams" legacyBehavior><a className={router.pathname === "/teams" ? "active" : router.route.includes("/teams") ? "active" : ""}>Teams</a></Link></li>
                                     <li onClick={() => { setMobileMenu(false) }}><Link href="/#standings" legacyBehavior><a>Standings</a></Link></li>
                                     <li><Link href="/about" legacyBehavior><a className={router.pathname === "/about" ? "active" : ""}>About</a></Link></li>
-                                    <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Partners</a></Link></li>
-                                    <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Instagram</a></Link></li>
-                                    <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>Facebook</a></Link></li>
-                                    <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/partners" ? "active" : ""}>X</a></Link></li>
+                                    <li><Link href="/contact" legacyBehavior><a className={router.pathname === "/about" ? "active" : ""}>About</a></Link></li>
+                                    <li><Link href="/partners" legacyBehavior><a className={router.pathname === "/contact" ? "active" : ""}>Contact</a></Link></li>
+                                    <li><Link href="https://www.instagram.com/worldchampionshipoflegends" legacyBehavior><a>Instagram</a></Link></li>
+                                    <li><Link href="https://www.facebook.com/@worldchampionshipoflegends/?mibextid=ZbWKwL" legacyBehavior><a>Facebook</a></Link></li>
+                                    <li><Link href="https://x.com/wclleague" legacyBehavior><a>X</a></Link></li>
                                 </ul>
                             </div>
                             :

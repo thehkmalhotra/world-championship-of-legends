@@ -144,6 +144,16 @@ const News = () => {
             "news_title": "World Championship of Legends Season 2 announced: Defending champions India to face Pakistan in July",
             "news_image": "https://cf-img-a-in.tosshub.com/lingo/stak/images/story/202412/676a68e4f037f-flags-representing-india-and-pakistan-on-the-field-245509449-16x9.jpg?size=1200:800",
             "news_url": "https://thesportstak.com/cricket/story/world-championship-of-legends-season-2-announced-defending-champions-india-to-face-pakistan-in-july-3152209-2024-12-24"
+        },
+        {
+            "news_title": "India Champions sign Shikhar Dhawan for World Championship of Legends season 2",
+            "news_image": "https://d3lzcn6mbbadaf.cloudfront.net/media/details/ANI-20250125082031.jpg",
+            "news_url": "https://aninews.in/news/sports/cricket/india-champions-sign-shikhar-dhawan-for-world-championship-of-legends-season-220250125135039/"
+        },
+        {
+            "news_title": "AB de Villiers returns to Cricket, to lead Game Changers South Africa in World Championship of Legends",
+            "news_image": "https://d3lzcn6mbbadaf.cloudfront.net/media/details/ANI-20250128062253.jpg",
+            "news_url": "https://www.aninews.in/news/sports/cricket/ab-de-villiers-returns-to-cricket-to-lead-game-changers-south-africa-in-world-championship-of-legends20250128115543/"
         }
     ];
 

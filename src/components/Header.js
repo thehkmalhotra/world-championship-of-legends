@@ -10,6 +10,9 @@ const Header = () => {
     return (
         <>
             <header>
+                <div className="announcement-bar">
+                    <p>Annoucement</p>
+                </div>
                 <div className="header-container">
                     <ul className="nav-menu-left">
                         <li><Link href="/news" legacyBehavior><a className={router.pathname === "/news" ? "active" : ""}>News</a></Link></li>
@@ -61,13 +64,32 @@ const Header = () => {
             <style jsx>{`
                 header {
                     width: 100%;
-                    height: 100px;
+                    height: 130px;
                     display: flex;
+                    flex-direction: column;
                     align-items: center;
+                    gap: 10px;
                     position: sticky;
                     top: 0;
                     z-index: 999;
                     background-color: #2D3B7D;
+                }
+
+                .announcement-bar {
+                    width: 100%;
+                    height: 30px;
+                    background-color: #DAB072;
+                    display: flex;
+                }
+
+                .announcement-bar p {
+                    margin: auto; 
+                    color: #2D3B7D;
+                    font-family: "Formula Condensed Regular";
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    line-height: 2.2rem;
+                    text-transform: uppercase;
                 }
 
                 header .header-container {

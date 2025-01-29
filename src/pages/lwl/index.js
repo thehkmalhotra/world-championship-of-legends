@@ -1,6 +1,6 @@
+import Button from '@/components/Button';
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import Link from 'next/link'
 import React, { useState } from 'react'
 
 const LwlLanding = () => {
@@ -23,7 +23,7 @@ const LwlLanding = () => {
         }
     
         if (!validateEmail(email)) {
-            setSuccess("");
+            setSuccess('');
             setError('Please enter a valid email address');
             return;
         }
@@ -73,15 +73,18 @@ const LwlLanding = () => {
                                             placeholder="Enter your email address"
                                             onChange={(e) => setEmail(e.target.value)}
                                         />
-                                        <button type="submit">Join Now</button>
+                                        <button type="submit">Stay Tuned</button>
                                     </form>
                                 </div>
                                 {error && <p style={{ color: 'red' }}>{error}</p>}
                                 {success && <p style={{ color: '#ffffff' }}>{success}</p>}
                             </div>
+                            {/* <div className="policy">
+                                <button className="lwl-terms-conditions">Lwl Terms & Conditions</button>
+                            </div> */}
                         </div>
                         <div className="lwl-wcl">
-                            <img src="/assets/images/lwl-registeration-banner.webp" />
+                            <img src="/assets/images/lwl-page-banner.webp" />
                             <div>
                                 <h2>What's in for you?</h2>
                                 <ul>
@@ -89,6 +92,7 @@ const LwlLanding = () => {
                                     <li>Stay with your chosen team and experience the behind-the-scenes 🎥 action of WCL.</li>
                                     <li>Be a part of match-day activities 🏟️, training sessions 💪, and 🎤 media appearances.</li>
                                     <li>Feature on WCL platforms & broadcasting partners 📺 as one of the lucky winners.</li>
+                                    <li>Be Part of Post Match Victory Celebrations 🥳 & Team Gala Dinners 🍽️</li>
                                 </ul>
                             </div>
                         </div>
@@ -108,9 +112,9 @@ const LwlLanding = () => {
                                 <div className="round">
                                     <div>
                                         <h4>Round 2</h4>
-                                        <h6>(16th March to 25th March)</h6>
+                                        <h6>(7th April to 9th April)</h6>
                                     </div>
-                                    <p>Submit a 1-2 minute video sharing your enthusiasm for cricket and why you should win this incredible opportunity.</p>
+                                    <p>Submit a 1 minute video sharing your enthusiasm for cricket and why you should win this incredible opportunity.</p>
                                 </div>
                                 <div className="round">
                                     <div>
@@ -118,6 +122,13 @@ const LwlLanding = () => {
                                         <h6>(8th April to 10th April)</h6>
                                     </div>
                                     <p>A live Zoom call with the team captains and WCL representatives.</p>
+                                </div>
+                                <div className="round">
+                                    <div>
+                                        <h4>Winners Announcement</h4>
+                                        <h6>(15th April)</h6>
+                                    </div>
+                                    <p>LWL champions win an exclusive all-expenses-paid experience with cricketers, including VIP access and celebrations.</p>
                                 </div>
                             </div>
                         </div>

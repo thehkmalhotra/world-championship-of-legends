@@ -11,7 +11,13 @@ const Header = () => {
         <>
             <header>
                 <div className="announcement-bar">
-                    <p>Annoucement</p>
+                    <div className="marquee">
+                        <p>LWL REGISTRATION OPENS FEB 15 – MARCH 15! TRAVEL & STAY WITH YOUR FAVORITE CRICKETERS FROM JULY 18 – AUG 2, WITH ALL EXPENSES COVERED BY WCL!&nbsp; • &nbsp;</p>
+                        <p>LWL REGISTRATION OPENS FEB 15 – MARCH 15! TRAVEL & STAY WITH YOUR FAVORITE CRICKETERS FROM JULY 18 – AUG 2, WITH ALL EXPENSES COVERED BY WCL!&nbsp; • &nbsp;</p>
+                        <p>LWL REGISTRATION OPENS FEB 15 – MARCH 15! TRAVEL & STAY WITH YOUR FAVORITE CRICKETERS FROM JULY 18 – AUG 2, WITH ALL EXPENSES COVERED BY WCL!&nbsp; • &nbsp;</p>
+                        <p>LWL REGISTRATION OPENS FEB 15 – MARCH 15! TRAVEL & STAY WITH YOUR FAVORITE CRICKETERS FROM JULY 18 – AUG 2, WITH ALL EXPENSES COVERED BY WCL!&nbsp; • &nbsp;</p>
+                        <p>LWL REGISTRATION OPENS FEB 15 – MARCH 15! TRAVEL & STAY WITH YOUR FAVORITE CRICKETERS FROM JULY 18 – AUG 2, WITH ALL EXPENSES COVERED BY WCL!&nbsp; • &nbsp;</p>
+                    </div>
                 </div>
                 <div className="header-container">
                     <ul className="nav-menu-left">
@@ -79,10 +85,15 @@ const Header = () => {
                     width: 100%;
                     height: 30px;
                     background-color: #DAB072;
-                    display: flex;
+                    display: inline-flex;
+                    white-space: nowrap;
+                    overflow: hidden;
                 }
 
                 .announcement-bar p {
+                    display: inline-flex;
+                    white-space: nowrap;
+                    gap: 5px;
                     margin: auto; 
                     color: #2D3B7D;
                     font-family: "Formula Condensed Regular";
@@ -90,6 +101,16 @@ const Header = () => {
                     letter-spacing: 1px;
                     line-height: 2.2rem;
                     text-transform: uppercase;
+                    animation: announcement 10s linear infinite;
+                }
+
+                @keyframes announcement {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-100%);
+                    }
                 }
 
                 header .header-container {

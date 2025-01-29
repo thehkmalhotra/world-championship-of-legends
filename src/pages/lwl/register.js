@@ -6,12 +6,42 @@ const RegisterLwl = () => {
     const [loaderStatus, setLoaderStatus] = useState(false);
     const [registerContentStatus, setRegisterContentStatus] = useState(false);
 
+    const [name, setName] = useState('');
+    const [fatherName, setFatherName] = useState('');
+    const [dob, setDob] = useState('');
+    const [occupation, setOccupation] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [favourableTeam, setFavourableTeam] = useState('');
+
     function handleTerms() {
         setLoaderStatus(true);
         setTimeout(() => {
             setLoaderStatus(false);
             setRegisterContentStatus(true);
         }, 2000)
+    }
+
+    const handleSubmit = async () => {
+        const response = await fetch("/api/lwl/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: name,
+                fathersName: fathersName,
+                dob: dob,
+                occupation: occupation,
+                contactNumber: contactNumber,
+                email: email,
+                residingCountry: residingCountry,
+                favorableTeam: favorableTeam
+            })
+        })
+        const result = await response.json();
+        if (response.ok) {
+            console.log(result);
+        }
     }
     return (
         <>
@@ -27,34 +57,65 @@ const RegisterLwl = () => {
                                     </div>
                                 </div>
                                 <div className="registeration-container">
-                                    <form>
+                                    <form onSubmit={(event) => {
+                                        event.preventDefault();
+                                        handleSubmit();
+                                    }}>
                                         <label>
                                             Name
-                                            <input type="text" placeholder="Your full name" />
+                                            <input type="text" placeholder="Your full name" onChange={(e) => {
+                                                e.preventDefault();
+                                                setName(e.target.value)
+                                            }
+                                            } />
                                         </label>
                                         <label>
                                             Father's Name
-                                            <input type="text" placeholder="Your father's name" />
+                                            <input type="text" placeholder="Your father's name" onChange={(e) => {
+                                                e.preventDefault();
+                                                setFatherName(e.target.value)
+                                            }
+                                            } />
                                         </label>
                                         <label>
                                             Date of Birth
-                                            <input type="text" placeholder="Your DOB in DD-MM-YY format" />
+                                            <input type="text" placeholder="Your DOB in DD-MM-YY format" onChange={(e) => {
+                                                e.preventDefault();
+                                                setDob(e.target.value)
+                                            }
+                                            } />
                                         </label>
                                         <label>
                                             Occupation
-                                            <input type="text" placeholder="Your occupation" />
+                                            <input type="text" placeholder="Your occupation" onChange={(e) => {
+                                                e.preventDefault();
+                                                setOccupation(e.target.value)
+                                            }
+                                            } />
                                         </label>
                                         <label>
                                             Number
-                                            <input type="text" placeholder="Your contact number with country code" />
+                                            <input type="text" placeholder="Your contact number with country code" onChange={(e) => {
+                                                e.preventDefault();
+                                                setPhoneNumber(e.target.value)
+                                            }
+                                            } />
                                         </label>
                                         <label>
                                             Residing Country
-                                            <input type="text" placeholder="Your residing country" />
+                                            <input type="text" placeholder="Your residing country" onChange={(e) => {
+                                                e.preventDefault();
+                                                setCountry(e.target.value)
+                                            }
+                                            } />
                                         </label>
                                         <label>
                                             Favourite Team
-                                            <select>
+                                            <select onChange={(e) => {
+                                                e.preventDefault();
+                                                setFavourableTeam(e.target.value)
+                                            }
+                                            } >
                                                 <option value="Australia Champions">Australia Champions</option>
                                                 <option value="England Champions">England Champions</option>
                                                 <option value="India Champions">India Champions</option>

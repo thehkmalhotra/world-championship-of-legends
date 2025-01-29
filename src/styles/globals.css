@@ -19,28 +19,8 @@
 }
 
 @font-face {
-  font-family: "Laliga Regular";
-  src: url("/assets/fonts/laliga-regular.ttf");
-}
-
-@font-face {
-  font-family: "Laliga Headline";
-  src: url("/assets/fonts/laliga-headline.ttf");
-}
-
-@font-face {
-  font-family: "Laliga Headline VF";
-  src: url("/assets/fonts/laliga-headline-vf.ttf");
-}
-
-@font-face {
-  font-family: "Laliga Players Headline";
-  src: url("/assets/fonts/laliga-players-headline.ttf");
-}
-
-@font-face {
-  font-family: "Laliga Bold";
-  src: url("/assets/fonts/laliga-bold.ttf");
+  font-family: "Cornero";
+  src: url("/assets/fonts/cornero.ttf");
 }
 
 * {

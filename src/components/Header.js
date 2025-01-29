@@ -201,7 +201,7 @@ const Header = () => {
                     background-color: #2D3B7D;
                     display: flex;
                     position: fixed;
-                    top: 100px;
+                    top: 130px;
                     left: 0;
                 }
 

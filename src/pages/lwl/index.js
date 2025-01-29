@@ -1,7 +1,7 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Link from 'next/link';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 
 const LwlLanding = () => {
     const [email, setEmail] = useState('');
@@ -15,20 +15,21 @@ const LwlLanding = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         if (!email) {
-            setSuccess("");
+            setSuccess(false);
             setError('Email is required');
             return;
         }
-    
+
         if (!validateEmail(email)) {
-            setSuccess('');
+            setSuccess(false);
             setError('Please enter a valid email address');
             return;
         }
+
         setError('');
-    
+
         // If email is valid, proceed with form submission
         const response = await fetch("/api/lwl/preregister", {
             method: "POST",
@@ -39,20 +40,34 @@ const LwlLanding = () => {
                 email: email
             })
         });
-    
+
         if (response.ok) {
             const result = await response.json();
             if (result.statusCode === 500) { // Fixed here: Strict comparison
                 setError("You've already subscribed");
+                setSuccess(false);
             } else if (result.statusCode === 200) {
                 setSuccess("You've subscribed for LWL.");
             }
-            console.log(result);            
+            console.log(result);
             setError('');
         } else {
             setError('There was an error submitting your email. Please try again.');
         }
     };
+
+    useEffect(() => {
+        if (success) {
+            // After successful subscription, trigger smartech functions
+            smartech('contact', 2, {
+                'pk^email': email
+            });
+            smartech('identify', email);
+            smartech('dispatch', 'pre_register', {
+                'email': email
+            });
+        }
+    }, [success, email]); // Run when success or email changes
 
     return (
         <>

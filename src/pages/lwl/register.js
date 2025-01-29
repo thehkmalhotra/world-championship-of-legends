@@ -7,10 +7,11 @@ const RegisterLwl = () => {
     const [registerContentStatus, setRegisterContentStatus] = useState(false);
 
     const [name, setName] = useState('');
-    const [fatherName, setFatherName] = useState('');
+    const [fathersName, setFathersName] = useState('');
     const [dob, setDob] = useState('');
     const [occupation, setOccupation] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
+    const [contactNumber, setContactNumber] = useState('');
+    const [email, setEmail] = useState('');
     const [favourableTeam, setFavourableTeam] = useState('');
 
     function handleTerms() {
@@ -35,7 +36,7 @@ const RegisterLwl = () => {
                 contactNumber: contactNumber,
                 email: email,
                 residingCountry: residingCountry,
-                favorableTeam: favorableTeam
+                favorableTeam: favourableTeam
             })
         })
         const result = await response.json();
@@ -73,7 +74,7 @@ const RegisterLwl = () => {
                                             Father's Name
                                             <input type="text" placeholder="Your father's name" onChange={(e) => {
                                                 e.preventDefault();
-                                                setFatherName(e.target.value)
+                                                setFathersName(e.target.value)
                                             }
                                             } />
                                         </label>
@@ -97,7 +98,15 @@ const RegisterLwl = () => {
                                             Number
                                             <input type="text" placeholder="Your contact number with country code" onChange={(e) => {
                                                 e.preventDefault();
-                                                setPhoneNumber(e.target.value)
+                                                setContactNumber(e.target.value)
+                                            }
+                                            } />
+                                        </label>
+                                        <label>
+                                            Email
+                                            <input type="text" placeholder="Your email address" onChange={(e) => {
+                                                e.preventDefault();
+                                                setEmail(e.target.value)
                                             }
                                             } />
                                         </label>

@@ -1,6 +1,6 @@
-import Button from '@/components/Button';
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import Link from 'next/link';
 import React, { useState } from 'react'
 
 const LwlLanding = () => {
@@ -79,20 +79,21 @@ const LwlLanding = () => {
                                 {error && <p style={{ color: 'red' }}>{error}</p>}
                                 {success && <p style={{ color: '#ffffff' }}>{success}</p>}
                             </div>
-                            {/* <div className="policy">
-                                <button className="lwl-terms-conditions">Lwl Terms & Conditions</button>
-                            </div> */}
+                            <div className="policy">
+                                <Link href="/lwl/terms-conditions" legacyBehavior><a><button className="lwl-terms-conditions">Lwl Terms & Conditions</button></a></Link>
+                            </div>
                         </div>
                         <div className="lwl-wcl">
                             <img src="/assets/images/lwl-page-banner.webp" />
                             <div>
                                 <h2>What's in for you?</h2>
                                 <ul>
-                                    <li>Travel to the UK 🇬🇧 alongside your favourite 🏏 cricketing legends.</li>
-                                    <li>Stay with your chosen team and experience the behind-the-scenes 🎥 action of WCL.</li>
-                                    <li>Be a part of match-day activities 🏟️, training sessions 💪, and 🎤 media appearances.</li>
-                                    <li>Feature on WCL platforms & broadcasting partners 📺 as one of the lucky winners.</li>
-                                    <li>Be Part of Post Match Victory Celebrations 🥳 & Team Gala Dinners 🍽️</li>
+                                    <li><span>01.</span> Travel to the UK alongside your favourite cricketing legends.</li>
+                                    <li><span>02.</span> Stay with your chosen team and experience the behind-the-scenes action of WCL.</li>
+                                    <li><span>03.</span> Be a part of match-day activities, training sessions, and media appearances.</li>
+                                    <li><span>04.</span> Feature on WCL platforms & broadcasting partners as one of the lucky winners.</li>
+                                    <li><span>05.</span> Be Part of Post Match Victory Celebrations & Team Gala Dinners.</li>
+                                    <li><span>06.</span> Get an autograph from the captain of your favourite team.</li>
                                 </ul>
                             </div>
                         </div>
@@ -112,14 +113,14 @@ const LwlLanding = () => {
                                 <div className="round">
                                     <div>
                                         <h4>Round 2</h4>
-                                        <h6>(7th April to 9th April)</h6>
+                                        <h6>(16th March to 25th April)</h6>
                                     </div>
                                     <p>Submit a 1 minute video sharing your enthusiasm for cricket and why you should win this incredible opportunity.</p>
                                 </div>
                                 <div className="round">
                                     <div>
                                         <h4>Round 3</h4>
-                                        <h6>(8th April to 10th April)</h6>
+                                        <h6>(7th April to 9th April)</h6>
                                     </div>
                                     <p>A live Zoom call with the team captains and WCL representatives.</p>
                                 </div>
@@ -238,6 +239,23 @@ const LwlLanding = () => {
                     text-transform: uppercase;
                 }
 
+                .policy button {
+                    width: max-content;
+                    height: 45px !important;
+                    padding: 0 20px;
+                    background-color: transparent;
+                    color: #ffffff;
+                    text-decoration: unset !important;
+                    border-radius: 10px;
+                    font-family: "Formula Condensed Regular";
+                    font-weight: 500;
+                    font-size: 16px;
+                    letter-spacing: .02em;
+                    text-transform: uppercase;
+                    text-decoration-line: underline !important;
+                    text-underline-offset: 4px;
+                }
+
                 .lwl-wcl {
                     width: 100%;
                     max-width: 720px;
@@ -283,6 +301,7 @@ const LwlLanding = () => {
                     list-style: none;
                     display: flex;
                     flex-direction: column;
+                    gap: 5px;
                 }
 
                 .lwl-wcl div ul li {
@@ -292,6 +311,11 @@ const LwlLanding = () => {
                     letter-spacing: .02em;
                     text-transform: uppercase;
                     text-align: center;
+                }
+
+                .lwl-wcl div ul li span {
+                    font-family: "Formula Condensed Bold";
+                    font-weight: 500;
                 }
 
                 .how-it-works-container {

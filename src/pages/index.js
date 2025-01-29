@@ -311,6 +311,7 @@ const Homepage = () => {
         <Header />
         <div className="body">
           <div className="hero-container">
+            <Link href="/lwl" legacyBehavior><a><img src="/assets/images/lwl-registeration-banner.webp" /></a></Link>
             <video src="/assets/videos/wcl-video.mp4" muted autoPlay loop></video>
           </div>
           <div className="news news-container">
@@ -437,9 +438,17 @@ const Homepage = () => {
             max-width: 1280px;
             padding: 0 20px;
             margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         .hero-container video {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .hero-container img {
             width: 100%;
             border-radius: 20px;
         }

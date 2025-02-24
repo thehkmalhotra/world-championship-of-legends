@@ -57,27 +57,27 @@ const LwlLanding = () => {
                             <div className="key-features-grid">
                                 <div className="round">
                                     <div>
-                                        <img src="/assets/images/emt-coupon.webp" />
-                                    </div>
-                                    <p>$9(₹750⟩ coupon code for first 20,000 participants who qualified round 1.</p>
-                                </div>
-                                <div className="round">
-                                    <div>
                                         <img src="/assets/images/merchandise.webp" />
                                     </div>
-                                    <p>Every participant will receive signed merchandise signed from their favourite team captain.</p>
+                                    <p>Every participant will receive signed merchandise from their favourite team captain.</p>
                                 </div>
                                 <div className="round">
                                     <div>
-                                        <img src="/assets/images/uk-trip.webp" />
+                                        <img src="/assets/images/emt-coupon.webp" />
                                     </div>
-                                    <p>12 finalists will travel to the UK with their favourite team for WCL season 2 from 18th July to 2nd August.</p>
+                                    <p>$9(₹750) coupon code for first 20,000 participants who qualified round 1.</p>
                                 </div>
                                 <div className="round">
                                     <div>
                                         <img src="/assets/images/video-call.webp" />
                                     </div>
                                     <p>60 participants will get a chance to video call with their favourite team captain.</p>
+                                </div>
+                                <div className="round">
+                                    <div>
+                                        <img src="/assets/images/uk-trip.webp" />
+                                    </div>
+                                    <p>12 finalists will travel to the UK with their favourite team for WCL season 2 from 18th July to 2nd August.</p>
                                 </div>
                             </div>
                         </div>

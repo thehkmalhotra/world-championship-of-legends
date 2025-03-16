@@ -71,9 +71,9 @@ const Dashboard = (props) => {
                                                 <p>🎥 Get ready and showcase your best!</p>
 
                                                 <Link href="video" legacyBehavior>
-                                                    <a>
+                                                    <button>
                                                         Proceed to Round 2
-                                                    </a>
+                                                    </button>
                                                 </Link>
                                             </div>
                                         </div>
@@ -239,6 +239,21 @@ const Dashboard = (props) => {
 
                 .empty ul {
                     list-style: none;
+                }
+
+                .empty button {
+                    width: 180px;
+                    height: 45px;
+                    border-radius: 10px;
+                    margin-top: 30px;
+                    padding: 0 10px;
+                    background-color: #ffffff;
+                    color: #2D3B7D;
+                    font-family: "Poppins Semibold";
+                    font-weight: 500;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    letter-spacing: -.5px;
                 }
             `}</style>
         </>

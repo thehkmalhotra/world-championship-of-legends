@@ -34,9 +34,7 @@ const SubmitVideo = ({ current_user }) => {
             });
 
             const result = await response.json();
-            setSubmissionMessage(result.message || "Video submitted successfully!);
-            destroyCookie(null, "current_user", { path: "/" });
-            router.push("/lwl");
+            setSubmissionMessage(result.message || "Video submitted successfully!")
         } catch (error) {
             console.error("Error submitting video:", error);
             alert("Failed to submit video. Please try again.");

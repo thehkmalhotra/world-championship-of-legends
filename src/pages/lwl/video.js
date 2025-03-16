@@ -70,7 +70,6 @@ const SubmitVideo = ({ current_user }) => {
                                 <p>🎉 Congratulations on clearing Round 1 of Live with the Legends (LWL)!</p>
                                 <ul>
                                     <p>📢 What’s Next?</p>
-                                    <li>- Round 1 Results Announcement: Results will be sent via email on April 1.</li>
                                     <li>- Round 2 Eligibility: You have successfully qualified for Round 2!</li>
                                 </ul>
                                 <p>📌 <strong>Round 2 Instructions:</strong></p>

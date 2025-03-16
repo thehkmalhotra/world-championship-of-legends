@@ -34,7 +34,7 @@ const SubmitVideo = ({ current_user }) => {
             });
 
             const result = await response.json();
-            setSubmissionMessage(result.message || "Video submitted successfully & you will be logged out in next 3 seconds!");
+            setSubmissionMessage(result.message || "Video submitted successfully!);
             destroyCookie(null, "current_user", { path: "/" });
             router.push("/lwl");
         } catch (error) {

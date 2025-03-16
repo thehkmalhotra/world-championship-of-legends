@@ -62,7 +62,6 @@ const Dashboard = (props) => {
                                                 <p>Thank you for participating in Round 1 of Live with the Legends (LWL)!</p>
                                                 <ul>
                                                     <p>📢 What’s Next?</p>
-                                                    <li>- <strong>Round 1 Results Announcement:</strong> Results will be declared on April 15 via email. Keep an eye on your inbox—you will receive an email from us with your result.</li>
                                                     <li>- <strong>Round 2 Details:</strong> You were eligible for Round 2! 🎥</li>
                                                 </ul>
                                                 <p>📌 <strong>Round 2 Instructions:</strong></p>

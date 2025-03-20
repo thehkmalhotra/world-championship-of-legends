@@ -133,6 +133,7 @@ const SubmitVideo = ({ current_user }) => {
                 @media screen and (max-width: 767px){
                     .lwl-container {
                         width: 100%;
+                        padding: 40px 20px;
                     }
                 }
 

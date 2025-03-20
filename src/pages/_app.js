@@ -1,9 +1,14 @@
 import "@/styles/globals.css";
+import Head from "next/head";
 import Script from "next/script";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <meta name="google-site-verification" content="s92k2tY9Ih--DMgj_sMGNEUHgSHacLZPE5Gr984V_h8" />
+      </Head>
+
       {/* Netcore Smartech Script */}
       <Script
         src="//cdnt.netcoresmartech.com/smartechclient.js"
@@ -37,14 +42,16 @@ export default function App({ Component, pageProps }) {
       />
 
       {/* NoScript for Facebook Pixel */}
-      <noscript>
-        <img
-          height="1"
-          width="1"
-          style={{ display: "none" }}
-          src="https://www.facebook.com/tr?id=1152170233016515&ev=PageView&noscript=1"
-        />
-      </noscript>
+      <div dangerouslySetInnerHTML={{ __html: `
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style="display:none"
+            src="https://www.facebook.com/tr?id=1304445290846987&ev=PageView&noscript=1"
+          />
+        </noscript>
+      `}} />
 
       <Component {...pageProps} />
     </>

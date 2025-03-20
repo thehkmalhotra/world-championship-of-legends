@@ -35,7 +35,13 @@ const SubmitVideo = ({ current_user }) => {
 
             const result = await response.json();
             alert("Video submitted successfully!");
-            setSubmissionMessage(result.message || "Video submitted successfully!")
+            setSubmissionMessage(result.message || "Video submitted successfully!");
+
+            smartech('dispatch', 'video_submitted', {
+              'email': user?.user?.email,
+              'submitted': true
+            });
+            
         } catch (error) {
             console.error("Error submitting video:", error);
             alert("Failed to submit video. Please try again.");

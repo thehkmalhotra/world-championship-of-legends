@@ -5,11 +5,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const About = ({ meta_title, meta_description, meta_keywords }) => {
+const About = ({ canonical_link, meta_title, meta_description, meta_keywords }) => {
     return (
         <>
             <Head>
                 <title>{meta_title}</title>
+                <link rel="canonical" href={canonical_link} />
                 <meta name="description" content={meta_description} />
                 <meta name="keywords" content={meta_keywords} />
             </Head>
@@ -23,7 +24,7 @@ const About = ({ meta_title, meta_description, meta_keywords }) => {
                                 <li>About</li>
                             </ul>
                             <div className="page-headers">
-                                <h1>About Wcl</h1>
+                                <h1>About WCL Cricket Legends</h1>
                             </div>
                         </div>
                         <div className="about-wcl">
@@ -258,12 +259,13 @@ x                text-transform: uppercase;
     )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
     return {
         props: {
-            meta_title: "West Indies Champions | West Indies Cricket Legends | WCL 2025 - WCL T20",
-            meta_description: "See West Indies Champions & West Indies cricket legends in WCL 2025! Iconic WI stars shine in the World Championship. Check it out!",
-            meta_keywords: "West Indies Champions, West Indies  Cricket Legends, West Indies  Legends,  Edgbaston, Northampton, WCL T20"
+            canonical_link: `https://${req.headers.host}${req.url}`,
+            meta_title: "WCL Cricket 2025 | World Championship of Legends - WCL T20",
+            meta_description: "Learn about WCL Cricket 2025! Discover the World Championship of Legends, its stars & mission at Edgbaston. Explore now!",
+            meta_keywords: "WCL Cricket 2025, World Championship of Legends, Edgbaston, Northampton, WCL T20"
         }
     }
 }

@@ -5,7 +5,7 @@ import Head from 'next/head';
 import React from 'react'
 import 'swiper/css';
 
-const SauthAfricaChampions = ({ meta_title, meta_description, meta_keywords }) => {
+const SauthAfricaChampions = ({ canonical_link, meta_title, meta_description, meta_keywords }) => {
   const players = [
     {
       "player_name": "Jacques Kallis",
@@ -148,6 +148,7 @@ const SauthAfricaChampions = ({ meta_title, meta_description, meta_keywords }) =
     <>
       <Head>
         <title>{meta_title}</title>
+        <link rel="canonical" href={canonical_link} />
         <meta name="description" content={meta_description} />
         <meta name="keywords" content={meta_keywords} />
       </Head>
@@ -162,7 +163,7 @@ const SauthAfricaChampions = ({ meta_title, meta_description, meta_keywords }) =
                 <li>South Africa Champions</li>
               </ul>
               <div className="page-headers">
-                <h1>South Africa Champions</h1>
+                <h1>South Africa Champions & Cricket Legends - WCL 2025 South Africa Team</h1>
               </div>
             </div>
             <div className="team-owners-container">
@@ -303,9 +304,10 @@ const SauthAfricaChampions = ({ meta_title, meta_description, meta_keywords }) =
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
   return {
       props: {
+          canonical_link: `https://${req.headers.host}${req.url}`,
           meta_title: "South Africs Champions | South Africa Cricket Legends | WCL 2025 - WCL T20",
           meta_description: "Meet South Africa Champions & South Africa cricket legends in WCL 2025! See SA’s iconic stars in action at Edgbaston and Northampton. Check it out!",
           meta_keywords: "South Africa Champions, South Africa Cricket Legends, South Africa Legends, Edgbaston, Northampton, WCL T20"

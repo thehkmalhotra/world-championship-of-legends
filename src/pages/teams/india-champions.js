@@ -5,7 +5,7 @@ import Head from 'next/head';
 import React from 'react'
 import 'swiper/css';
 
-const IndiaChampions = ({ meta_title, meta_description, meta_keywords }) => {
+const IndiaChampions = ({ canonical_link, meta_title, meta_description, meta_keywords }) => {
   const players = [
     {
       "player_name": "Yuvraj Singh",
@@ -157,6 +157,7 @@ const IndiaChampions = ({ meta_title, meta_description, meta_keywords }) => {
     <>
       <Head>
         <title>{meta_title}</title>
+        <link rel="canonical" href={canonical_link} />
         <meta name="description" content={meta_description} />
         <meta name="keywords" content={meta_keywords} />
       </Head>
@@ -171,7 +172,7 @@ const IndiaChampions = ({ meta_title, meta_description, meta_keywords }) => {
                 <li>India Champions</li>
               </ul>
               <div className="page-headers">
-                <h1>India Champions</h1>
+                <h1>India Champions & Cricket Legends - WCL 2025 India Team</h1>
               </div>
             </div>
             <div className="team-owners-container">
@@ -315,9 +316,10 @@ const IndiaChampions = ({ meta_title, meta_description, meta_keywords }) => {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
   return {
       props: {
+          canonical_link: `https://${req.headers.host}${req.url}`,
           meta_title: "India Champions | India Cricket Legends | WCL 2025 - WCL T20",
           meta_description: "Meet India Champions & India cricket legends in WCL 2025! See India’s iconic stars shine in the World Championship. Check it out!",
           meta_keywords: "India Champions, India Cricket Legends, India Legends,  Edgbaston, Northampton, WCL T20"

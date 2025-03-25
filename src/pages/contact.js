@@ -3,11 +3,12 @@ import Header from '@/components/Header'
 import Head from 'next/head'
 import React from 'react'
 
-const Contact = ({ meta_title, meta_description, meta_keywords }) => {
+const Contact = ({ canonical_link, meta_title, meta_description, meta_keywords }) => {
     return (
         <>
             <Head>
                 <title>{meta_title}</title>
+                <link rel="canonical" href={canonical_link} />
                 <meta name="description" content={meta_description} />
                 <meta name="keywords" content={meta_keywords} />
             </Head>
@@ -21,7 +22,7 @@ const Contact = ({ meta_title, meta_description, meta_keywords }) => {
                                 <li>Contact</li>
                             </ul>
                             <div className="page-headers">
-                                <h1>Contact WCL</h1>
+                                <h1>Contact WCL Cricket</h1>
                             </div>
                         </div>
                         <div className="contact-wcl">
@@ -143,12 +144,13 @@ const Contact = ({ meta_title, meta_description, meta_keywords }) => {
     )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
     return {
         props: {
-            meta_title: "West Indies Champions | West Indies Cricket Legends | WCL 2025 - WCL T20",
-            meta_description: "See West Indies Champions & West Indies cricket legends in WCL 2025! Iconic WI stars shine in the World Championship. Check it out!",
-            meta_keywords: "West Indies Champions, West Indies  Cricket Legends, West Indies  Legends,  Edgbaston, Northampton, WCL T20"
+            canonical_link: `https://${req.headers.host}${req.url}`,
+            meta_title: "WCL Cricket 2025 | World Championship Support - WCL T20",
+            meta_description: "Contact WCL Cricket 2025! Reach World Championship of Legends support for tickets, info & more at Edgbaston. Get in touch!",
+            meta_keywords: "WCL Cricket 2025, World Championship Support, Edgbaston, Northampton, WCL T20"
         }
     }
 }

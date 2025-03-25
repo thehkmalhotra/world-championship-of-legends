@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import VideoCard from '@/components/VideoCard';
 import Head from 'next/head';
 
-const Videos = ({ meta_title, meta_description, meta_keywords }) => {
+const Videos = ({ canonical_link, meta_title, meta_description, meta_keywords }) => {
     const videos = [
         {
             "video_title": "India Champions vs England Champions - Full Match Highlights (3rd July)",
@@ -102,6 +102,7 @@ const Videos = ({ meta_title, meta_description, meta_keywords }) => {
         <>
             <Head>
                 <title>{meta_title}</title>
+                <link rel="canonical" href={canonical_link} />
                 <meta name="description" content={meta_description} />
                 <meta name="keywords" content={meta_keywords} />
             </Head>
@@ -116,7 +117,7 @@ const Videos = ({ meta_title, meta_description, meta_keywords }) => {
                                 <li>Videos</li>
                             </ul>
                             <div className="page-headers">
-                                <h1>Wcl Videos</h1>
+                                <h1>World Championship Of Legends Cricket Highlights 2025</h1>
                             </div>
                         </div>
                         <div className="news-grid">
@@ -210,9 +211,10 @@ const Videos = ({ meta_title, meta_description, meta_keywords }) => {
     )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
     return {
         props: {
+            canonical_link: `https://${req.headers.host}${req.url}`,
             meta_title: "WCL Cricket Videos 2025 | World Championship of Legends Cricket Highlights - WCL T20",
             meta_description: "Explore WCL Cricket Videos 2025! Enjoy World Championship of Legends cricket highlights with top stars at Edgbaston and Northampton. Watch now!",
             meta_keywords: "WCL Cricket Videos 2025, World Championship of Legends Cricket Highlights, Edgbaston, Northampton, WCL T20"

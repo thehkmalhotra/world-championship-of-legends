@@ -5,7 +5,7 @@ import Head from 'next/head';
 import React from 'react'
 import 'swiper/css';
 
-const EnglandChampions = ({ meta_title, meta_description, meta_keywords }) => {
+const EnglandChampions = ({ canonical_link, meta_title, meta_description, meta_keywords }) => {
     const players = [
         {
             "player_name": "Kevin Pietersen",
@@ -148,6 +148,7 @@ const EnglandChampions = ({ meta_title, meta_description, meta_keywords }) => {
         <>
             <Head>
                 <title>{meta_title}</title>
+                <link rel="canonical" href={canonical_link} />
                 <meta name="description" content={meta_description} />
                 <meta name="keywords" content={meta_keywords} />
             </Head>
@@ -162,7 +163,7 @@ const EnglandChampions = ({ meta_title, meta_description, meta_keywords }) => {
                                 <li>England Champions</li>
                             </ul>
                             <div className="page-headers">
-                                <h1>England Champions</h1>
+                                <h1>England Champions & Cricket Legends - WCL 2025 England Team</h1>
                             </div>
                         </div>
                         <div className="team-owners-container">
@@ -303,9 +304,10 @@ const EnglandChampions = ({ meta_title, meta_description, meta_keywords }) => {
     )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
     return {
         props: {
+            canonical_link: `https://${req.headers.host}${req.url}`,
             meta_title: "England Champions | England Cricket Legends | WCL 2025 - WCL T20",
             meta_description: "Discover England Champions & England cricket legends in WCL 2025! See England’s finest at Edgbaston and Northampton in action. Explore now!",
             meta_keywords: "England Champions, England Cricket Legends, England Legends, Edgbaston, Northampton, WCL T20"

@@ -4,7 +4,7 @@ import TeamCard from '@/components/TeamCard'
 import Head from 'next/head';
 import React from 'react'
 
-const Teams = ({meta_title, meta_description, meta_keywords}) => {
+const Teams = ({canonical_link, meta_title, meta_description, meta_keywords}) => {
     const teams = [
         {
             team: "Australia Champions",
@@ -42,6 +42,7 @@ const Teams = ({meta_title, meta_description, meta_keywords}) => {
         <>
             <Head>
                 <title>{meta_title}</title>
+                <link rel="canonical" href={canonical_link} />
                 <meta name="description" content={meta_description} />
                 <meta name="keywords" content={meta_keywords} />
             </Head>
@@ -55,7 +56,7 @@ const Teams = ({meta_title, meta_description, meta_keywords}) => {
                                 <li>Teams</li>
                             </ul>
                             <div className="page-headers">
-                                <h1>Wcl Squads</h1>
+                                <h1>World Championship of Legends Cricket Teams List 2025</h1>
                             </div>
                         </div>
                         <div className="teams-grid">
@@ -137,9 +138,10 @@ const Teams = ({meta_title, meta_description, meta_keywords}) => {
     )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
     return {
         props: {
+            canonical_link: `https://${req.headers.host}${req.url}`,
             meta_title: "World Championship of Legends Cricket Teams List 2025: Full Squads Revealed - WCL T20",
             meta_description: "Explore the complete World Championship of Legends Cricket teams list for 2025! Check out the full squads, including star players like Yuvraj Singh, Shahid Afridi, and more, competing in this epic T20 tournament starting July 18, 2025, at Edgbaston Stadium.",
             meta_keywords: "World Championship of Legends Cricket teams list 2025, T20 tournament, Edgbaston, Northampton, WCL T20"

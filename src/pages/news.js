@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Head from 'next/head';
 import React from 'react'
 
-const News = ({ meta_title, meta_description, meta_keywords }) => {
+const News = ({ canonical_link, meta_title, meta_description, meta_keywords }) => {
     const news = [
         {
             "news_title": "Cricket Legends to Illuminate Edgbaston in Prestigious ECB-Sanctioned T20 Extravaganza | Republic World",
@@ -172,6 +172,7 @@ const News = ({ meta_title, meta_description, meta_keywords }) => {
         <>
             <Head>
                 <title>{meta_title}</title>
+                <link rel="canonical" href={canonical_link} />
                 <meta name="description" content={meta_description} />
                 <meta name="keywords" content={meta_keywords} />
             </Head>
@@ -186,7 +187,7 @@ const News = ({ meta_title, meta_description, meta_keywords }) => {
                                 <li>Articles</li>
                             </ul>
                             <div className="page-headers">
-                                <h1>WCL News</h1>
+                                <h1>World Championship of Legends Cricket News - WCL Cricket News</h1>
                             </div>
                         </div>
                         <div className="news-grid">
@@ -281,9 +282,10 @@ const News = ({ meta_title, meta_description, meta_keywords }) => {
     )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
     return {
         props: {
+            canonical_link: `https://${req.headers.host}${req.url}`,
             meta_title: "World Championship of Legends Cricket news | WCL Cricket News - WCL T20",
             meta_description: "Get WCL Cricket News & World Championship of Legends cricket news for 2025! Latest updates from Edgbaston. Stay informed!",
             meta_keywords: "World Championship of Legends Cricket news, WCL Cricket News, World Championship Updates, Edgbaston cricket news, WCL news, Edgbaston, Northampton"

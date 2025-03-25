@@ -3,11 +3,12 @@ import Header from '@/components/Header'
 import Head from 'next/head'
 import React from 'react'
 
-const Partners = ({ meta_title, meta_description, meta_keywords }) => {
+const Partners = ({ canonical_link, meta_title, meta_description, meta_keywords }) => {
     return (
         <>
             <Head>
                 <title>{meta_title}</title>
+                <link rel="canonical" href={canonical_link} />
                 <meta name="description" content={meta_description} />
                 <meta name="keywords" content={meta_keywords} />
             </Head>
@@ -21,7 +22,7 @@ const Partners = ({ meta_title, meta_description, meta_keywords }) => {
                                 <li>Partners</li>
                             </ul>
                             <div className="page-headers">
-                                <h1>WCL Partners</h1>
+                                <h1>WCL Cricket Partners 2025</h1>
                             </div>
                         </div>
                         <div className="sponsors">
@@ -247,9 +248,10 @@ const Partners = ({ meta_title, meta_description, meta_keywords }) => {
     )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
     return {
         props: {
+            canonical_link: `https://${req.headers.host}${req.url}`,
             meta_title: "WCL Cricket Partners 2025 | World Championship of Legends Sponsors - WCL T20",
             meta_description: "Meet the WCL Cricket Partners 2025! Explore sponsors of the World Championship of Legends at Edgbaston. Join us today!",
             meta_keywords: "WCL Cricket Partners 2025, World Championship Sponsors, Edgbaston, Northampton, WCL T20WCL Cricket Partners 2025, World Championship Sponsors, Edgbaston, Northampton, WCL T20"

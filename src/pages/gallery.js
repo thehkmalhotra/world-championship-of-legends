@@ -3,11 +3,12 @@ import Header from '@/components/Header'
 import Head from 'next/head'
 import React from 'react'
 
-const Gallery = ({ meta_title, meta_description, meta_keywords }) => {
+const Gallery = ({ canonical_link, meta_title, meta_description, meta_keywords }) => {
   return (
     <>
       <Head>
         <title>{meta_title}</title>
+        <link rel="canonical" href={canonical_link} />
         <meta name="description" content={meta_description} />
         <meta name="keywords" content={meta_keywords} />
       </Head>
@@ -21,7 +22,7 @@ const Gallery = ({ meta_title, meta_description, meta_keywords }) => {
                 <li>Gallery</li>
               </ul>
               <div className="page-headers">
-                <h1>WCL Gallery</h1>
+                <h1>WCL Cricket Gallery 2025</h1>
               </div>
             </div>
             <div className="gallery-grid">
@@ -107,9 +108,10 @@ const Gallery = ({ meta_title, meta_description, meta_keywords }) => {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
   return {
     props: {
+      canonical_link: `https://${req.headers.host}${req.url}`,
       meta_title: "WCL Cricket Gallery 2025 | World Championship Photos - WCL T20",
       meta_description: "Browse the WCL Cricket Gallery 2025! Stunning World Championship photos of legends like Yuvraj Singh at Edgbaston. See now!",
       meta_keywords: "WCL Cricket Gallery 2025, World Championship Photos, Edgbaston, Northampton, WCL T20"

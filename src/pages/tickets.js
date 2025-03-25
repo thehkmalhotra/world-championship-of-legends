@@ -4,12 +4,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react'
 
-const Tickets = ({meta_title, meta_description, meta_keywords}) => {
+const Tickets = ({canonical_link, meta_title, meta_description, meta_keywords}) => {
 
     return (
         <>
             <Head>
                 <title>{meta_title}</title>
+                <link rel="canonical" href={canonical_link} />
                 <meta name="description" content={meta_description} />
                 <meta name="keywords" content={meta_keywords} />
             </Head>
@@ -23,7 +24,7 @@ const Tickets = ({meta_title, meta_description, meta_keywords}) => {
                                 <li>Tickets</li>
                             </ul>
                             <div className="page-headers">
-                                <h1>WCL Tickets</h1>
+                                <h1>WCL Tickets 2025 | Buy Tickets Online For WCL Season 2</h1>
                             </div>
                         </div>
                         <div className="tickets-grid">
@@ -189,9 +190,10 @@ const Tickets = ({meta_title, meta_description, meta_keywords}) => {
     )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
     return {
         props: {
+            canonical_link: `https://${req.headers.host}${req.url}`,
             meta_title: "WCL Tickets 2025 | Buy Season 2 Cricket Tickets Online | World Championship of Legends Cricket Ticket Booking - WCL T20",
             meta_description: "WCL Tickets 2025: Secure your spot for WCL Season 2! Buy tickets online for the World Championship of Legends 2025, featuring cricket legends in action. Easy cricket ticket booking for July 2025 matches at Edgbaston and Northampton. Don’t miss out—book now!",
             meta_keywords: "Buy tickets online, WCL season 2, WCL 2025, cricket ticket booking, wcl tickets northampton, wcl tickets Edgbaston, WCL T20"

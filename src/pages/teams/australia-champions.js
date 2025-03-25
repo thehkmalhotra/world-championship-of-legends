@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import React from 'react'
 import 'swiper/css';
 
-const AustraliaChampions = ({ meta_title, meta_description, meta_keywords }) => {
+const AustraliaChampions = ({ canonical_link, meta_title, meta_description, meta_keywords }) => {
   const router = useRouter();
   const players = [
     {
@@ -141,6 +141,7 @@ const AustraliaChampions = ({ meta_title, meta_description, meta_keywords }) => 
     <>
       <Head>
         <title>{meta_title}</title>
+        <link rel="canonical" href={canonical_link} />
         <meta name="description" content={meta_description} />
         <meta name="keywords" content={meta_keywords} />
       </Head>
@@ -155,7 +156,7 @@ const AustraliaChampions = ({ meta_title, meta_description, meta_keywords }) => 
                 <li>Australia Champions</li>
               </ul>
               <div className="page-headers">
-                <h1>Australia Champions</h1>
+                <h1>Australia Champions & Cricket Legends - WCL 2025 Australia Team</h1>
               </div>
             </div>
             <div className="team-owners-container">
@@ -293,9 +294,10 @@ const AustraliaChampions = ({ meta_title, meta_description, meta_keywords }) => 
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
   return {
     props: {
+      canonical_link: `https://${req.headers.host}${req.url}`,
       meta_title: "Australia Champions | Australia Cricket Legends | WCL 2025 Team - WCL T20",
       meta_description: "Meet Australia Champions & Australia Cricket Legends in WCL 2025! Explore the top Australia Legends in action at Edgbaston and Northampton. Dive in now!",
       meta_keywords: "Australia Champions, Australia Legends, Australia Cricket Legends, Edgbaston, Northampton, WCL T20"

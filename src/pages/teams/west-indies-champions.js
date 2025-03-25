@@ -5,7 +5,7 @@ import Head from 'next/head';
 import React from 'react'
 import 'swiper/css';
 
-const WestIndiesChampions = ({ meta_title, meta_description, meta_keywords }) => {
+const WestIndiesChampions = ({ canonical_link, meta_title, meta_description, meta_keywords }) => {
     const players = [
         {
             "player_name": "Chris Gayle",
@@ -139,6 +139,7 @@ const WestIndiesChampions = ({ meta_title, meta_description, meta_keywords }) =>
         <>
             <Head>
                 <title>{meta_title}</title>
+                <link rel="canonical" href={canonical_link} />
                 <meta name="description" content={meta_description} />
                 <meta name="keywords" content={meta_keywords} />
             </Head>
@@ -153,7 +154,7 @@ const WestIndiesChampions = ({ meta_title, meta_description, meta_keywords }) =>
                                 <li>West Indies Champions</li>
                             </ul>
                             <div className="page-headers">
-                                <h1>West Indies Champions</h1>
+                                <h1>West Indies Champions & Cricket Legends - WCL 2025 West Indies Team</h1>
                             </div>
                         </div>
                         <div className="team-owners-container">
@@ -291,9 +292,10 @@ const WestIndiesChampions = ({ meta_title, meta_description, meta_keywords }) =>
     )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
   return {
       props: {
+          canonical_link: `https://${req.headers.host}${req.url}`,
           meta_title: "West Indies Champions | West Indies Cricket Legends | WCL 2025 - WCL T20",
           meta_description: "See West Indies Champions & West Indies cricket legends in WCL 2025! Iconic WI stars shine in the World Championship. Check it out!",
           meta_keywords: "West Indies Champions, West Indies  Cricket Legends, West Indies  Legends,  Edgbaston, Northampton, WCL T20"

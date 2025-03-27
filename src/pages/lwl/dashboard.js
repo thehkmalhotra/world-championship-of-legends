@@ -41,7 +41,7 @@ const Dashboard = (props) => {
                                 current_user?.user?.quizProgress?.round1?.status === "passed" ? (
                                     current_user?.user?.quizProgress?.round2?.status === "locked" ? (
                                         <div className="empty">
-                                            <h4>Oops! You missed the chance to upload your video! 🎉</h4>
+                                            <h4>Oops! You missed the chance to upload your video!</h4>
                                             <div className="content">
                                                 <p>LWL 2025 has ended. Stay tuned for the next season via email.</p>
                                             </div>

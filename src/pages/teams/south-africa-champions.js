@@ -308,7 +308,7 @@ export async function getServerSideProps({ req }) {
   return {
       props: {
           canonical_link: `https://${req.headers.host}${req.url}`,
-          meta_title: "South Africs Champions | South Africa Cricket Legends | WCL 2025 - WCL T20",
+          meta_title: "South Africa Champions | South Africa Cricket Legends | WCL 2025 - WCL T20",
           meta_description: "Meet South Africa Champions & South Africa cricket legends in WCL 2025! See SA’s iconic stars in action at Edgbaston and Northampton. Check it out!",
           meta_keywords: "South Africa Champions, South Africa Cricket Legends, South Africa Legends, Edgbaston, Northampton, WCL T20"
       }

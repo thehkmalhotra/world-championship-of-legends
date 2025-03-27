@@ -12,11 +12,13 @@ const Header = () => {
             <header>
                 <div className="announcement-bar">
                     <div className="marquee">
-                        <p>LWL REGISTRATION OPENS FEB 15 – MARCH 25! TRAVEL & STAY WITH YOUR FAVORITE CRICKETERS FROM JULY 18 – AUG 2, WITH ALL EXPENSES COVERED BY WCL!&nbsp; • &nbsp;</p>
-                        <p>LWL REGISTRATION OPENS FEB 15 – MARCH 25! TRAVEL & STAY WITH YOUR FAVORITE CRICKETERS FROM JULY 18 – AUG 2, WITH ALL EXPENSES COVERED BY WCL!&nbsp; • &nbsp;</p>
-                        <p>LWL REGISTRATION OPENS FEB 15 – MARCH 25! TRAVEL & STAY WITH YOUR FAVORITE CRICKETERS FROM JULY 18 – AUG 2, WITH ALL EXPENSES COVERED BY WCL!&nbsp; • &nbsp;</p>
-                        <p>LWL REGISTRATION OPENS FEB 15 – MARCH 25! TRAVEL & STAY WITH YOUR FAVORITE CRICKETERS FROM JULY 18 – AUG 2, WITH ALL EXPENSES COVERED BY WCL!&nbsp; • &nbsp;</p>
-                        <p>LWL REGISTRATION OPENS FEB 15 – MARCH 25! TRAVEL & STAY WITH YOUR FAVORITE CRICKETERS FROM JULY 18 – AUG 2, WITH ALL EXPENSES COVERED BY WCL!&nbsp; • &nbsp;</p>
+                        <p>LWL REGISTERATIONS ARE CLOSED NOW&nbsp; • &nbsp;</p>
+                        <p>LWL REGISTERATIONS ARE CLOSED NOW&nbsp; • &nbsp;</p>
+                        <p>LWL REGISTERATIONS ARE CLOSED NOW&nbsp; • &nbsp;</p>
+                        <p>LWL REGISTERATIONS ARE CLOSED NOW&nbsp; • &nbsp;</p>
+                        <p>LWL REGISTERATIONS ARE CLOSED NOW&nbsp; • &nbsp;</p>
+                        <p>LWL REGISTERATIONS ARE CLOSED NOW&nbsp; • &nbsp;</p>
+                        <p>LWL REGISTERATIONS ARE CLOSED NOW&nbsp; • &nbsp;</p>
                     </div>
                 </div>
                 <div className="header-container">

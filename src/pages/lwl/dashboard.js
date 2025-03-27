@@ -38,68 +38,38 @@ const Dashboard = (props) => {
                                 <button onClick={handleLogout}>Logout</button>
                             </div>
                             {
-                                current_user?.user?.quizProgress?.round1?.status === "locked" ?
-                                    <div className="container">
-                                        <h4>Round 1 : Quiz</h4>
-                                        <div className="content">
-                                            Before You Start the Quiz – Please Read Carefully
-                                            <ul>
-                                                <li>- Time Limit: You have 15 minutes to complete the quiz.</li>
-                                                <li>- Auto-Submission: If you do not submit within 15 minutes, the quiz will be automatically submitted with your attempted answers.</li>
-                                                <li>- No Retakes: Once submitted (manually or automatically), you cannot retake the quiz.</li>
-                                                <li>- Device & Network: Ensure your device is charged and you have a stable internet connection to avoid any disruptions.</li>
-                                            </ul>
-                                            Make sure you’re ready before starting. Good luck!
-                                        </div>
-                                        <Link href="/lwl/quiz" legacyBehavior onClick={handleStartQuiz}><a><button>Start Quiz</button></a></Link>
-                                    </div>
-                                    :
-                                    current_user?.user?.quizProgress?.round1?.status === "passed" &&
-                                        current_user?.user?.quizProgress?.round2?.status === "locked" ?
+                                current_user?.user?.quizProgress?.round1?.status === "passed" ? (
+                                    current_user?.user?.quizProgress?.round2?.status === "locked" ? (
                                         <div className="empty">
-                                            <h4>Congratulations on Winning Round 1! 🎉</h4>
+                                            <h4>Oops! You missed the chance to upload your video! 🎉</h4>
                                             <div className="content">
-                                                <p>Thank you for participating in Round 1 of Live with the Legends (LWL)!</p>
+                                                <p>LWL 2025 has ended. Stay tuned for the next season via email.</p>
+                                            </div>
+                                        </div>
+                                    ) : current_user?.user?.quizProgress?.round2?.status === "submitted" ? (
+                                        <div className="empty">
+                                            <h4>Congratulations on completing Round 2! 🎉</h4>
+                                            <div className="content">
+                                                <p>Thank you for participating in Live with the Legends (LWL)!</p>
                                                 <ul>
                                                     <p>📢 What’s Next?</p>
-                                                    <li>- <strong>Round 2 Details:</strong> You were eligible for Round 2! 🎥</li>
+                                                    <li><strong>Round 2 Results:</strong> Winners will be notified via email. 📩</li>
                                                 </ul>
-                                                <p>📌 <strong>Round 2 Instructions:</strong></p>
-                                                <p>Upload your video to YouTube, Google Drive, or any other online platform, ensuring that it is publicly accessible. Copy the public video URL and submit it below.</p>
-                                                <p>⚠️ <strong>Important:</strong> Your video must be publicly visible without any restrictions. If it is private or restricted, you will not be able to submit it again.</p>
-                                                <p>🎥 Get ready and showcase your best!</p>
+                                                <p>📌 <strong>Round 3 Instructions:</strong></p>
+                                                <p>If you qualify for Round 3, you will receive further instructions via email. Don't forget to check your spam or promotions tab so you don’t miss any updates.</p>
+                                                <p>⚠️ <strong>Important:</strong> All Round 3 details will be shared via email only.</p>
+                                                <p>🎯 Stay tuned and keep an eye on your inbox!</p>
                                             </div>
                                         </div>
-                                        :
-                                        current_user?.user?.quizProgress?.round1?.status === "passed" &&
-                                            current_user?.user?.quizProgress?.round2?.status === "submitted" ?
-                                            <div className="empty">
-                                                <h4>Congratulations on completing Round 2! 🎉</h4>
-                                                <div className="content">
-                                                    <p>Thank you for participating in Live with the Legends (LWL)!</p>
-                                                    <ul>
-                                                        <p>📢 What’s Next?</p>
-                                                        <li>- <strong>Round 2 Results:</strong> Winners will be notified via email. 📩</li>
-                                                    </ul>
-                                                    <p>📌 <strong>Round 3 Instructions:</strong></p>
-                                                    <p>If you qualify for Round 3, you will receive further instructions via email. Don't forget to check your spam or promotional tab to ensure you don’t miss any updates.</p>
-                                                    <p>⚠️ <strong>Important:</strong> All Round 3 details will be shared through email only.</p>
-                                                    <p>🎯 Stay tuned and keep an eye on your inbox!</p>
-                                                </div>
+                                    ) : (
+                                        <div className="empty">
+                                            <h4>LWL Season 1 has ended.</h4>
+                                            <div className="content">
+                                                <p>Stay tuned for the next season or further instructions via email. Good luck!</p>
                                             </div>
-                                            :
-                                            <div className="empty">
-                                                <h4>Congratulations on Completing Round 1! 🎉</h4>
-                                                <div className="content">
-                                                    Thank you for participating in Round 1 of Live with the Legends (LWL)!
-                                                    <ul>
-                                                        <p>📢 What’s Next?</p>
-                                                        <li>- Round 1 Results Announcement: Results will be declared on March 16 via email. Keep an eye on your inbox—you will receive an email from us with your result.</li>
-                                                        <li>- Round 2 Details: If you qualify, you will move on to Round 2</li>
-                                                    </ul>
-                                                    Stay tuned for further instructions in your email!. Good luck!
-                                                </div>
-                                            </div>
+                                        </div>
+                                    )
+                                ) : null
                             }
                         </div>
                     </div>

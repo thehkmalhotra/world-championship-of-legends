@@ -43,22 +43,14 @@ const Dashboard = (props) => {
                                         <div className="empty">
                                             <h4>Oops! You missed the chance to upload your video!</h4>
                                             <div className="content">
-                                                <p>LWL 2025 has ended. Stay tuned for the next season via email.</p>
+                                                <p>Last date for submitting the video was March 25. Wish you good luck for next season.</p>
                                             </div>
                                         </div>
                                     ) : current_user?.user?.quizProgress?.round2?.status === "submitted" ? (
                                         <div className="empty">
                                             <h4>Congratulations on completing Round 2! 🎉</h4>
                                             <div className="content">
-                                                <p>Thank you for participating in Live with the Legends (LWL)!</p>
-                                                <ul>
-                                                    <p>📢 What’s Next?</p>
-                                                    <li><strong>Round 2 Results:</strong> Winners will be notified via email. 📩</li>
-                                                </ul>
-                                                <p>📌 <strong>Round 3 Instructions:</strong></p>
-                                                <p>If you qualify for Round 3, you will receive further instructions via email. Don't forget to check your spam or promotions tab so you don’t miss any updates.</p>
-                                                <p>⚠️ <strong>Important:</strong> All Round 3 details will be shared via email only.</p>
-                                                <p>🎯 Stay tuned and keep an eye on your inbox!</p>
+                                                <p>Results will be announced on April 1. You will be notified over email.</p>
                                             </div>
                                         </div>
                                     ) : (

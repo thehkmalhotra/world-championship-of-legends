@@ -147,7 +147,7 @@ const Videos = ({ canonical_link, meta_title, meta_description, meta_keywords })
             }
 
             .news-header-container {
-                width: max-content;
+                width: 100%;
                 margin: auto;
                 display: flex;
                 flex-direction: column;
@@ -177,8 +177,9 @@ const Videos = ({ canonical_link, meta_title, meta_description, meta_keywords })
             .page-headers h1 {
                 color: #ffffff;
                 font-family: "Poppins Semibold";
-                font-size: 35px;
+                font-size: 30px;
                 text-transform: uppercase;
+                text-align: center;
             }
 
             .container-header {

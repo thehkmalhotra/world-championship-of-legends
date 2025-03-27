@@ -68,12 +68,6 @@ const Dashboard = (props) => {
                                                 <p>Upload your video to YouTube, Google Drive, or any other online platform, ensuring that it is publicly accessible. Copy the public video URL and submit it below.</p>
                                                 <p>⚠️ <strong>Important:</strong> Your video must be publicly visible without any restrictions. If it is private or restricted, you will not be able to submit it again.</p>
                                                 <p>🎥 Get ready and showcase your best!</p>
-
-                                                <Link href="video" legacyBehavior>
-                                                    <button>
-                                                        Proceed to Round 2
-                                                    </button>
-                                                </Link>
                                             </div>
                                         </div>
                                         :

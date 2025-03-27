@@ -233,6 +233,21 @@ const Homepage = ({ meta_title, meta_description, meta_keywords }) => {
       "news_title": "Great news for cricket fans: Here's how you can enjoy 16-day free trip with legends like Yuvraj Singh, Shikhar Dhawan, Suresh Raina, Shahid Afridi",
       "news_image": "https://cf-img-a-in.tosshub.com/lingo/stak/images/story/202502/67b05f6ced05d-world-championship-of-legends-wcl-t20-league-153327750-16x9.jpeg?size=1600:900",
       "news_url": "https://thesportstak.com/cricket/story/great-news-for-cricket-fans-heres-how-you-can-enjoy-16-day-free-trip-with-legends-like-yuvraj-singh-shikhar-dhawan-suresh-raina-shahid-afridi-3161019-2025-02-15"
+    },
+    {
+        "news_title": "WCL T20 2025: India-Pakistan Blockbuster Headlines 16-Day Tournament Across Birmingham, Northampton, Leicester and Leeds",
+        "news_image": "https://img.republicworld.com/all_images/world-championship-of-legends-1738578955186-16_9.webp?w=1200&h=675&q=75&format=webp",
+        "news_url": "https://www.republicworld.com/sports/cricket/wcl-t20-2025-india-pakistan-blockbuster-headlines-16-day-tournament-across-birmingham-northampton-leicester-and-leeds"
+    },
+    {
+        "news_title": "Renowned Indian Legend Yuvraj Singh to lead India Champions for EaseMyTrip WCL Season 2",
+        "news_image": "https://cf-img-a-in.tosshub.com/lingo/stak/images/story/202503/67dc029cafefa-renowned-indian-legend-yuvraj-singh-to-lead-india-champions-for-easemytrip-wcl-season-2-205711376-16x9.jpg?size=1600:900",
+        "news_url": "https://thesportstak.com/cricket/story/renowned-indian-legend-yuvraj-singh-to-lead-india-champions-for-easemytrip-wcl-season-2-3166660-2025-03-21"
+    },
+    {
+        "news_title": "Alastair Cook to feature in World Championship of Legends 2025",
+        "news_image": "https://www.crictracker.com/_next/image/?url=https%3A%2F%2Fmedia.crictracker.com%2Fmedia%2Fattachments%2F1708167520691_Alaistor-Cook.jpeg&w=1200&q=75",
+        "news_url": "https://www.crictracker.com/cricket-news/alastair-cook-to-feature-in-world-championship-of-legends-2025-3378/"
     }
   ];
 

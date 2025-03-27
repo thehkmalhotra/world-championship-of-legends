@@ -30,13 +30,13 @@ const About = ({ canonical_link, meta_title, meta_description, meta_keywords }) 
                         <div className="about-wcl">
                             <Image src="/assets/images/trophy.webp" width={100} height={280} />
                             <div>
-                                <h2>WAR OF CHAMPIONS</h2>
+                                <h2>War of Champions</h2>
                                 <p>Edgbaston, the distinguished host of the World Championship of Legends (WCL) this summer. Immerse yourself in a riveting T20 tournament. Approved by the England & Wales Cricket Board (ECB), WCL unveils a stellar showcase of retired and non-contracted players from cricketing giants, including England, India, Pakistan, Australia, West Indies, and South Africa. Join us for an unforgettable celebration of cricket’s living legends.</p>
                             </div>
                         </div>
                         <div className="about-wcl-bollywood">
                             <div>
-                                <h2>Meet the league owners</h2>
+                                <h2>Meet the League Owners</h2>
                                 <p>Leading the World Championship of Legends (WCL) is a visionary leadership team dedicated to redefining the sport. Mr. Ajay Devgn, Bollywood icon and co-owner of WCL, Mr. Nishant Pitti, co-founder of EaseMyTrip, and Mr. Harshit Tomar, founder and owner of WCL, bring together their unmatched expertise in entertainment, business, and sports to make WCL a premier platform for cricket legends.</p>
                             </div>
                             <div className="bollywood-owners">
@@ -84,7 +84,7 @@ const About = ({ canonical_link, meta_title, meta_description, meta_keywords }) 
             }
 
             .about-header-container {
-                width: max-content;
+                width: 100%;
                 margin: auto;
                 display: flex;
                 flex-direction: column;
@@ -114,8 +114,9 @@ const About = ({ canonical_link, meta_title, meta_description, meta_keywords }) 
             .page-headers h1 {
                 color: #ffffff;
                 font-family: "Poppins Semibold";
-                font-size: 35px;
+                font-size: 30px;
                 text-transform: uppercase;
+                text-align: center;
             }
 
             .about-wcl {
@@ -143,7 +144,7 @@ const About = ({ canonical_link, meta_title, meta_description, meta_keywords }) 
             .about-wcl div h2 {
                 color: #ffffff;
                 font-family: "Poppins Semibold";
-                text-transform: uppercase;
+                text-align: center;
             }
 
             .about-wcl div p {

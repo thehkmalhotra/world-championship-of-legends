@@ -80,9 +80,10 @@ const Gallery = ({ canonical_link, meta_title, meta_description, meta_keywords }
             color: #ffffff;
             font-family: "Poppins Bold";
             font-weight: 500;
-            font-size: 45px;
+            font-size: 30px;
             letter-spacing: .02em;
             text-transform: uppercase;
+            text-align: center;
         }
 
         .gallery-grid {

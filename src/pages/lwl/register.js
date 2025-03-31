@@ -281,7 +281,6 @@ const RegisterLwl = () => {
                     billing_pincode: billingPincode,
                 });
                 setCookie(null, "current_user", JSON.stringify(result.data), { path: "/" });
-                router.push(result.data?.paymentLink);
             } else if (result.statusCode === 200 && result.status === "success" && !result.data?.paymentLink) {
                 setAccountMessage("You've already paid. Log in to your LWL dashboard.");
             }

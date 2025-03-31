@@ -27,7 +27,7 @@ const Owner = () => {
                         <div className="owner-wcl">
                             <Image src={`/assets/images/owners/${currentSlug}.webp`} width={320} height={480} style={{ borderRadius: "20px", objectFit: "cover" }} />
                             <div>
-                                <h2>{currentOwner === "ajay devgn" ? "Mr. Ajay Devgn – Bollywood Icon and Co-Owner of WCL" : currentOwner === "nishant pitti" ? "CEO and Founder, EaseMyTrip" : currentOwner === "harshit tomar" ? "CEO and Founder, EaseMyTrip" : ""}</h2>
+                                <h2>{currentOwner === "ajay devgn" ? "Mr. Ajay Devgn – Bollywood Icon and Co-Owner of WCL" : currentOwner === "nishant pitti" ? "CEO and Founder, EaseMyTrip" : currentOwner === "harshit tomar" ? "CEO and Founder, WCL" : ""}</h2>
                                 <p>
                                     {currentOwner === "ajay devgn" ? "A legendary figure in Indian cinema, Mr. Ajay Devgn brings his unparalleled influence and visionary leadership to the World Championship of Legends (WCL). As a Bollywood icon with a career spanning over three decades, he is known for his excellence in acting, producing, and entrepreneurship. As the co-owner of WCL, Mr. Devgn leverages his passion for sports and entertainment to elevate the league, creating a global platform that celebrates cricket legends and their enduring legacy."
                                         :

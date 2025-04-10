@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import PlayerCard from '@/components/PlayerCard';
 import TeamOwner from '@/components/TeamOwner';
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react'
 import 'swiper/css';
 
@@ -200,6 +201,10 @@ const PakistanChampions = ({ canonical_link, meta_title, meta_description, meta_
                                 ))}
                             </div>
                         </div>
+                        <div className="team-fixtures">
+                            <h2>Pakistan Champions Fixtures - WCL T20</h2>
+                            <Link href="https://edgbaston.com/wcl" legacyBehavior><a><img src="/assets/images/fixtures/pakistan-fixture.webp" /></a></Link>
+                        </div>
                     </div>
                 </div>
                 <Footer pagecontent={page_content} />
@@ -307,6 +312,32 @@ const PakistanChampions = ({ canonical_link, meta_title, meta_description, meta_
                 grid-template-columns: repeat(1, 1fr);
                 gap: 10px;
             }
+            }
+
+            .team-fixtures {
+                width: 100%;
+                margin-top: 80px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .team-fixtures h2 {
+                color: #ffffff;
+                font-family: "Poppins Bold";
+                font-weight: 500;
+                font-size: 30px;
+                text-transform: uppercase;
+            }
+
+            .team-fixtures img {
+                width: 100%;
+                border-radius: 20px;
+                transition: all .5s;
+            }
+
+            .team-fixtures img:hover {
+                transform: scale(.99);
             }
         `}</style>
         </>

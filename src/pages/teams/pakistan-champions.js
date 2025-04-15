@@ -4,156 +4,191 @@ import PlayerCard from '@/components/PlayerCard';
 import TeamOwner from '@/components/TeamOwner';
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import 'swiper/css';
 
 const PakistanChampions = ({ canonical_link, meta_title, meta_description, meta_keywords, page_content }) => {
-    const players = [
-        {
-            "player_name": "Younis Khan",
-            "player_type": "Batsman",
-            "player_jersey": "75",
-            "player_metric_1": "65",
-            "player_metric_2": "45",
-            "player_dob": "29 Nov",
-            "player_image": "/assets/images/players/pakistan-champions/younis-khan.webp"
-        },
-        {
-            "player_name": "Shahid Afridi",
-            "player_type": "Batsman",
-            "player_jersey": "10",
-            "player_metric_1": "20",
-            "player_metric_2": "10",
-            "player_dob": "1 Mar",
-            "player_image": "/assets/images/players/pakistan-champions/shahid-afridi.webp"
-        },
-        {
-            "player_name": "Misbah-ul-Haq",
-            "player_type": "Batsman",
-            "player_jersey": "22",
-            "player_metric_1": "18",
-            "player_metric_2": "15",
-            "player_dob": "28 May",
-            "player_image": "/assets/images/players/pakistan-champions/misbah-ul-haq.webp"
-        },
-        {
-            "player_name": "Sharjeel Khan",
-            "player_type": "Batsman",
-            "player_jersey": "98",
-            "player_metric_1": "72",
-            "player_metric_2": "30",
-            "player_dob": "14 Aug",
-            "player_image": "/assets/images/players/pakistan-champions/sharjeel-khan.webp"
-        },
-        {
-            "player_name": "Abdul Razzaq",
-            "player_type": "Bowler",
-            "player_jersey": "12",
-            "player_metric_1": "2",
-            "player_metric_2": "22",
-            "player_dob": "2 Dec",
-            "player_image": "/assets/images/players/pakistan-champions/abdul-razzaq.webp"
-        },
-        {
-            "player_name": "Kamran Akmal",
-            "player_type": "Batsman",
-            "player_jersey": "",
-            "player_metric_1": "77",
-            "player_metric_2": "40",
-            "player_dob": "26 May",
-            "player_image": "/assets/images/players/pakistan-champions/kamran-akmal.webp"
-        },
-        {
-            "player_name": "Sohaib Maqsood",
-            "player_type": "Batsman",
-            "player_jersey": "92",
-            "player_metric_1": "64",
-            "player_metric_2": "44",
-            "player_dob": "15 Apr",
-            "player_image": "/assets/images/players/pakistan-champions/sohaib-maqsood.webp"
-        },
-        {
-            "player_name": "Shoaib Malik",
-            "player_type": "Batsman",
-            "player_jersey": "18",
-            "player_metric_1": "51",
-            "player_metric_2": "26",
-            "player_dob": "1 Feb",
-            "player_image": "/assets/images/players/pakistan-champions/shoaib-malik.webp"
-        },
-        {
-            "player_name": "Saeed Ajmal",
-            "player_type": "Bowler",
-            "player_jersey": "",
-            "player_metric_1": "3",
-            "player_metric_2": "12",
-            "player_dob": "20 Dec",
-            "player_image": "/assets/images/players/pakistan-champions/saeed-ajmal.webp"
-        },
-        {
-            "player_name": "Sohail Tanvir",
-            "player_type": "Bowler",
-            "player_jersey": "14",
-            "player_metric_1": "1",
-            "player_metric_2": "18",
-            "player_dob": "12 Dec",
-            "player_image": "/assets/images/players/pakistan-champions/sohail-tanvir.webp"
-        },
-        {
-            "player_name": "Wahab Riaz",
-            "player_type": "Bowler",
-            "player_jersey": "47",
-            "player_metric_1": "2",
-            "player_metric_2": "35",
-            "player_dob": "28 Jun",
-            "player_image": "/assets/images/players/pakistan-champions/wahab-riaz.webp"
-        },
-        {
-            "player_name": "Abdul Rehman",
-            "player_type": "Bowler",
-            "player_jersey": "",
-            "player_metric_1": "0",
-            "player_metric_2": "0",
-            "player_dob": "1 Mar",
-            "player_image": "/assets/images/players/pakistan-champions/abdul-rehman.webp"
-        },
-        {
-            "player_name": "Sohail Khan",
-            "player_type": "Bowler",
-            "player_jersey": "",
-            "player_metric_1": "4",
-            "player_metric_2": "21",
-            "player_dob": "6 Mar",
-            "player_image": "/assets/images/players/pakistan-champions/sohail-khan.webp"
-        },
-        {
-            "player_name": "Aamer Yamin",
-            "player_type": "Batsman",
-            "player_jersey": "34",
-            "player_metric_1": "40",
-            "player_metric_2": "18",
-            "player_dob": "26 Jun",
-            "player_image": "/assets/images/players/pakistan-champions/aamer-yamin.webp"
-        },
-        {
-            "player_name": "Taufeeq Umar",
-            "player_type": "Batsman",
-            "player_jersey": "",
-            "player_metric_1": "0",
-            "player_metric_2": "0",
-            "player_dob": "20 Jun",
-            "player_image": "/assets/images/players/pakistan-champions/taufeeq-umar.webp"
-        },
-        {
-            "player_name": "Yasir Arafat",
-            "player_type": "Bowler",
-            "player_jersey": "27",
-            "player_metric_1": "0",
-            "player_metric_2": "8",
-            "player_dob": "12 Mar",
-            "player_image": "/assets/images/players/pakistan-champions/yasir-arafat.webp"
-        }
-    ];
+    const [season, setSeason] = useState(2);
+    const players = {
+        season1: [
+            {
+                "player_name": "Younis Khan",
+                "player_type": "Batsman",
+                "player_jersey": "75",
+                "player_image": "/assets/images/players/pakistan-champions/younis-khan.webp"
+            },
+            {
+                "player_name": "Shahid Afridi",
+                "player_type": "Batsman",
+                "player_jersey": "10",
+                "player_image": "/assets/images/players/pakistan-champions/shahid-afridi.webp"
+            },
+            {
+                "player_name": "Misbah-ul-Haq",
+                "player_type": "Batsman",
+                "player_jersey": "22",
+                "player_image": "/assets/images/players/pakistan-champions/misbah-ul-haq.webp"
+            },
+            {
+                "player_name": "Sharjeel Khan",
+                "player_type": "Batsman",
+                "player_jersey": "98",
+                "player_image": "/assets/images/players/pakistan-champions/sharjeel-khan.webp"
+            },
+            {
+                "player_name": "Abdul Razzaq",
+                "player_type": "Bowler",
+                "player_jersey": "12",
+                "player_image": "/assets/images/players/pakistan-champions/abdul-razzaq.webp"
+            },
+            {
+                "player_name": "Kamran Akmal",
+                "player_type": "Batsman",
+                "player_jersey": "",
+                "player_image": "/assets/images/players/pakistan-champions/kamran-akmal.webp"
+            },
+            {
+                "player_name": "Sohaib Maqsood",
+                "player_type": "Batsman",
+                "player_jersey": "92",
+                "player_image": "/assets/images/players/pakistan-champions/sohaib-maqsood.webp"
+            },
+            {
+                "player_name": "Shoaib Malik",
+                "player_type": "Batsman",
+                "player_jersey": "18",
+                "player_image": "/assets/images/players/pakistan-champions/shoaib-malik.webp"
+            },
+            {
+                "player_name": "Saeed Ajmal",
+                "player_type": "Bowler",
+                "player_jersey": "",
+                "player_image": "/assets/images/players/pakistan-champions/saeed-ajmal.webp"
+            },
+            {
+                "player_name": "Sohail Tanvir",
+                "player_type": "Bowler",
+                "player_jersey": "14",
+                "player_image": "/assets/images/players/pakistan-champions/sohail-tanvir.webp"
+            },
+            {
+                "player_name": "Wahab Riaz",
+                "player_type": "Bowler",
+                "player_jersey": "47",
+                "player_image": "/assets/images/players/pakistan-champions/wahab-riaz.webp"
+            },
+            {
+                "player_name": "Abdul Rehman",
+                "player_type": "Bowler",
+                "player_jersey": "",
+                "player_image": "/assets/images/players/pakistan-champions/abdul-rehman.webp"
+            },
+            {
+                "player_name": "Sohail Khan",
+                "player_type": "Bowler",
+                "player_jersey": "",
+                "player_image": "/assets/images/players/pakistan-champions/sohail-khan.webp"
+            },
+            {
+                "player_name": "Aamer Yamin",
+                "player_type": "Batsman",
+                "player_jersey": "34",
+                "player_image": "/assets/images/players/pakistan-champions/aamer-yamin.webp"
+            },
+            {
+                "player_name": "Taufeeq Umar",
+                "player_type": "Batsman",
+                "player_jersey": "",
+                "player_image": "/assets/images/players/pakistan-champions/taufeeq-umar.webp"
+            },
+            {
+                "player_name": "Yasir Arafat",
+                "player_type": "Bowler",
+                "player_jersey": "27",
+                "player_image": "/assets/images/players/pakistan-champions/yasir-arafat.webp"
+            }
+        ],
+        season2: [
+            {
+                "player_name": "Shohaib Maqsood",
+                "player_type": "Batsman",
+                "player_jersey": "92",
+                "player_image": "/assets/images/players/pakistan-champions/shohaib-maqsood.webp",
+                "player_about": "A powerful middle-order batsman, Maqsood’s aggressive stroke play makes him a key asset in WCL, capable of shifting momentum with his big hits."
+            },
+            {
+                "player_name": "Sharjeel Khan",
+                "player_type": "Batsman",
+                "player_jersey": "98",
+                "player_image": "/assets/images/players/pakistan-champions/sharjeel-khan.webp",
+                "player_about": "An explosive opener, Sharjeel’s fearless approach at the top makes him a dangerous player in WCL, giving his team strong starts with his attacking intent."
+            },
+            {
+                "player_name": "Shoaib Malik",
+                "player_type": "All Rounder",
+                "player_jersey": "18",
+                "player_image": "/assets/images/players/pakistan-champions/shoaib-malik.webp",
+                "player_about": "A veteran all-rounder, Malik’s vast experience and adaptability in WCL add depth to both batting and bowling, making him a match-winner."
+            },
+            {
+                "player_name": "Shahid Afridi",
+                "player_type": "All Rounder",
+                "player_jersey": "10",
+                "player_image": "/assets/images/players/pakistan-champions/shahid-afridi.webp",
+                "player_about": "The legendary all-rounder and captain, Afridi’s power-hitting and wicket-taking ability make him a game-changer in WCL, leading his team with aggression."
+            },
+            {
+                "player_name": "Asif Ali",
+                "player_type": "Batsman",
+                "player_jersey": "45",
+                "player_image": "/assets/images/players/pakistan-champions/asif-ali.webp",
+                "player_about": "Known for his finishing abilities, Asif is a key middle-order batter in WCL, capable of delivering match-winning performances in high-pressure situations."
+            },
+            {
+                "player_name": "Kamran Akmal",
+                "player_type": "Wicketkeeper",
+                "player_jersey": "23",
+                "player_image": "/assets/images/players/pakistan-champions/kamran-akmal.webp",
+                "player_about": "A seasoned wicketkeeper-batsman, Akmal’s quick glovework and attacking batting style make him a valuable player in WCL."
+            },
+            {
+                "player_name": "Sarfaraz Ahmed",
+                "player_type": "Wicketkeeper",
+                "player_jersey": "54",
+                "player_image": "/assets/images/players/pakistan-champions/sarfaraz-ahmed.webp",
+                "player_about": "A reliable wicketkeeper and strong leader, Sarfraz’s presence in WCL ensures stability in the middle order and sharp skills behind the stumps."
+            },
+            {
+                "player_name": "Wahab Riaz",
+                "player_type": "Bowler",
+                "player_jersey": "47",
+                "player_image": "/assets/images/players/pakistan-champions/wahab-riaz.webp",
+                "player_about": "A fiery left-arm pacer, Wahab’s express pace and ability to bowl under pressure make him a key strike bowler in WCL."
+            },
+            {
+                "player_name": "Sohail Tanvir",
+                "player_type": "All Rounder",
+                "player_jersey": "33",
+                "player_image": "/assets/images/players/pakistan-champions/sohail-tanvir.webp",
+                "player_about": "A versatile left-arm pacer, Tanvir’s unorthodox bowling action and all-round skills bring unpredictability to his team in WCL."
+            },
+            {
+                "player_name": "Aamer Yamin",
+                "player_type": "All Rounder",
+                "player_jersey": "34",
+                "player_image": "/assets/images/players/pakistan-champions/aamer-yamin.webp",
+                "player_about": "A dynamic all-rounder, Aamer’s ability to contribute with both bat and ball makes him an important asset in WCL."
+            },
+            {
+                "player_name": "Rumman Raees",
+                "player_type": "Bowler",
+                "player_jersey": "15",
+                "player_image": "/assets/images/players/pakistan-champions/rumman-raees.webp",
+                "player_about": "A skilled left-arm fast bowler, Rumman’s control and variations make him a crucial bowler in WCL, especially in death overs."
+            }
+        ]
+    };
+    const currentSquad = players[`season${season}`];
 
     return (
         <>
@@ -186,16 +221,21 @@ const PakistanChampions = ({ canonical_link, meta_title, meta_description, meta_
                         </div>
                         <div className="team-squad">
                             <h2>Pakistan Champions Squad - Team Overview</h2>
+                            <div className="season-switcher">
+                                <select onChange={(event) => setSeason(event.target.value)}>
+                                    <option value="1">Season 1</option>
+                                    <option value="2" selected>Season 2</option>
+                                </select>
+                            </div>
                             <div className="players-grid">
-                                {players.map((player, index) => (
+                                {currentSquad.map((player, index) => (
                                     <PlayerCard
                                         key={index}
                                         name={player.player_name}
                                         type={player.player_type}
                                         jersey={player.player_jersey}
-                                        dob={player.player_dob}
-                                        metric1={player.player_metric_1}
-                                        metric2={player.player_metric_2}
+                                        about={player.player_about}
+                                        
                                         image={player.player_image}
                                     />
                                 ))}
@@ -298,6 +338,18 @@ const PakistanChampions = ({ canonical_link, meta_title, meta_description, meta_
                 font-weight: 500;
                 font-size: 30px;
                 text-transform: uppercase;
+            }
+
+            .season-switcher select {
+                -webkit-appearance: none;
+                background-color: transparent;
+                color: #ffffff;
+                font-family: "Poppins Semibold";
+                font-size: 14px;
+                text-transform: uppercase;
+                border-bottom: solid 1px #ffffff;
+                outline: none;
+                border-radius: 0;
             }
 
             .players-grid {

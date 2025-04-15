@@ -4,138 +4,179 @@ import PlayerCard from '@/components/PlayerCard';
 import TeamOwner from '@/components/TeamOwner';
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import 'swiper/css';
 
 const WestIndiesChampions = ({ canonical_link, meta_title, meta_description, meta_keywords, page_content }) => {
-    const players = [
-        {
-            "player_name": "Chris Gayle",
-            "player_type": "Batsman",
-            "player_jersey": "33",
-            "player_player_metric_1": "70",
-            "player_player_metric_2": "40",
-            "player_dob": "21 Sep",
-            "player_image": "/assets/images/players/west-indies-champions/chris-gayle.webp"
-        },
-        {
-            "player_name": "Darren Sammy",
-            "player_type": "Batsman",
-            "player_jersey": "88",
-            "player_metric_1": "33",
-            "player_metric_2": "18",
-            "player_dob": "20 Dec",
-            "player_image": "/assets/images/players/west-indies-champions/darren-sammy.webp"
-        },
-        {
-            "player_name": "Samuel Badree",
-            "player_type": "Bowler",
-            "player_jersey": "77",
-            "player_metric_1": "1",
-            "player_metric_2": "13",
-            "player_dob": "9 Mar",
-            "player_image": "/assets/images/players/west-indies-champions/samuel-badree.webp"
-        },
-        {
-            "player_name": "Tino Best",
-            "player_type": "Bowler",
-            "player_jersey": "36",
-            "player_metric_1": "2",
-            "player_metric_2": "41",
-            "player_dob": "26 Aug",
-            "player_image": "/assets/images/players/west-indies-champions/tino-best.webp"
-        },
-        {
-            "player_name": "Rayad Rayan",
-            "player_type": "Bowler",
-            "player_jersey": "",
-            "player_metric_1": "3",
-            "player_metric_2": "48",
-            "player_dob": "8 Mar",
-            "player_image": "/assets/images/players/west-indies-champions/rayad-rayan.webp"
-        },
-        {
-            "player_name": "Jason Mohammed",
-            "player_type": "Bowler",
-            "player_jersey": "3",
-            "player_metric_1": "2",
-            "player_metric_2": "23",
-            "player_dob": "23 Sep",
-            "player_image": "/assets/images/players/west-indies-champions/jason-mohammed.webp"
-        },
-        {
-            "player_name": "Navin Stewart",
-            "player_type": "Bowler",
-            "player_jersey": "25",
-            "player_metric_1": "0",
-            "player_metric_2": "18",
-            "player_dob": "13 Jun",
-            "player_image": "/assets/images/players/west-indies-champions/navin-stewart.webp"
-        },
-        {
-            "player_name": "Ashley Nurse",
-            "player_type": "Batsman",
-            "player_jersey": "5",
-            "player_metric_1": "70",
-            "player_metric_2": "36",
-            "player_dob": "22 Dec",
-            "player_image": "/assets/images/players/west-indies-champions/ashley-nurse.webp"
-        },
-        {
-            "player_name": "Dwayne Smith",
-            "player_type": "Batsman",
-            "player_jersey": "50",
-            "player_metric_1": "65",
-            "player_metric_2": "46",
-            "player_dob": "12 Apr",
-            "player_image": "/assets/images/players/west-indies-champions/dwayne-smith.webp"
-        },
-        {
-            "player_name": "Suleiman Benn",
-            "player_type": "Bowler",
-            "player_jersey": "62",
-            "player_metric_1": "2",
-            "player_metric_2": "26",
-            "player_dob": "22 Jul",
-            "player_image": "/assets/images/players/west-indies-champions/suleiman-benn.webp"
-        },
-        {
-            "player_name": "Chadwick Walton",
-            "player_type": "Batsman",
-            "player_jersey": "59",
-            "player_metric_1": "85",
-            "player_metric_2": "42",
-            "player_dob": "3 Jul",
-            "player_image": "/assets/images/players/west-indies-champions/chadwick-walton.webp"
-        },
-        {
-            "player_name": "Jerome Taylor",
-            "player_type": "Bowler",
-            "player_jersey": "75",
-            "player_metric_1": "1",
-            "player_metric_2": "27",
-            "player_dob": "22 Jun",
-            "player_image": "/assets/images/players/west-indies-champions/jerome-taylor.webp"
-        },
-        {
-            "player_name": "Fidel Edwards",
-            "player_type": "Bowler",
-            "player_jersey": "20",
-            "player_metric_1": "3",
-            "player_metric_2": "24",
-            "player_dob": "6 Feb",
-            "player_image": "/assets/images/players/west-indies-champions/fidel-edwards.webp"
-        },
-        {
-            "player_name": "Kirk Edwards",
-            "player_type": "Batsman",
-            "player_jersey": "30",
-            "player_metric_1": "12",
-            "player_metric_2": "9",
-            "player_dob": "3 Nov",
-            "player_image": "/assets/images/players/west-indies-champions/kirk-edwards.webp"
-        }
-    ];
+    const [season, setSeason] = useState(2);
+    const players = {
+        season1: [
+            {
+                "player_name": "Chris Gayle",
+                "player_type": "Batsman",
+                "player_jersey": "33",
+                "player_image": "/assets/images/players/west-indies-champions/chris-gayle.webp"
+            },
+            {
+                "player_name": "Darren Sammy",
+                "player_type": "Batsman",
+                "player_jersey": "88",
+                "player_image": "/assets/images/players/west-indies-champions/darren-sammy.webp"
+            },
+            {
+                "player_name": "Samuel Badree",
+                "player_type": "Bowler",
+                "player_jersey": "77",
+                "player_image": "/assets/images/players/west-indies-champions/samuel-badree.webp"
+            },
+            {
+                "player_name": "Tino Best",
+                "player_type": "Bowler",
+                "player_jersey": "36",
+                "player_image": "/assets/images/players/west-indies-champions/tino-best.webp"
+            },
+            {
+                "player_name": "Rayad Rayan",
+                "player_type": "Bowler",
+                "player_jersey": "",
+                "player_image": "/assets/images/players/west-indies-champions/rayad-rayan.webp"
+            },
+            {
+                "player_name": "Jason Mohammed",
+                "player_type": "Bowler",
+                "player_jersey": "3",
+                "player_image": "/assets/images/players/west-indies-champions/jason-mohammed.webp"
+            },
+            {
+                "player_name": "Navin Stewart",
+                "player_type": "Bowler",
+                "player_jersey": "25",
+                "player_image": "/assets/images/players/west-indies-champions/navin-stewart.webp"
+            },
+            {
+                "player_name": "Ashley Nurse",
+                "player_type": "Batsman",
+                "player_jersey": "5",
+                "player_image": "/assets/images/players/west-indies-champions/ashley-nurse.webp"
+            },
+            {
+                "player_name": "Dwayne Smith",
+                "player_type": "Batsman",
+                "player_jersey": "50",
+                "player_image": "/assets/images/players/west-indies-champions/dwayne-smith.webp"
+            },
+            {
+                "player_name": "Suleiman Benn",
+                "player_type": "Bowler",
+                "player_jersey": "62",
+                "player_image": "/assets/images/players/west-indies-champions/suleiman-benn.webp"
+            },
+            {
+                "player_name": "Chadwick Walton",
+                "player_type": "Batsman",
+                "player_jersey": "59",
+                "player_image": "/assets/images/players/west-indies-champions/chadwick-walton.webp"
+            },
+            {
+                "player_name": "Jerome Taylor",
+                "player_type": "Bowler",
+                "player_jersey": "75",
+                "player_image": "/assets/images/players/west-indies-champions/jerome-taylor.webp"
+            },
+            {
+                "player_name": "Fidel Edwards",
+                "player_type": "Bowler",
+                "player_jersey": "20",
+                "player_image": "/assets/images/players/west-indies-champions/fidel-edwards.webp"
+            },
+            {
+                "player_name": "Kirk Edwards",
+                "player_type": "Batsman",
+                "player_jersey": "30",
+                "player_image": "/assets/images/players/west-indies-champions/kirk-edwards.webp"
+            }
+        ],
+        season2: [
+            {
+                "player_name": "Dwayne Smith",
+                "player_type": "Batsman",
+                "player_jersey": "50",
+                "player_image": "/assets/images/players/west-indies-champions/dwayne-smith.webp",
+                "player_about": "A destructive opening batsman, Dwayne Smith’s powerful hitting and ability to provide quick starts make him a thrilling player in WCL. His part-time medium pace adds versatility to any squad."
+            },
+            {
+                "player_name": "Sheldon Cottrell",
+                "player_type": "Bowler",
+                "player_jersey": "19",
+                "player_image": "/assets/images/players/west-indies-champions/sheldon-cottrell.webp",
+                "player_about": "Known for his left-arm pace and trademark salute celebration, Sheldon Cottrell’s ability to swing the ball and bowl fiery spells makes him a dangerous bowler in WCL."
+            },
+            {
+                "player_name": "Lendl Simmons",
+                "player_type": "Batsman",
+                "player_jersey": "54",
+                "player_image": "/assets/images/players/west-indies-champions/lendl-simmons.webp",
+                "player_about": "A proven match-winner, Lendl Simmons’ ability to accelerate innings and play impactful knocks makes him a key figure in WCL. His T20 experience strengthens any batting lineup."
+            },
+            {
+                "player_name": "Ashley Nurse",
+                "player_type": "All Rounder",
+                "player_jersey": "5",
+                "player_image": "/assets/images/players/west-indies-champions/ashley-nurse.webp",
+                "player_about": "A crafty off-spinner and a handy lower-order batsman, Ashley Nurse’s ability to contain runs and take key wickets makes him a valuable all-rounder in WCL."
+            },
+            {
+                "player_name": "Devendra Bishoo",
+                "player_type": "Bowler",
+                "player_jersey": "70",
+                "player_image": "/assets/images/players/west-indies-champions/devendra-bishoo.webp",
+                "player_about": "A skillful leg-spinner, Devendra Bishoo’s sharp turn and deceptive variations make him a formidable bowler in WCL. His ability to outfox batsmen is a major asset."
+            },
+            {
+                "player_name": "Shivnarine Chanderpaul",
+                "player_type": "Batsman",
+                "player_jersey": "16",
+                "player_image": "/assets/images/players/west-indies-champions/shivnarine-chanderpaul.webp",
+                "player_about": "One of the most resilient batsmen in cricket history, Shivnarine Chanderpaul’s unorthodox technique and ability to anchor innings bring immense experience to WCL."
+            },
+            {
+                "player_name": "Shannon Gabriel",
+                "player_type": "Bowler",
+                "player_jersey": "85",
+                "player_image": "/assets/images/players/west-indies-champions/shannon-gabriel.webp",
+                "player_about": "A fast bowler known for his express pace and aggressive approach, Shannon Gabriel’s ability to generate bounce and trouble batsmen makes him a lethal force in WCL."
+            },
+            {
+                "player_name": "Dwayne Bravo",
+                "player_type": "All Rounder",
+                "player_jersey": "47",
+                "player_image": "/assets/images/players/west-indies-champions/dwayne-bravo.webp",
+                "player_about": "A T20 legend, Dwayne Bravo’s dynamic all-round abilities make him a showstopper in WCL. His ability to finish games with the bat and bowl crucial death overs makes him an invaluable asset."
+            },
+            {
+                "player_name": "Ravi Rampaul",
+                "player_type": "Bowler",
+                "player_jersey": "11",
+                "player_image": "/assets/images/players/west-indies-champions/ravi-rampaul.webp",
+                "player_about": "An experienced fast bowler, Ravi Rampaul’s ability to swing the ball and pick up key wickets makes him a dependable option in WCL. His international experience adds strength to the bowling unit."
+            },
+            {
+                "player_name": "Chris Gayle",
+                "player_type": "Batsman",
+                "player_jersey": "333",
+                "player_image": "/assets/images/players/west-indies-champions/chris-gayle.webp",
+                "player_about": "The \"Universe Boss\", Chris Gayle’s record-breaking six-hitting ability makes him one of the biggest attractions in WCL. His explosive batting at the top can single-handedly win games."
+            },
+            {
+                "player_name": "Kieron Pollard",
+                "player_type": "All Rounder",
+                "player_jersey": "55",
+                "player_image": "/assets/images/players/west-indies-champions/kieron-pollard.webp",
+                "player_about": "A powerful all-rounder, Kieron Pollard’s brutal hitting and crucial medium-pace bowling make him a game-changer in WCL. His leadership and experience in global leagues add immense value to any team."
+            }
+        ]
+    };
+    const currentSquad = players[`season${season}`];
 
     return (
         <>
@@ -168,16 +209,21 @@ const WestIndiesChampions = ({ canonical_link, meta_title, meta_description, met
                         </div>
                         <div className="team-squad">
                             <h2>West Indies Champions Squad - Team Overview</h2>
+                            <div className="season-switcher">
+                                <select onChange={(event) => setSeason(event.target.value)}>
+                                    <option value="1">Season 1</option>
+                                    <option value="2" selected>Season 2</option>
+                                </select>
+                            </div>
                             <div className="players-grid">
-                                {players.map((player, index) => (
+                                {currentSquad.map((player, index) => (
                                     <PlayerCard
                                         key={index}
                                         name={player.player_name}
                                         type={player.player_type}
                                         jersey={player.player_jersey}
-                                        dob={player.player_dob}
-                                        metric1={player.player_metric_1}
-                                        metric2={player.player_metric_2}
+                                        about={player.player_about}
+                                        
                                         image={player.player_image}
                                     />
                                 ))}
@@ -280,6 +326,18 @@ const WestIndiesChampions = ({ canonical_link, meta_title, meta_description, met
                     font-weight: 500;
                     font-size: 30px;
                     text-transform: uppercase;
+                }
+
+                .season-switcher select {
+                    -webkit-appearance: none;
+                    background-color: transparent;
+                    color: #ffffff;
+                    font-family: "Poppins Semibold";
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    border-bottom: solid 1px #ffffff;
+                    outline: none;
+                    border-radius: 0;
                 }
 
                 .players-grid {

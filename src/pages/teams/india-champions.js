@@ -4,156 +4,191 @@ import PlayerCard from '@/components/PlayerCard';
 import TeamOwner from '@/components/TeamOwner';
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import 'swiper/css';
 
 const IndiaChampions = ({ canonical_link, meta_title, meta_description, meta_keywords, page_content }) => {
-  const players = [
-    {
-      "player_name": "Yuvraj Singh",
-      "player_type": "Batsman",
-      "player_jersey": "12",
-      "player_metric_1": "59",
-      "player_metric_2": "28",
-      "player_dob": "12 Dec",
-      "player_image": "/assets/images/players/india-champions/yuvraj-singh.webp"
-    },
-    {
-      "player_name": "Harbhajan Singh",
-      "player_type": "Bowler",
-      "player_jersey": "3",
-      "player_metric_1": "4",
-      "player_metric_2": "25",
-      "player_dob": "3 Jul",
-      "player_image": "/assets/images/players/india-champions/harbhajan-singh.webp"
-    },
-    {
-      "player_name": "Suresh Raina",
-      "player_type": "Batsman",
-      "player_jersey": "48",
-      "player_metric_1": "52",
-      "player_metric_2": "40",
-      "player_dob": "27 Nov",
-      "player_image": "/assets/images/players/india-champions/suresh-raina.webp"
-    },
-    {
-      "player_name": "Irfan Pathan",
-      "player_type": "Batsman",
-      "player_jersey": "56",
-      "player_metric_1": "51",
-      "player_metric_2": "19",
-      "player_dob": "27 Oct",
-      "player_image": "/assets/images/players/india-champions/irfan-pathan.webp"
-    },
-    {
-      "player_name": "Robin Uthappa",
-      "player_type": "Batsman",
-      "player_jersey": "14",
-      "player_metric_1": "65",
-      "player_metric_2": "35",
-      "player_dob": "11 Nov",
-      "player_image": "/assets/images/players/india-champions/robin-uthappa.webp"
-    },
-    {
-      "player_name": "Ambati Rayadu",
-      "player_type": "Batsman",
-      "player_jersey": "9",
-      "player_metric_1": "50",
-      "player_metric_2": "30",
-      "player_dob": "23 Sep",
-      "player_image": "/assets/images/players/india-champions/ambati-rayadu.webp"
-    },
-    {
-      "player_name": "Gurkeerat Mann",
-      "player_type": "Batsman",
-      "player_jersey": "8",
-      "player_metric_1": "86",
-      "player_metric_2": "42",
-      "player_dob": "29 Jun",
-      "player_image": "/assets/images/players/india-champions/gurkeerat-maan.webp"
-    },
-    {
-      "player_name": "Yusuf Pathan",
-      "player_type": "Batsman",
-      "player_jersey": "21",
-      "player_metric_1": "78",
-      "player_metric_2": "48",
-      "player_dob": "17 Nov",
-      "player_image": "/assets/images/players/india-champions/yusuf-pathan.webp"
-    },
-    {
-      "player_name": "Rahul Sharma",
-      "player_type": "Bowler",
-      "player_jersey": "27",
-      "player_metric_1": "-",
-      "player_metric_2": "-",
-      "player_dob": "30 Nov",
-      "player_image": "/assets/images/players/india-champions/rahul-sharma.webp"
-    },
-    {
-      "player_name": "Naman Ojha",
-      "player_type": "Batsman",
-      "player_jersey": "40",
-      "player_metric_1": "25",
-      "player_metric_2": "20",
-      "player_dob": "20 Jul",
-      "player_image": "/assets/images/players/india-champions/naman-ojha.webp"
-    },
-    {
-      "player_name": "Rahul Shukla",
-      "player_type": "Bowler",
-      "player_jersey": "",
-      "player_metric_1": "1",
-      "player_metric_2": "31",
-      "player_dob": "28 Aug",
-      "player_image": "/assets/images/players/india-champions/rahul-shukla.webp"
-    },
-    {
-      "player_name": "R P Singh",
-      "player_type": "Bowler",
-      "player_jersey": "9",
-      "player_metric_1": "1",
-      "player_metric_2": "38",
-      "player_dob": "6 Dec",
-      "player_image": "/assets/images/players/india-champions/rp-singh.webp"
-    },
-    {
-      "player_name": "Vinay Kumar",
-      "player_type": "Bowler",
-      "player_jersey": "",
-      "player_metric_1": "2",
-      "player_metric_2": "36",
-      "player_dob": "12 Feb",
-      "player_image": "/assets/images/players/india-champions/vinay-kumar.webp"
-    },
-    {
-      "player_name": "Dhawal Kulkarni",
-      "player_type": "Bowler",
-      "player_jersey": "91",
-      "player_metric_1": "2",
-      "player_metric_2": "49",
-      "player_dob": "10 Dec",
-      "player_image": "/assets/images/players/india-champions/dhawal-kulkarni.webp"
-    },
-    {
-      "player_name": "Anureet Singh",
-      "player_type": "Bowler",
-      "player_jersey": "33",
-      "player_metric_1": "3",
-      "player_metric_2": "43",
-      "player_dob": "2 Mar",
-      "player_image": "/assets/images/players/india-champions/anureet-singh.webp"
-    },
-    {
-      "player_name": "Pawan Negi",
-      "player_type": "Bowler",
-      "player_jersey": "15",
-      "player_metric_1": "1",
-      "player_metric_2": "24",
-      "player_dob": "6 Jan",
-      "player_image": "/assets/images/players/india-champions/pawan-negi.webp"
-    }
-  ];
+  const [season, setSeason] = useState(2);
+  const players = {
+    season1: [
+      {
+        "player_name": "Yuvraj Singh",
+        "player_type": "Batsman",
+        "player_jersey": "12",
+        "player_image": "/assets/images/players/india-champions/yuvraj-singh.webp"
+      },
+      {
+        "player_name": "Harbhajan Singh",
+        "player_type": "Bowler",
+        "player_jersey": "3",
+        "player_image": "/assets/images/players/india-champions/harbhajan-singh.webp"
+      },
+      {
+        "player_name": "Suresh Raina",
+        "player_type": "Batsman",
+        "player_jersey": "48",
+        "player_image": "/assets/images/players/india-champions/suresh-raina.webp"
+      },
+      {
+        "player_name": "Irfan Pathan",
+        "player_type": "Batsman",
+        "player_jersey": "56",
+        "player_image": "/assets/images/players/india-champions/irfan-pathan.webp"
+      },
+      {
+        "player_name": "Robin Uthappa",
+        "player_type": "Batsman",
+        "player_jersey": "14",
+        "player_image": "/assets/images/players/india-champions/robin-uthappa.webp"
+      },
+      {
+        "player_name": "Ambati Rayadu",
+        "player_type": "Batsman",
+        "player_jersey": "9",
+        "player_image": "/assets/images/players/india-champions/ambati-rayadu.webp"
+      },
+      {
+        "player_name": "Gurkeerat Mann",
+        "player_type": "Batsman",
+        "player_jersey": "8",
+        "player_image": "/assets/images/players/india-champions/gurkeerat-maan.webp"
+      },
+      {
+        "player_name": "Yusuf Pathan",
+        "player_type": "Batsman",
+        "player_jersey": "21",
+        "player_image": "/assets/images/players/india-champions/yusuf-pathan.webp"
+      },
+      {
+        "player_name": "Rahul Sharma",
+        "player_type": "Bowler",
+        "player_jersey": "27",
+        "player_image": "/assets/images/players/india-champions/rahul-sharma.webp"
+      },
+      {
+        "player_name": "Naman Ojha",
+        "player_type": "Batsman",
+        "player_jersey": "40",
+        "player_image": "/assets/images/players/india-champions/naman-ojha.webp"
+      },
+      {
+        "player_name": "Rahul Shukla",
+        "player_type": "Bowler",
+        "player_jersey": "",
+        "player_image": "/assets/images/players/india-champions/rahul-shukla.webp"
+      },
+      {
+        "player_name": "R P Singh",
+        "player_type": "Bowler",
+        "player_jersey": "9",
+        "player_image": "/assets/images/players/india-champions/rp-singh.webp"
+      },
+      {
+        "player_name": "Vinay Kumar",
+        "player_type": "Bowler",
+        "player_jersey": "",
+        "player_image": "/assets/images/players/india-champions/vinay-kumar.webp"
+      },
+      {
+        "player_name": "Dhawal Kulkarni",
+        "player_type": "Bowler",
+        "player_jersey": "91",
+        "player_image": "/assets/images/players/india-champions/dhawal-kulkarni.webp"
+      },
+      {
+        "player_name": "Anureet Singh",
+        "player_type": "Bowler",
+        "player_jersey": "33",
+        "player_image": "/assets/images/players/india-champions/anureet-singh.webp"
+      },
+      {
+        "player_name": "Pawan Negi",
+        "player_type": "Bowler",
+        "player_jersey": "15",
+        "player_image": "/assets/images/players/india-champions/pawan-negi.webp"
+      }
+    ],
+    season2: [
+      {
+        "player_name": "Shikhar Dhawan",
+        "player_type": "Batsman",
+        "player_jersey": "42",
+        "player_image": "/assets/images/players/india-champions/shikhar-dhawan.webp",
+        "player_about": "Known for his fearless batting, Shikhar Dhawan brings his trademark flair to WCL. His ability to dominate bowlers in the powerplay makes him a key asset in the tournament."
+      },
+      {
+        "player_name": "Suresh Raina",
+        "player_type": "Batsman",
+        "player_jersey": "3",
+        "player_image": "/assets/images/players/india-champions/suresh-raina.webp",
+        "player_about": "A T20 specialist and one of India’s most reliable middle-order batsmen, Suresh Raina’s explosive batting and agile fielding make him a crucial player in WCL. His experience in high-pressure situations adds immense value."
+      },
+      {
+        "player_name": "Irfan Pathan",
+        "player_type": "All Rounder",
+        "player_jersey": "56",
+        "player_image": "/assets/images/players/india-champions/irfan-pathan.webp",
+        "player_about": "A lethal left-arm swing bowler and a handy lower-order batsman, Irfan Pathan's all-round abilities make him a game-changer in WCL. His knack for picking up early wickets is a huge advantage for any team."
+      },
+      {
+        "player_name": "Yusuf Pathan",
+        "player_type": "All Rounder",
+        "player_jersey": "28",
+        "player_image": "/assets/images/players/india-champions/yusuf-pathan.webp",
+        "player_about": "A powerhouse of a batsman, Yusuf Pathan’s ability to clear the ropes effortlessly is a major attraction in WCL. His off-spin adds an extra dimension, making him a valuable all-rounder in the tournament."
+      },
+      {
+        "player_name": "Yuvraj Singh",
+        "player_type": "All Rounder",
+        "player_jersey": "12",
+        "player_image": "/assets/images/players/india-champions/yuvraj-singh.webp",
+        "player_about": "A true match-winner, Yuvraj Singh’s aggressive batting and crucial left-arm spin make him one of the biggest stars in WCL. His experience and ability to perform on the big stage make him a fan favorite."
+      },
+      {
+        "player_name": "Piyush Chawla",
+        "player_type": "Bowler",
+        "player_jersey": "11",
+        "player_image": "/assets/images/players/india-champions/piyush-chawla.webp",
+        "player_about": "A seasoned leg-spinner with a knack for breaking partnerships, Piyush Chawla’s presence in WCL adds depth to the bowling attack. His variations make him a tough challenge for any batsman."
+      },
+      {
+        "player_name": "Siddarth Kaul",
+        "player_type": "Bowler",
+        "player_jersey": "9",
+        "player_image": "/assets/images/players/india-champions/siddarth-kaul.webp",
+        "player_about": "A skilled fast bowler known for his accuracy and lethal yorkers, Siddarth Kaul’s ability to bowl in the death overs makes him an asset in WCL. His experience in T20 leagues gives him an edge in crucial moments."
+      },
+      {
+        "player_name": "Robin Uthappa",
+        "player_type": "Batsman",
+        "player_jersey": "37",
+        "player_image": "/assets/images/players/india-champions/robin-uthappa.webp",
+        "player_about": "A stylish and aggressive batsman, Robin Uthappa’s ability to play big knocks at the top of the order makes him a key player in WCL. His versatility and experience make him a dependable match-winner."
+      },
+      {
+        "player_name": "Abhimanyu Mithun",
+        "player_type": "Bowler",
+        "player_jersey": "25",
+        "player_image": "/assets/images/players/india-champions/abhimanyu-mithun.webp",
+        "player_about": "A determined fast bowler, Abhimanyu Mithun’s ability to generate pace and movement makes him a valuable asset in WCL. His aggressive bowling style helps build pressure on opposition batsmen."
+      },
+      {
+        "player_name": "Stuart Binny",
+        "player_type": "All Rounder",
+        "player_jersey": "84",
+        "player_image": "/assets/images/players/india-champions/stuart-binny.webp",
+        "player_about": "A reliable all-rounder, Stuart Binny’s medium-pace bowling and ability to score crucial runs make him a key player in WCL. His ability to contribute in all departments adds balance to any team."
+      },
+      {
+        "player_name": "Gurkeerat Mann",
+        "player_type": "All Rounder",
+        "player_jersey": "77",
+        "player_image": "/assets/images/players/india-champions/gurkeerat-maan.webp",
+        "player_about": "A dynamic batsman and a handy off-spinner, Gurkeerat Mann’s all-round skills add depth to WCL. His aggressive batting approach and ability to handle pressure make him a valuable middle-order player."
+      }
+    ]
+  }
+  const currentSquad = players[`season${season}`];
 
   return (
     <>
@@ -192,14 +227,20 @@ const IndiaChampions = ({ canonical_link, meta_title, meta_description, meta_key
             </div>
             <div className="team-squad">
               <h2>India Champions Squad - Team Overview</h2>
+              <div className="season-switcher">
+                <select onChange={(event) => setSeason(event.target.value)}>
+                  <option value="1">Season 1</option>
+                  <option value="2" selected>Season 2</option>
+                </select>
+              </div>
               <div className="players-grid">
-                {players.map((player, index) => (
+                {currentSquad.map((player, index) => (
                   <PlayerCard
                     key={index}
                     name={player.player_name}
                     type={player.player_type}
                     jersey={player.player_jersey}
-                    dob={player.player_dob}
+                    about={player.player_about}
                     metric1={player.player_metric_1}
                     metric2={player.player_metric_2}
                     image={player.player_image}
@@ -304,6 +345,18 @@ const IndiaChampions = ({ canonical_link, meta_title, meta_description, meta_key
             font-weight: 500;
             font-size: 30px;
             text-transform: uppercase;
+          }
+
+          .season-switcher select {
+            -webkit-appearance: none;
+            background-color: transparent;
+            color: #ffffff;
+            font-family: "Poppins Semibold";
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: solid 1px #ffffff;
+            outline: none;
+            border-radius: 0;
           }
 
           .players-grid {

@@ -36,7 +36,7 @@ const LwlLanding = ({ meta_title, meta_description, meta_keywords }) => {
                                     Are you ready to live your cricket dream? Here’s your chance to win an all-expenses-paid trip to the UK, where you’ll travel with legendary cricketers, live the cricket lifestyle, and create memories of a lifetime!
                                 </p>
                                 <div className="ctas">
-                                    <Link href="/lwl/register" legacyBehavior onClick={handleRegister}><a><button>Join Now</button></a></Link>
+                                    {/* <Link href="/lwl/register" legacyBehavior onClick={handleRegister}><a><button>Join Now</button></a></Link> */}
                                     <Link href="/lwl/login" legacyBehavior><a><button>Already joined</button></a></Link>
                                 </div>
                             </div>

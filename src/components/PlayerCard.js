@@ -1,19 +1,19 @@
 import React from 'react'
 
-const PlayerCard = ({ name, jersey, dob, type, metric1, metric2, image }) => {
+const PlayerCard = ({ name, jersey, type, metric1, metric2, image, about }) => {
     return (
         <>
             <div className="player">
                 <div className="player-body">
                     <div className="col-left">
-                        <div>
+                        {/* <div>
                             <h2>{metric1}</h2>
                             <p>{type === "Bowler" ? "Wickets" : "Runs"}</p>
                         </div>
                         <div>
                             <h2>{metric2}</h2>
                             <p>{type === "Bowler" ? "Runs" : "Balls"}</p>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="col-right">
                         <h2>{jersey}</h2>
@@ -22,11 +22,9 @@ const PlayerCard = ({ name, jersey, dob, type, metric1, metric2, image }) => {
                 </div>
                 <div className="separator"></div>
                 <div className="player-footer">
-                    <h2>{dob}</h2>
-                    <div className="divider"></div>
                     <div className="player-detail">
-                        <h4>{name}</h4>
-                        <p>{type}</p>
+                        <h4>{name} - {type}</h4>
+                        <p>{about}</p>
                     </div>
                 </div>
             </div>
@@ -117,7 +115,6 @@ const PlayerCard = ({ name, jersey, dob, type, metric1, metric2, image }) => {
 
                 .player-footer {
                     width: 100%;
-                    height: 80px;
                     padding: 20px;
                     display: flex;
                     align-items: center;
@@ -154,10 +151,9 @@ const PlayerCard = ({ name, jersey, dob, type, metric1, metric2, image }) => {
                 }
 
                 .player-detail p {
-                    color: #ffffff;
+                    color: #ABB1CB;
                     font-family: "Poppins Light";
                     font-size: 12px;
-                    text-transform: uppercase;
                 }
             `}</style>
         </>

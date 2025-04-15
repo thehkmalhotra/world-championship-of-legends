@@ -122,6 +122,17 @@ const Partners = ({ canonical_link, meta_title, meta_description, meta_keywords,
                                 </div>
                             </div>
                         </div>
+                        <div className="partners">
+                            <h2>Radio Partners</h2>
+                            <div className="partners-grid">
+                                <div>
+                                    <img src="/assets/images/radio/cricbuzz.webp" />
+                                </div>
+                                <div>
+                                    <img src="/assets/images/radio/fancode.webp" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <Footer pagecontent={page_content} />

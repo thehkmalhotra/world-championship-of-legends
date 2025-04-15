@@ -4,147 +4,193 @@ import PlayerCard from '@/components/PlayerCard';
 import TeamOwner from '@/components/TeamOwner';
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import 'swiper/css';
 
 const SauthAfricaChampions = ({ canonical_link, meta_title, meta_description, meta_keywords, page_content }) => {
-  const players = [
-    {
-      "player_name": "Jacques Kallis",
-      "player_type": "Batsman",
-      "player_jersey": "3",
-      "player_metric_1": "18",
-      "player_metric_2": "21",
-      "player_dob": "16 Oct",
-      "player_image": "/assets/images/players/south-africa-champions/jacques-kallis.webp"
-    },
-    {
-      "player_name": "Imran Tahir",
-      "player_type": "Bowler",
-      "player_jersey": "99",
-      "player_metric_1": "1",
-      "player_metric_2": "19",
-      "player_dob": "27 Mar",
-      "player_image": "/assets/images/players/south-africa-champions/imran-tahir.webp"
-    },
-    {
-      "player_name": "Herschelle Gibbs",
-      "player_type": "Batsman",
-      "player_jersey": "24",
-      "player_metric_1": "26",
-      "player_metric_2": "19",
-      "player_dob": "23 Feb",
-      "player_image": "/assets/images/players/south-africa-champions/herschelle-gibbs.webp"
-    },
-    {
-      "player_name": "Dale Steyn",
-      "player_type": "Bowler",
-      "player_jersey": "8",
-      "player_metric_1": "1",
-      "player_metric_2": "24",
-      "player_dob": "27 Jun",
-      "player_image": "/assets/images/players/south-africa-champions/dale-steyn.webp"
-    },
-    {
-      "player_name": "Mahkaya Ntini",
-      "player_type": "Bowler",
-      "player_jersey": "77",
-      "player_metric_1": "0",
-      "player_metric_2": "27",
-      "player_dob": "6 Jul",
-      "player_image": "/assets/images/players/south-africa-champions/mahkaya-ntini.webp"
-    },
-    {
-      "player_name": "JP Duminy",
-      "player_type": "Bowler",
-      "player_jersey": "21",
-      "player_metric_1": "2",
-      "player_metric_2": "33",
-      "player_dob": "14 Apr",
-      "player_image": "/assets/images/players/south-africa-champions/jp-duminy.webp"
-    },
-    {
-      "player_name": "Neil McKenzie",
-      "player_type": "Batsman",
-      "player_jersey": "44",
-      "player_metric_1": "33",
-      "player_metric_2": "24",
-      "player_dob": "24 Nov",
-      "player_image": "/assets/images/players/south-africa-champions/neil-mckenzie.webp"
-    },
-    {
-      "player_name": "Ryan McLaren",
-      "player_type": "Bowler",
-      "player_jersey": "23",
-      "player_metric_1": "2",
-      "player_metric_2": "20",
-      "player_dob": "9 Feb",
-      "player_image": "/assets/images/players/south-africa-champions/ryan-mclaren.webp"
-    },
-    {
-      "player_name": "Justice Ontong",
-      "player_type": "Batsman",
-      "player_jersey": "26",
-      "player_metric_1": "1",
-      "player_metric_2": "2",
-      "player_dob": "4 Jan",
-      "player_image": "/assets/images/players/south-africa-champions/justice-ontong.webp"
-    },
-    {
-      "player_name": "Rory Klienveldt",
-      "player_type": "Bowler",
-      "player_jersey": "19",
-      "player_metric_1": "1",
-      "player_metric_2": "14",
-      "player_dob": "15 Mar",
-      "player_image": "/assets/images/players/south-africa-champions/rory-klienveldt.webp"
-    },
-    {
-      "player_name": "Ashwell Prince",
-      "player_type": "Batsman",
-      "player_jersey": "5",
-      "player_metric_1": "46",
-      "player_metric_2": "35",
-      "player_dob": "28 May",
-      "player_image": "/assets/images/players/south-africa-champions/ashwell-prince.webp"
-    },
-    {
-      "player_name": "Dane Vilas",
-      "player_type": "Batsman",
-      "player_jersey": "33",
-      "player_metric_1": "44",
-      "player_metric_2": "17",
-      "player_dob": "10 Jun",
-      "player_image": "/assets/images/players/south-africa-champions/dane-vilas.webp"
-    },
-    {
-      "player_name": "Vernon Philander",
-      "player_type": "Bowler",
-      "player_jersey": "1",
-      "player_metric_1": "1",
-      "player_metric_2": "37",
-      "player_dob": "24 Jun",
-      "player_image": "/assets/images/players/south-africa-champions/vernon-philander.webp"
-    },
-    {
-      "player_name": "Charl Langeveldt",
-      "player_type": "Bowler",
-      "player_jersey": "67",
-      "player_metric_1": "1",
-      "player_metric_2": "47",
-      "player_dob": "17 Dec",
-      "player_image": "/assets/images/players/south-africa-champions/charl-langeveldt.webp"
-    },
-    {
-      "player_name": "Richard Levi",
-      "player_type": "Batsman",
-      "player_jersey": "88",
-      "player_metric_1": "60",
-      "player_metric_2": "25",
-      "player_dob": "14 Jan",
-      "player_image": "/assets/images/players/south-africa-champions/richard-levi.webp"
-    }
-  ];
+  const [season, setSeason] = useState(2);
+  const players = {
+    season1: [
+      {
+        "player_name": "Jacques Kallis",
+        "player_type": "Batsman",
+        "player_jersey": "3",
+        "player_image": "/assets/images/players/south-africa-champions/jacques-kallis.webp"
+      },
+      {
+        "player_name": "Imran Tahir",
+        "player_type": "Bowler",
+        "player_jersey": "99",
+        "player_image": "/assets/images/players/south-africa-champions/imran-tahir.webp"
+      },
+      {
+        "player_name": "Herschelle Gibbs",
+        "player_type": "Batsman",
+        "player_jersey": "24",
+        "player_image": "/assets/images/players/south-africa-champions/herschelle-gibbs.webp"
+      },
+      {
+        "player_name": "Dale Steyn",
+        "player_type": "Bowler",
+        "player_jersey": "8",
+        "player_image": "/assets/images/players/south-africa-champions/dale-steyn.webp"
+      },
+      {
+        "player_name": "Mahkaya Ntini",
+        "player_type": "Bowler",
+        "player_jersey": "77",
+        "player_image": "/assets/images/players/south-africa-champions/mahkaya-ntini.webp"
+      },
+      {
+        "player_name": "JP Duminy",
+        "player_type": "Bowler",
+        "player_jersey": "21",
+        "player_image": "/assets/images/players/south-africa-champions/jp-duminy.webp"
+      },
+      {
+        "player_name": "Neil McKenzie",
+        "player_type": "Batsman",
+        "player_jersey": "44",
+        "player_image": "/assets/images/players/south-africa-champions/neil-mckenzie.webp"
+      },
+      {
+        "player_name": "Ryan McLaren",
+        "player_type": "Bowler",
+        "player_jersey": "23",
+        "player_image": "/assets/images/players/south-africa-champions/ryan-mclaren.webp"
+      },
+      {
+        "player_name": "Justice Ontong",
+        "player_type": "Batsman",
+        "player_jersey": "26",
+        "player_image": "/assets/images/players/south-africa-champions/justice-ontong.webp"
+      },
+      {
+        "player_name": "Rory Klienveldt",
+        "player_type": "Bowler",
+        "player_jersey": "19",
+        "player_image": "/assets/images/players/south-africa-champions/rory-klienveldt.webp"
+      },
+      {
+        "player_name": "Ashwell Prince",
+        "player_type": "Batsman",
+        "player_jersey": "5",
+        "player_image": "/assets/images/players/south-africa-champions/ashwell-prince.webp"
+      },
+      {
+        "player_name": "Dane Vilas",
+        "player_type": "Batsman",
+        "player_jersey": "33",
+        "player_image": "/assets/images/players/south-africa-champions/dane-vilas.webp"
+      },
+      {
+        "player_name": "Vernon Philander",
+        "player_type": "Bowler",
+        "player_jersey": "1",
+        "player_image": "/assets/images/players/south-africa-champions/vernon-philander.webp"
+      },
+      {
+        "player_name": "Charl Langeveldt",
+        "player_type": "Bowler",
+        "player_jersey": "67",
+        "player_image": "/assets/images/players/south-africa-champions/charl-langeveldt.webp"
+      },
+      {
+        "player_name": "Richard Levi",
+        "player_type": "Batsman",
+        "player_jersey": "88",
+        "player_image": "/assets/images/players/south-africa-champions/richard-levi.webp"
+      }
+    ],
+    season2: [
+      {
+        "player_name": "AB De Villiers",
+        "player_type": "Batsman",
+        "player_jersey": "17",
+        "player_image": "/assets/images/players/south-africa-champions/ab-de-villiers.webp",
+        "player_about": "One of the most explosive and versatile batsmen in cricket history, AB de Villiers brings his 360-degree batting prowess to WCL. His ability to dominate any bowling attack makes him a superstar of the tournament."
+      },
+      {
+        "player_name": "Albie Morkel",
+        "player_type": "All Rounder",
+        "player_jersey": "81",
+        "player_image": "/assets/images/players/south-africa-champions/albie-morkel.webp",
+        "player_about": "A hard-hitting all-rounder, Albie Morkel’s powerful finishing ability and medium-pace bowling make him a valuable asset in WCL. His experience in T20 leagues worldwide adds immense value to his team."
+      },
+      {
+        "player_name": "Chris Morris",
+        "player_type": "All Rounder",
+        "player_jersey": "2",
+        "player_image": "/assets/images/players/south-africa-champions/chris-morris.webp",
+        "player_about": "A dynamic all-rounder, Chris Morris’ express pace and big-hitting lower down the order make him a game-changer in WCL. His death-over bowling skills add an extra edge to his team."
+      },
+      {
+        "player_name": "JJ Smuts",
+        "player_type": "All Rounder",
+        "player_jersey": "21",
+        "player_image": "/assets/images/players/south-africa-champions/jj-smuts.webp",
+        "player_about": "A dependable all-rounder, JJ Smuts brings balance to any WCL side with his attacking batting at the top and handy spin bowling. His ability to accelerate the innings makes him a key player."
+      },
+      {
+        "player_name": "Hardus Viljoen",
+        "player_type": "Bowler",
+        "player_jersey": "77",
+        "player_image": "/assets/images/players/south-africa-champions/hardus-viljoen.webp",
+        "player_about": "A fierce fast bowler, Hardus Viljoen’s raw pace and aggressive bowling style make him a dangerous weapon in WCL. His ability to bowl hostile spells puts batsmen under pressure."
+      },
+      {
+        "player_name": "Wayne Parnell",
+        "player_type": "Bowler",
+        "player_jersey": "7",
+        "player_image": "/assets/images/players/south-africa-champions/wayne-parnell.webp",
+        "player_about": "A skillful left-arm pacer and a handy lower-order batsman, Wayne Parnell’s ability to swing the ball and contribute with the bat makes him a vital all-rounder in WCL."
+      },
+      {
+        "player_name": "Imran Tahir",
+        "player_type": "Bowler",
+        "player_jersey": "99",
+        "player_image": "/assets/images/players/south-africa-champions/imran-tahir.webp",
+        "player_about": "A world-class leg-spinner, Imran Tahir’s wicket-taking ability and energetic celebrations will light up WCL. His vast experience and variations make him a key match-winner."
+      },
+      {
+        "player_name": "Richard Levi",
+        "player_type": "Batsman",
+        "player_jersey": "88",
+        "player_image": "/assets/images/players/south-africa-champions/richard-levi.webp",
+        "player_about": "A powerful top-order batsman, Richard Levi is known for his explosive hitting, especially in the powerplay. His aggressive batting style makes him a fan-favorite in WCL."
+      },
+      {
+        "player_name": "Dane Vilas",
+        "player_type": "Wicket Keeper",
+        "player_jersey": "33",
+        "player_image": "/assets/images/players/south-africa-champions/dane-vilas.webp",
+        "player_about": "A reliable wicketkeeper-batsman, Dane Vilas brings stability to the middle order in WCL. His experience and sharp glovework behind the stumps make him a crucial member of his team."
+      },
+      {
+        "player_name": "SJ Erwee",
+        "player_type": "Batsman",
+        "player_jersey": "30",
+        "player_image": "/assets/images/players/south-africa-champions/sj-erwee.webp",
+        "player_about": "A stylish left-handed batsman, SJ Erwee’s ability to play long innings and anchor the game makes him a key top-order player in WCL. His composure under pressure adds value to his team."
+      },
+      {
+        "player_name": "Duanne Olivier",
+        "player_type": "Bowler",
+        "player_jersey": "74",
+        "player_image": "/assets/images/players/south-africa-champions/duanne-olivier.webp",
+        "player_about": "A pace sensation, Duanne Olivier’s ability to generate bounce and trouble batsmen with his aggressive bowling makes him a dangerous prospect in WCL. His raw pace is a huge advantage."
+      },
+      {
+        "player_name": "Morne van Wyk",
+        "player_type": "Wicket Keeper",
+        "player_jersey": "15",
+        "player_image": "/assets/images/players/south-africa-champions/morne-van-wyk.webp",
+        "player_about": "A seasoned wicketkeeper-batsman, Morne van Wyk’s ability to provide quick starts at the top and his safe hands behind the stumps make him a vital part of any WCL squad."
+      }
+    ]
+
+  };
+  const currentSquad = players[`season${season}`];
 
   return (
     <>
@@ -180,14 +226,20 @@ const SauthAfricaChampions = ({ canonical_link, meta_title, meta_description, me
             </div>
             <div className="team-squad">
               <h2>South Africa Champions Squad - Team Overview</h2>
+              <div className="season-switcher">
+                <select onChange={(event) => setSeason(event.target.value)}>
+                  <option value="1">Season 1</option>
+                  <option value="2" selected>Season 2</option>
+                </select>
+              </div>
               <div className="players-grid">
-                {players.map((player, index) => (
+                {currentSquad.map((player, index) => (
                   <PlayerCard
                     key={index}
                     name={player.player_name}
                     type={player.player_type}
                     jersey={player.player_jersey}
-                    dob={player.player_dob}
+                    about={player.player_about}
                     metric1={player.player_metric_1}
                     metric2={player.player_metric_2}
                     image={player.player_image}
@@ -292,6 +344,18 @@ const SauthAfricaChampions = ({ canonical_link, meta_title, meta_description, me
             font-weight: 500;
             font-size: 30px;
             text-transform: uppercase;
+          }
+
+          .season-switcher select {
+            -webkit-appearance: none;
+            background-color: transparent;
+            color: #ffffff;
+            font-family: "Poppins Semibold";
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: solid 1px #ffffff;
+            outline: none;
+            border-radius: 0;
           }
 
           .players-grid {

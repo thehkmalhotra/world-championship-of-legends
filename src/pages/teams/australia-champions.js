@@ -4,140 +4,167 @@ import PlayerCard from '@/components/PlayerCard';
 import TeamOwner from '@/components/TeamOwner';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import React from 'react'
+import React, { useState } from 'react'
 import 'swiper/css';
 
 const AustraliaChampions = ({ canonical_link, meta_title, meta_description, meta_keywords, page_content }) => {
-  const router = useRouter();
-  const players = [
-    {
-      "player_name": "Brett Lee",
-      "player_type": "Bowler",
-      "player_jersey": "58",
-      "player_metric_1": "2",
-      "player_metric_2": "19",
-      "player_dob": "8 Nov",
-      "player_image": "/assets/images/players/australia-champions/brett-lee.webp"
-    },
-    {
-      "player_name": "Tim Paine",
-      "player_type": "Batsman",
-      "player_jersey": "36",
-      "player_metric_1": "34",
-      "player_metric_2": "21",
-      "player_dob": "8 Dec",
-      "player_image": "/assets/images/players/australia-champions/tim-paine.webp"
-    },
-    {
-      "player_name": "Shaun Marsh",
-      "player_type": "Batsman",
-      "player_jersey": "9",
-      "player_metric_1": "49",
-      "player_metric_2": "28",
-      "player_dob": "9 Jul",
-      "player_image": "/assets/images/players/australia-champions/shaun-marsh.webp"
-    },
-    {
-      "player_name": "Ben Cutting",
-      "player_type": "Batsman",
-      "player_jersey": "31",
-      "player_metric_1": "38",
-      "player_metric_2": "17",
-      "player_dob": "30 Jan",
-      "player_image": "/assets/images/players/australia-champions/ben-cutting.webp"
-    },
-    {
-      "player_name": "Ben Dunk",
-      "player_type": "Batsman",
-      "player_jersey": "51",
-      "player_metric_1": "100",
-      "player_metric_2": "35",
-      "player_dob": "11 Mar",
-      "player_image": "/assets/images/players/australia-champions/ben-dunk.webp"
-    },
-    {
-      "player_name": "Dirk Nannes",
-      "player_type": "Bowler",
-      "player_jersey": "29",
-      "player_metric_1": "0",
-      "player_metric_2": "0",
-      "player_dob": "16 May",
-      "player_image": "/assets/images/players/australia-champions/dirk-nannes.webp"
-    },
-    {
-      "player_name": "Dan Christian",
-      "player_type": "Batsman",
-      "player_jersey": "54",
-      "player_metric_1": "99",
-      "player_metric_2": "35",
-      "player_dob": "4 May",
-      "player_image": "/assets/images/players/australia-champions/dan-christian.webp"
-    },
-    {
-      "player_name": "Ben Laughlin",
-      "player_type": "Bowler",
-      "player_jersey": "55",
-      "player_metric_1": "0",
-      "player_metric_2": "19",
-      "player_dob": "3 Oct",
-      "player_image": "/assets/images/players/australia-champions/ben-laughlin.webp"
-    },
-    {
-      "player_name": "Aaron Finch",
-      "player_type": "Batsman",
-      "player_jersey": "5",
-      "player_metric_1": "68",
-      "player_metric_2": "40",
-      "player_dob": "17 Nov",
-      "player_image": "/assets/images/players/australia-champions/aaron-finch.webp"
-    },
-    {
-      "player_name": "John Hastings",
-      "player_type": "Bowler",
-      "player_jersey": "41",
-      "player_metric_1": "0",
-      "player_metric_2": "0",
-      "player_dob": "4 Nov",
-      "player_image": "/assets/images/players/australia-champions/john-hastings.webp"
-    },
-    {
-      "player_name": "Callum Ferguson",
-      "player_type": "Batsman",
-      "player_jersey": "12",
-      "player_metric_1": "26",
-      "player_metric_2": "16",
-      "player_dob": "21 Nov",
-      "player_image": "/assets/images/players/australia-champions/callum-fergusan.webp"
-    },
-    {
-      "player_name": "Peter Siddle",
-      "player_type": "Bowler",
-      "player_jersey": "64",
-      "player_metric_1": "4",
-      "player_metric_2": "50",
-      "player_dob": "25 Nov",
-      "player_image": "/assets/images/players/australia-champions/peter-siddle.webp"
-    },
-    {
-      "player_name": "Xavier Doherty",
-      "player_type": "Bowler",
-      "player_jersey": "3",
-      "player_metric_1": "3",
-      "player_metric_2": "23",
-      "player_dob": "22 Nov",
-      "player_image": "/assets/images/players/australia-champions/xavier-doherty.webp"
-    },
-    {
-      "player_name": "Nathan Coulter-Nile",
-      "player_type": "Bowler",
-      "player_jersey": "6",
-      "player_metric_1": "3",
-      "player_metric_2": "7",
-      "player_dob": "11 Oct",
-      "player_image": "/assets/images/players/australia-champions/nathan-coulter-nile.webp"
-    }
-  ];
+  const [season, setSeason] = useState(2);
+  const players = {
+    season1: [
+      {
+        "player_name": "Brett Lee",
+        "player_type": "Bowler",
+        "player_jersey": "58",
+        "player_image": "/assets/images/players/australia-champions/brett-lee.webp"
+      },
+      {
+        "player_name": "Tim Paine",
+        "player_type": "Batsman",
+        "player_jersey": "36",
+        "player_image": "/assets/images/players/australia-champions/tim-paine.webp"
+      },
+      {
+        "player_name": "Shaun Marsh",
+        "player_type": "Batsman",
+        "player_jersey": "9",
+        "player_image": "/assets/images/players/australia-champions/shaun-marsh.webp"
+      },
+      {
+        "player_name": "Ben Cutting",
+        "player_type": "Batsman",
+        "player_jersey": "31",
+        "player_image": "/assets/images/players/australia-champions/ben-cutting.webp"
+      },
+      {
+        "player_name": "Ben Dunk",
+        "player_type": "Batsman",
+        "player_jersey": "51",
+        "player_image": "/assets/images/players/australia-champions/ben-dunk.webp"
+      },
+      {
+        "player_name": "Dirk Nannes",
+        "player_type": "Bowler",
+        "player_jersey": "29",
+        "player_image": "/assets/images/players/australia-champions/dirk-nannes.webp"
+      },
+      {
+        "player_name": "Dan Christian",
+        "player_type": "Batsman",
+        "player_jersey": "54",
+        "player_metric_1": "99",
+        "player_metric_2": "35",
+        "player_image": "/assets/images/players/australia-champions/dan-christian.webp"
+      },
+      {
+        "player_name": "Ben Laughlin",
+        "player_type": "Bowler",
+        "player_jersey": "55",
+        "player_image": "/assets/images/players/australia-champions/ben-laughlin.webp"
+      },
+      {
+        "player_name": "Aaron Finch",
+        "player_type": "Batsman",
+        "player_jersey": "5",
+        "player_image": "/assets/images/players/australia-champions/aaron-finch.webp"
+      },
+      {
+        "player_name": "John Hastings",
+        "player_type": "Bowler",
+        "player_jersey": "41",
+        "player_image": "/assets/images/players/australia-champions/john-hastings.webp"
+      },
+      {
+        "player_name": "Callum Ferguson",
+        "player_type": "Batsman",
+        "player_jersey": "12",
+        "player_image": "/assets/images/players/australia-champions/callum-fergusan.webp"
+      },
+      {
+        "player_name": "Peter Siddle",
+        "player_type": "Bowler",
+        "player_jersey": "64",
+        "player_image": "/assets/images/players/australia-champions/peter-siddle.webp"
+      },
+      {
+        "player_name": "Xavier Doherty",
+        "player_type": "Bowler",
+        "player_jersey": "3",
+        "player_image": "/assets/images/players/australia-champions/xavier-doherty.webp"
+      },
+      {
+        "player_name": "Nathan Coulter-Nile",
+        "player_type": "Bowler",
+        "player_jersey": "6",
+        "player_image": "/assets/images/players/australia-champions/nathan-coulter-nile.webp"
+      }
+    ],
+    season2: [
+      {
+        "player_name": "Brett Lee",
+        "player_type": "Bowler",
+        "player_jersey": "42",
+        "player_image": "/assets/images/players/australia-champions/brett-lee.webp",
+        "player_about": "One of the fastest bowlers in cricket history, Brett Lee’s raw pace and aggressive bowling make him a lethal weapon in WCL. His ability to rattle batsmen with sheer speed adds excitement to the tournament."
+      },
+      {
+        "player_name": "Dan Christian",
+        "player_type": "All Rounder",
+        "player_jersey": "54",
+        "player_image": "/assets/images/players/australia-champions/dan-christian.webp",
+        "player_about": "A seasoned all-rounder, Dan Christian’s ability to finish games with the bat and contribute with the ball makes him a valuable asset in WCL. His vast T20 experience strengthens any team."
+      },
+      {
+        "player_name": "Shaun Marsh",
+        "player_type": "Batsman",
+        "player_jersey": "9",
+        "player_image": "/assets/images/players/australia-champions/shaun-marsh.webp",
+        "player_about": "A classy left-handed batsman, Shaun Marsh’s ability to build innings and play elegant shots makes him a key player in WCL. His consistency at the top adds stability to the batting lineup."
+      },
+      {
+        "player_name": "Ben Dunk",
+        "player_type": "Wicket Keeper",
+        "player_jersey": "51",
+        "player_image": "/assets/images/players/australia-champions/ben-dunk.webp",
+        "player_about": "A hard-hitting wicketkeeper-batsman, Ben Dunk’s aggressive batting in the powerplay makes him a dangerous opponent in WCL. His fearless approach adds firepower to any team."
+      },
+      {
+        "player_name": "D’Arcy Short",
+        "player_type": "Batsman",
+        "player_jersey": "23",
+        "player_image": "/assets/images/players/australia-champions/darcy-short.webp",
+        "player_about": "A dynamic opening batsman and useful left-arm spinner, D’Arcy Short’s explosive stroke play makes him a key entertainer in WCL. His all-round ability adds great balance to his team."
+      },
+      {
+        "player_name": "Nathan Coulter-Nile",
+        "player_type": "Bowler",
+        "player_jersey": "6",
+        "player_image": "/assets/images/players/australia-champions/nathan-coulter-nile.webp",
+        "player_about": "A skilled fast bowler and handy lower-order hitter, Nathan Coulter-Nile’s ability to bowl crucial spells and score quick runs makes him an impactful player in WCL."
+      },
+      {
+        "player_name": "Ben Cutting",
+        "player_type": "All Rounder",
+        "player_jersey": "31",
+        "player_image": "/assets/images/players/australia-champions/ben-cutting.webp",
+        "player_about": "A powerful all-rounder, Ben Cutting’s ability to clear the ropes effortlessly and contribute with the ball makes him a match-winner in WCL. His aggressive style is perfect for high-intensity games."
+      },
+      {
+        "player_name": "Peter Siddle",
+        "player_type": "Bowler",
+        "player_jersey": "64",
+        "player_image": "/assets/images/players/australia-champions/peter-siddle.webp",
+        "player_about": "A veteran pacer known for his accuracy and discipline, Peter Siddle’s experience and ability to bowl long spells make him a valuable bowler in WCL. His leadership on the field adds depth to the team."
+      },
+      {
+        "player_name": "Callum Ferguson",
+        "player_type": "Batsman",
+        "player_jersey": "12",
+        "player_image": "/assets/images/players/australia-champions/callum-fergusan.webp",
+        "player_about": "A stylish middle-order batsman, Callum Ferguson’s ability to anchor innings and accelerate when needed makes him a crucial part of WCL. His experience in domestic and international cricket adds value."
+      }
+    ]
+  };
+  const currentSquad = players[`season${season}`];
 
   return (
     <>
@@ -170,14 +197,20 @@ const AustraliaChampions = ({ canonical_link, meta_title, meta_description, meta
             </div>
             <div className="team-squad">
               <h2>Australia Champions Squad - Team Overview</h2>
+              <div className="season-switcher">
+                <select onChange={(event) => setSeason(event.target.value)}>
+                  <option value="1">Season 1</option>
+                  <option value="2" selected>Season 2</option>
+                </select>
+              </div>
               <div className="players-grid">
-                {players.map((player, index) => (
+                {currentSquad.map((player, index) => (
                   <PlayerCard
                     key={index}
                     name={player.player_name}
                     type={player.player_type}
                     jersey={player.player_jersey}
-                    dob={player.player_dob}
+                    about={player.player_about}
                     metric1={player.player_metric_1}
                     metric2={player.player_metric_2}
                     image={player.player_image}
@@ -283,6 +316,18 @@ const AustraliaChampions = ({ canonical_link, meta_title, meta_description, meta
             font-size: 30px;
             text-transform: uppercase;
           }
+
+        .season-switcher select {
+          -webkit-appearance: none;
+          background-color: transparent;
+          color: #ffffff;
+          font-family: "Poppins Semibold";
+          font-size: 14px;
+          text-transform: uppercase;
+          border-bottom: solid 1px #ffffff;
+          outline: none;
+          border-radius: 0;
+        }
 
           .players-grid {
             display: grid;

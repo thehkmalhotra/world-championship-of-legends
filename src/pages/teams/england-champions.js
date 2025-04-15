@@ -4,147 +4,188 @@ import PlayerCard from '@/components/PlayerCard';
 import TeamOwner from '@/components/TeamOwner';
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import 'swiper/css';
 
 const EnglandChampions = ({ canonical_link, meta_title, meta_description, meta_keywords, page_content }) => {
-    const players = [
-        {
-            "player_name": "Kevin Pietersen",
-            "player_type": "Batsman",
-            "player_jersey": "24",
-            "player_metric_1": "41",
-            "player_metric_2": "19",
-            "player_dob": "27 Jun",
-            "player_image": "/assets/images/players/england-champions/kevin-pietersen.webp"
-        },
-        {
-            "player_name": "Ravi Bopara",
-            "player_type": "Batsman",
-            "player_jersey": "42",
-            "player_metric_1": "53",
-            "player_metric_2": "30",
-            "player_dob": "4 May",
-            "player_image": "/assets/images/players/england-champions/ravi-bopara.webp"
-        },
-        {
-            "player_name": "Ian Bell",
-            "player_type": "Batsman",
-            "player_jersey": "7",
-            "player_metric_1": "97",
-            "player_metric_2": "64",
-            "player_dob": "11 April",
-            "player_image": "/assets/images/players/england-champions/ian-bell.webp"
-        },
-        {
-            "player_name": "Samit Patel",
-            "player_type": "Batsman",
-            "player_jersey": "21",
-            "player_metric_1": "51",
-            "player_metric_2": "25",
-            "player_dob": "30 Nov",
-            "player_image": "/assets/images/players/england-champions/samit-patel.webp"
-        },
-        {
-            "player_name": "Owais Shah",
-            "player_type": "Batsman",
-            "player_jersey": "",
-            "player_metric_1": "23",
-            "player_metric_2": "9",
-            "player_dob": "22 Oct",
-            "player_image": "/assets/images/players/england-champions/owais-shah.webp"
-        },
-        {
-            "player_name": "Mustard Philip",
-            "player_type": "Batsman",
-            "player_jersey": "19",
-            "player_metric_1": "84",
-            "player_metric_2": "35",
-            "player_dob": "8 Oct",
-            "player_image": "/assets/images/players/england-champions/mustard-philip.webp"
-        },
-        {
-            "player_name": "Sajid Mahmood",
-            "player_type": "Bowler",
-            "player_jersey": "19",
-            "player_metric_1": "0",
-            "player_metric_2": "0",
-            "player_dob": "21 Dec",
-            "player_image": "/assets/images/players/england-champions/sajid-mahmood.webp"
-        },
-        {
-            "player_name": "Chris Schofield",
-            "player_type": "Bowler",
-            "player_jersey": "30",
-            "player_metric_1": "4",
-            "player_metric_2": "33",
-            "player_dob": "6 Oct",
-            "player_image": "/assets/images/players/england-champions/chris-schofield.webp"
-        },
-        {
-            "player_name": "Ajmal Shahzad",
-            "player_type": "Bowler",
-            "player_jersey": "4",
-            "player_metric_1": "2",
-            "player_metric_2": "17",
-            "player_dob": "27 Jul",
-            "player_image": "/assets/images/players/england-champions/ajmal-shahzad.webp"
-        },
-        {
-            "player_name": "Ryan Sidebottom",
-            "player_type": "Bowler",
-            "player_jersey": "11",
-            "player_metric_1": "0",
-            "player_metric_2": "16",
-            "player_dob": "15 Jan",
-            "player_image": "/assets/images/players/england-champions/ryan-sidebottom.webp"
-        },
-        {
-            "player_name": "Usman Afzaal",
-            "player_type": "Bowler",
-            "player_jersey": "3",
-            "player_metric_1": "1",
-            "player_metric_2": "30",
-            "player_dob": "9 Jun",
-            "player_image": "/assets/images/players/england-champions/usman-afzaal.webp"
-        },
-        {
-            "player_name": "Stuart Meaker",
-            "player_type": "Bowler",
-            "player_jersey": "18",
-            "player_metric_1": "0",
-            "player_metric_2": "11",
-            "player_dob": "21 Jan",
-            "player_image": "/assets/images/players/england-champions/stuart-meaker.webp"
-        },
-        {
-            "player_name": "Kevin O’Brien",
-            "player_type": "Batsman",
-            "player_jersey": "22",
-            "player_metric_1": "0",
-            "player_metric_2": "0",
-            "player_dob": "4 Mar",
-            "player_image": "/assets/images/players/england-champions/kevin-obrien.webp"
-        },
-        {
-            "player_name": "Darren Maddy",
-            "player_type": "Batsman",
-            "player_jersey": "",
-            "player_metric_1": "0",
-            "player_metric_2": "19",
-            "player_dob": "23 May",
-            "player_image": "/assets/images/players/england-champions/darren-maddy.webp"
-        },
-        {
-            "player_name": "Alistair Brown",
-            "player_type": "Batsman",
-            "player_jersey": "23",
-            "player_metric_1": "26",
-            "player_metric_2": "20",
-            "player_dob": "11 Feb",
-            "player_image": "/assets/images/players/england-champions/alistair-brown.webp"
-        }
-    ];
+    const [season, setSeason] = useState(2);
+    const players = {
+        season1: [
+            {
+                "player_name": "Kevin Pietersen",
+                "player_type": "Batsman",
+                "player_jersey": "24",
+                "player_metric_1": "41",
+                "player_metric_2": "19",
+                "player_dob": "27 Jun",
+                "player_image": "/assets/images/players/england-champions/kevin-pietersen.webp"
+            },
+            {
+                "player_name": "Ravi Bopara",
+                "player_type": "Batsman",
+                "player_jersey": "42",
+                "player_image": "/assets/images/players/england-champions/ravi-bopara.webp"
+            },
+            {
+                "player_name": "Ian Bell",
+                "player_type": "Batsman",
+                "player_jersey": "7",
+                "player_image": "/assets/images/players/england-champions/ian-bell.webp"
+            },
+            {
+                "player_name": "Samit Patel",
+                "player_type": "Batsman",
+                "player_jersey": "21",
+                "player_image": "/assets/images/players/england-champions/samit-patel.webp"
+            },
+            {
+                "player_name": "Owais Shah",
+                "player_type": "Batsman",
+                "player_jersey": "",
+                "player_image": "/assets/images/players/england-champions/owais-shah.webp"
+            },
+            {
+                "player_name": "Phil Mustard",
+                "player_type": "Batsman",
+                "player_jersey": "52",
+                "player_image": "/assets/images/players/england-champions/phil-mustard.webp"
+            },
+            {
+                "player_name": "Sajid Mahmood",
+                "player_type": "Bowler",
+                "player_jersey": "19",
+                "player_image": "/assets/images/players/england-champions/sajid-mahmood.webp"
+            },
+            {
+                "player_name": "Chris Schofield",
+                "player_type": "Bowler",
+                "player_jersey": "30",
+                "player_image": "/assets/images/players/england-champions/chris-schofield.webp"
+            },
+            {
+                "player_name": "Ajmal Shahzad",
+                "player_type": "Bowler",
+                "player_jersey": "4",
+                "player_image": "/assets/images/players/england-champions/ajmal-shahzad.webp"
+            },
+            {
+                "player_name": "Ryan Sidebottom",
+                "player_type": "Bowler",
+                "player_jersey": "11",
+                "player_image": "/assets/images/players/england-champions/ryan-sidebottom.webp"
+            },
+            {
+                "player_name": "Usman Afzaal",
+                "player_type": "Bowler",
+                "player_jersey": "3",
+                "player_image": "/assets/images/players/england-champions/usman-afzaal.webp"
+            },
+            {
+                "player_name": "Stuart Meaker",
+                "player_type": "Bowler",
+                "player_jersey": "18",
+                "player_image": "/assets/images/players/england-champions/stuart-meaker.webp"
+            },
+            {
+                "player_name": "Kevin O’Brien",
+                "player_type": "Batsman",
+                "player_jersey": "22",
+                "player_image": "/assets/images/players/england-champions/kevin-obrien.webp"
+            },
+            {
+                "player_name": "Darren Maddy",
+                "player_type": "Batsman",
+                "player_jersey": "",
+                "player_image": "/assets/images/players/england-champions/darren-maddy.webp"
+            },
+            {
+                "player_name": "Alistair Brown",
+                "player_type": "Batsman",
+                "player_jersey": "23",
+                "player_image": "/assets/images/players/england-champions/alistair-brown.webp"
+            }
+        ],
+        season2: [
+            {
+                "player_name": "Sir Alastair Cook",
+                "player_type": "Batsman",
+                "player_jersey": "26",
+                "player_image": "/assets/images/players/england-champions/alastair-cook.webp",
+                "player_about": "One of England’s greatest Test captains, Alastair Cook brings his legendary batting prowess to WCL. Known for his resilience and impeccable technique, he remains a cornerstone of any squad he plays for."
+            },
+            {
+                "player_name": "Moeen Ali",
+                "player_type": "All Rounder",
+                "player_jersey": "18",
+                "player_image": "/assets/images/players/england-champions/moeen-ali.webp",
+                "player_about": "A dynamic all-rounder, Moeen Ali's explosive batting and sharp off-spin make him a key asset in WCL. His ability to turn games around with both bat and ball adds immense value to the tournament."
+            },
+            {
+                "player_name": "Eoin Morgan",
+                "player_type": "Batsman",
+                "player_jersey": "16",
+                "player_image": "/assets/images/players/england-champions/eoin-morgan.webp",
+                "player_about": "The mastermind behind England’s white-ball revolution, Eoin Morgan’s leadership and power-hitting are set to electrify WCL. His experience in high-pressure situations makes him a game-changer."
+            },
+            {
+                "player_name": "Ravi Bopara",
+                "player_type": "All Rounder",
+                "player_jersey": "42",
+                "player_image": "/assets/images/players/england-champions/ravi-bopara.webp",
+                "player_about": "A versatile all-rounder, Ravi Bopara's consistency with the bat and ability to chip in with crucial wickets make him a player to watch in WCL. His adaptability across formats is a major asset."
+            },
+            {
+                "player_name": "Samit Patel",
+                "player_type": "All Rounder",
+                "player_jersey": "21",
+                "player_image": "/assets/images/players/england-champions/samit-patel.webp",
+                "player_about": "A seasoned all-rounder, Samit Patel’s ability to anchor innings and provide key breakthroughs with his spin bowling adds depth to WCL. His experience in global leagues makes him a valuable addition."
+            },
+            {
+                "player_name": "Phil Mustard",
+                "player_type": "Wicket Keeper",
+                "player_jersey": "52",
+                "player_image": "/assets/images/players/england-champions/phil-mustard.webp",
+                "player_about": "A hard-hitting wicketkeeper-batsman, Phil Mustard’s aggressive style of play is set to entertain WCL fans. His quick glovework behind the stumps further strengthens his impact on the game."
+            },
+            {
+                "player_name": "Liam Plunkett",
+                "player_type": "Bowler",
+                "player_jersey": "29",
+                "player_image": "/assets/images/players/england-champions/liam-plunkett.webp",
+                "player_about": "A genuine fast bowler with the ability to generate bounce and pace, Liam Plunkett’s wicket-taking abilities make him a threat in WCL. His contributions in crunch moments define his reputation."
+            },
+            {
+                "player_name": "Chris Tremlett",
+                "player_type": "Bowler",
+                "player_jersey": "33",
+                "player_image": "/assets/images/players/england-champions/chris-tremplett.webp",
+                "player_about": "Known for his intimidating height and raw pace, Chris Tremlett is a force to reckon with in WCL. His ability to extract bounce and trouble batsmen will be crucial in high-stakes encounters."
+            },
+            {
+                "player_name": "Ajmal Shahzad",
+                "player_type": "Bowler",
+                "player_jersey": "13",
+                "player_image": "/assets/images/players/england-champions/ajmal-shahzad.webp",
+                "player_about": "A skilled fast bowler, Ajmal Shahzad brings energy and aggression to WCL. His ability to swing the ball and deliver under pressure makes him a dangerous bowler in the shortest formats."
+            },
+            {
+                "player_name": "Ian Bell",
+                "player_type": "Batsman",
+                "player_jersey": "7",
+                "player_image": "/assets/images/players/england-champions/ian-bell.webp",
+                "player_about": "A stylish batsman with a classical technique, Ian Bell’s grace at the crease is a treat for WCL fans. His experience and ability to build big innings add immense value to any team."
+            },
+            {
+                "player_name": "Tim Ambrose",
+                "player_type": "Wicket Keeper",
+                "player_jersey": "12",
+                "player_image": "/assets/images/players/england-champions/tim-ambrose.webp",
+                "player_about": "A reliable wicketkeeper-batsman, Tim Ambrose’s steady hands behind the stumps and his ability to score crucial runs lower down the order make him a vital component of WCL."
+            }
+        ]
+    }
+    const currentSquad = players[`season${season}`];
 
     return (
         <>
@@ -180,16 +221,21 @@ const EnglandChampions = ({ canonical_link, meta_title, meta_description, meta_k
                         </div>
                         <div className="team-squad">
                             <h2>England Champions Squad - Team Overview</h2>
+                            <div className="season-switcher">
+                                <select onChange={(event) => setSeason(event.target.value)}>
+                                    <option value="1">Season 1</option>
+                                    <option value="2" selected>Season 2</option>
+                                </select>
+                            </div>
                             <div className="players-grid">
-                                {players.map((player, index) => (
+                                {currentSquad.map((player, index) => (
                                     <PlayerCard
                                         key={index}
                                         name={player.player_name}
                                         type={player.player_type}
                                         jersey={player.player_jersey}
-                                        dob={player.player_dob}
-                                        metric1={player.player_metric_1}
-                                        metric2={player.player_metric_2}
+                                        about={player.player_about}
+                                        
                                         image={player.player_image}
                                     />
                                 ))}
@@ -292,6 +338,18 @@ const EnglandChampions = ({ canonical_link, meta_title, meta_description, meta_k
                 font-weight: 500;
                 font-size: 30px;
                 text-transform: uppercase;
+            }
+
+            .season-switcher select {
+                -webkit-appearance: none;
+                background-color: transparent;
+                color: #ffffff;
+                font-family: "Poppins Semibold";
+                font-size: 14px;
+                text-transform: uppercase;
+                border-bottom: solid 1px #ffffff;
+                outline: none;
+                border-radius: 0;
             }
 
             .players-grid {

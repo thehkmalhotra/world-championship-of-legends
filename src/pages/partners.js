@@ -122,14 +122,20 @@ const Partners = ({ canonical_link, meta_title, meta_description, meta_keywords,
                                 </div>
                             </div>
                         </div>
-                        <div className="partners">
+                        <div className="radio">
                             <h2>Radio Partners</h2>
-                            <div className="partners-grid">
-                                <div>
-                                    <img src="/assets/images/radio/cricbuzz.webp" />
+                            <div className="radio-grid">
+                                <div className="radio">
+                                    <div>
+                                        <img src="/assets/images/radio/radio-sangam.webp" />
+                                    </div>
+                                    <p>Radio Sangam UK is one of the finest Asian community radio stations in the country, dedicated to bringing cultures together through music, conversation, and community stories. Broadcasting from the heart of the UK, it plays a key role in connecting South Asian communities while celebrating diversity and tradition. With a rich mix of Bollywood music, thoughtful discussions, and local updates, Radio Sangam isn’t just a station but it’s a cultural hub that brings people closer, one broadcast at a time.</p>
                                 </div>
-                                <div>
-                                    <img src="/assets/images/radio/fancode.webp" />
+                                <div className="radio">
+                                    <div>
+                                        <img src="/assets/images/radio/sunrise-radio.webp" />
+                                    </div>
+                                    <p>Sunrise Radio UK is one of the most respected and long-standing Asian radio stations in the country, known for its vibrant mix of music, entertainment, and community-focused programming. Broadcasting across the UK, it has become a trusted voice for generations of South Asians, offering everything from Bollywood hits and classic tunes to cultural conversations and live updates. More than just a radio station, Sunrise Radio is a celebration of heritage, connection, and the ever-evolving South Asian identity in the UK.</p>
                                 </div>
                             </div>
                         </div>
@@ -254,6 +260,49 @@ const Partners = ({ canonical_link, meta_title, meta_description, meta_keywords,
                 .partners-grid div img {
                     width: 100%;
                     object-fit: contain;
+                }
+
+                .radio {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                .radio h2 {
+                    color: #ffffff;
+                    font-family: "Poppins Semibold";
+                    font-size: 25px;
+                    text-transform: uppercase;
+                }
+
+                .radio-grid {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 50px;
+                }
+
+                .radio-grid div.radio div {
+                    height: 100px;
+                    width: 100px;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .radio-grid div.radio div img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+
+                .radio-grid div.radio p {
+                    width: 100%;
+                    font-family: "Poppins Light";
+                    font-size: 14px;
+                    letter-spacing: .04em;
+                    color: #ffffff;
                 }
             `}</style>
         </>

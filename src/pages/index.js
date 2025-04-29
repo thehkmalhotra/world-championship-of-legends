@@ -460,16 +460,6 @@ const Homepage = ({ canonical_link, meta_title, meta_description, meta_keywords,
                     </Link>
                   </div>
                   <div className="swiper-slide">
-                    <Link href={"/owner/nishant-pitti"}>
-                      <div className="wcl-owner" style={{ backgroundImage: "url('/assets/images/owners/nishant-pitti.webp')" }}>
-                        <div>
-                          <h2>Nishant Pitti</h2>
-                          <p>Chief Patron</p>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                  <div className="swiper-slide">
                     <Link href={"/owner/harshit-tomar"}>
                       <div className="wcl-owner" style={{ backgroundImage: "url('/assets/images/owners/harshit-tomar.webp')" }}>
                         <div>

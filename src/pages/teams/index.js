@@ -22,11 +22,6 @@ const Teams = ({ canonical_link, meta_title, meta_description, meta_keywords, pa
             href: "/teams/india-champions"
         },
         {
-            team: "Pakistan Champions",
-            logo: "/assets/images/team-logos/pakistan-logo.webp",
-            href: "/teams/pakistan-champions"
-        },
-        {
             team: "South Africa Champions",
             logo: "/assets/images/team-logos/south-africa-logo.webp",
             href: "/teams/south-africa-champions"

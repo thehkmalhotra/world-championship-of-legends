@@ -63,20 +63,15 @@ const Footer = ({ pagecontent }) => {
                         <div className="col-2">
                             <h3>Buy WCL Tickets 2025</h3>
                             <ul>
-                                <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>England Champions v Pakistan Champions</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>West Indies Champions v South Africa Champions</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>England Champions v Australia Champions</a></Link></li>
-                                <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>India Champions v Pakistan Champions</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>India Champions v South Africa Champions</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>England Champions v West Indies Champions</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>Australia Champions v West Indies Champions</a></Link></li>
-                                <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>Pakistan Champions v South Africa Champions</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>England Champions v South Africa Champions</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>India Champions v Australia Champions</a></Link></li>
-                                <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>Pakistan Champions v West Indies Champions</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>Australia Champions v South Africa Champions</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>India Champions v England Champions</a></Link></li>
-                                <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>Australia Champions v Pakistan Champions</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>India Champions v West Indies Champions</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>Semi Final 1 v Semi Final 2</a></Link></li>
                                 <li><Link href="https://edgbaston.com/wcl/" legacyBehavior><a>Semi Final 2 v Semi Final 3</a></Link></li>
@@ -87,7 +82,6 @@ const Footer = ({ pagecontent }) => {
                             <h3>WCL T20 Teams</h3>
                             <ul>
                                 <li><Link href="/teams/india-champions" legacyBehavior><a>India Champions</a></Link></li>
-                                <li><Link href="/teams/pakistan-champions" legacyBehavior><a>Pakistan Champions</a></Link></li>
                                 <li><Link href="/teams/england-champions" legacyBehavior><a>England Champions</a></Link></li>
                                 <li><Link href="/teams/australia-champions" legacyBehavior><a>Australia Champions</a></Link></li>
                                 <li><Link href="/teams/west-indies-champions" legacyBehavior><a>West Indies Champions</a></Link></li>

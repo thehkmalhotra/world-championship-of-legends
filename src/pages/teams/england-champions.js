@@ -227,19 +227,29 @@ const EnglandChampions = ({ canonical_link, meta_title, meta_description, meta_k
                                     <option value="2" selected>Season 2</option>
                                 </select>
                             </div>
-                            <div className="players-grid">
-                                {currentSquad.map((player, index) => (
-                                    <PlayerCard
-                                        key={index}
-                                        name={player.player_name}
-                                        type={player.player_type}
-                                        jersey={player.player_jersey}
-                                        about={player.player_about}
-                                        
-                                        image={player.player_image}
-                                    />
-                                ))}
-                            </div>
+                           <div className="players-grid">
+                              {currentSquad.map((player, index) => {
+                                const isEoinMorgan = player.player_name === "Eoin Morgan";
+                            
+                                const card = (
+                                  <PlayerCard
+                                    key={index}
+                                    name={player.player_name}
+                                    type={player.player_type}
+                                    jersey={player.player_jersey}
+                                    about={player.player_about}
+                                    image={player.player_image}
+                                  />
+                                );
+                            
+                                return isEoinMorgan ? (
+                                  <Link href="/eoin-morgan" key={index}>
+                                    <a style={{ textDecoration: "none" }}>{card}</a>
+                                  </Link>
+                                ) : (
+                                  <React.Fragment key={index}>{card}</React.Fragment>
+                                );
+                              })}
                         </div>
                         <div className="team-fixtures">
                             <h2>England Champions Fixtures - WCL T20</h2>

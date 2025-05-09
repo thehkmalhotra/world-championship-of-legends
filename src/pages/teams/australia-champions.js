@@ -203,21 +203,33 @@ const AustraliaChampions = ({ canonical_link, meta_title, meta_description, meta
                   <option value="2" selected>Season 2</option>
                 </select>
               </div>
-              <div className="players-grid">
-                {currentSquad.map((player, index) => (
-                  <PlayerCard
-                    key={index}
-                    name={player.player_name}
-                    type={player.player_type}
-                    jersey={player.player_jersey}
-                    about={player.player_about}
-                    metric1={player.player_metric_1}
-                    metric2={player.player_metric_2}
-                    image={player.player_image}
-                  />
-                ))}
+             <div className="players-grid">
+                {currentSquad.map((player, index) => {
+                  const isBrettLee = player.player_name === "Brett Lee";
+              
+                  const card = (
+                    <PlayerCard
+                      key={index}
+                      name={player.player_name}
+                      type={player.player_type}
+                      jersey={player.player_jersey}
+                      about={player.player_about}
+                      metric1={player.player_metric_1}
+                      metric2={player.player_metric_2}
+                      image={player.player_image}
+                    />
+                  );
+              
+                  return isBrettLee ? (
+                    <Link href="/brett-lee" key={index}>
+                      <a style={{ textDecoration: "none" }}>{card}</a>
+                    </Link>
+                  ) : (
+                    <React.Fragment key={index}>{card}</React.Fragment>
+                  );
+                })}
               </div>
-            </div>
+
             <div className="team-fixtures">
               <h2>Australia Champions Fixtures - WCL T20</h2>
               <Link href="https://edgbaston.com/wcl" legacyBehavior><a><img src="/assets/images/fixtures/australia-fixture.webp" /></a></Link>

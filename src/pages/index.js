@@ -377,7 +377,7 @@ const Homepage = ({ canonical_link, meta_title, meta_description, meta_keywords,
         <Header />
         <div className="body">
           <div className="hero-container">
-            <Link href="/tickets" legacyBehavior><a><img src="/assets/images/hero-image.webp" /></a></Link>
+            <Link href="/tickets" legacyBehavior><a><img src="/assets/images/hero-image-new.webp" /></a></Link>
           </div>
           <div className="news news-container">
             <div className="container-header">

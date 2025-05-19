@@ -1,6 +1,6 @@
 // pages/brett-lee.js
 import Head from "next/head";
-import Layout from "@/components/Layouts.js";
+import Layout from "@/components/Layout.js";
 import styles from "@/styles/Player.module.css";
 
 export default function BrettLeePage() {

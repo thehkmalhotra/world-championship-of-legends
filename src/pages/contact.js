@@ -42,6 +42,13 @@ const Contact = ({ canonical_link, meta_title, meta_description, meta_keywords }
                                 <h2>Support Hours</h2>
                                 <p>Our team is available to assist you Monday to Friday, 9 AM to 6 PM (Dubai Time).</p>
                             </div>
+                           <div>
+                                 <h2>General Inquiries</h2>
+                                 <p> We’d love to hear from you! For general inquiries, media partnerships, or support,please feel free to get in touch using the details below. </p>
+                                 <p><strong>Phone:</strong> +971 4 587 2423</p>
+                                 <p><strong>Email:</strong> support@wclcricket.com</p>
+                                 <p><strong>Address:</strong> Business Center 1, Mezzanine Floor, The Meydan Hotel, Nad Al Sheba, Dubai, U.A.E.</p>
+                           </div>
                         </div>
                     </div>
                 </div>

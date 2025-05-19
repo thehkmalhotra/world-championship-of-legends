@@ -42,7 +42,7 @@ function PakistanChampions({ canonical_link, meta_title, meta_description, meta_
             <div className="team-owners-container">
               <div className="team-owners">
                 <div className="team-owner">
-                  <TeamOwner name="Mr. Salman Ahmed" image="/assets/images/team-owners/salman-ahmed.webp" about="Salman Ahmed, a global entertainment icon since 1987, has promoted over 1500 live concerts..." />
+                  <TeamOwner name="Mr. Kamil Khan" image="/assets/images/team-owners/kamil-khan.webp" about="Kamil Khan, owner of the Pakistan Champions Cricket Team in the World Championship of Legends (WCL), is an Australia-based passionate cricket enthusiast with a strong background in real estate. Recognised as an ICC Community Champion in 2022 and is known for his work as an Australian entrepreneur , he brings a unique blend of business acumen and love for the cricket to the WCL. With a deep commitment to honoring Pakistan’s cricketing legacy, he has played a crucial role in bringing legendary players back into the spotlight. His vision and leadership focus on building a team that embodies the pride, passion, and fighting spirit of Pakistan, while reconnecting fans with the golden era of cricket on a global platform." />
                 </div>
               </div>
             </div>
